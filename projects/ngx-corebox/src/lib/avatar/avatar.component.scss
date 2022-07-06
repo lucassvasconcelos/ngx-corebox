@@ -1,0 +1,34 @@
+.corebox-avatar {
+    background-color: var(--header-icon--background-color);
+    border-radius: 50%;
+    
+
+    &.corebox-sm {
+        padding: 8px;
+
+        span {
+            color: var(--header-icon--font-color);
+            font-weight: 600;
+        }
+    
+        img {
+            border-radius: 50%;
+            height: 32px;
+        }
+    }
+
+    &.corebox-lg {
+        padding: 20px;
+
+        span {
+            color: var(--header-icon--font-color);
+            font-weight: 600;
+            font-size: 30px;
+        }
+    
+        img {
+            border-radius: 50%;
+            height: 32px;
+        }
+    }
+}

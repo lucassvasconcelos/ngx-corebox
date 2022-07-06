@@ -1,0 +1,140 @@
+.corebox-profile {
+    background: var(--menu-background-color);
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px var(--header-border-shadow-color);
+    padding: 20px 30px;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    width: 200px;
+
+    > .corebox-profile-content {
+        align-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        letter-spacing: .3px;
+
+        > ul {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            > li {
+                display: contents;
+
+                > corebox-avatar {
+                    margin: 0 0 16px 0;
+                }
+
+                > .corebox-profile-info {
+                    color: var(--font-color);
+                    text-decoration: none;
+                }
+
+                > .corebox-my-profile {
+                    border: 1px solid;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    margin: 10px 0 0 0;
+                    padding: 8px 40px;
+                    transition: all .4s;
+                    -webkit-transition: all 0.4s;
+                    -moz-transition: all 0.4s;
+                    -o-transition: all 0.4s;
+
+                    &:hover {
+                        background-color: var(--menu-background-hover-color);
+                        color: var(--menu-font-hover-color);
+                    }
+                    
+                    > fa-icon {
+                        margin-right: 5px;
+                    }
+                }
+
+                > hr {
+                    margin: 20px 0;
+                    width: 100%;
+                }
+
+                > .corebox-logout {
+                    border: 1px solid;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    padding: 5px 15px;
+                    transition: all .4s;
+                    -webkit-transition: all 0.4s;
+                    -moz-transition: all 0.4s;
+                    -o-transition: all 0.4s;
+
+                    &:hover {
+                        background-color: var(--menu-background-hover-color);
+                        color: var(--menu-font-hover-color);
+                    }
+            
+                    > fa-icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1280px) {
+        border-radius: 0;
+        padding: 0;
+        right: -20px;
+        top: 44px;
+        width: 100vw;
+
+        > .corebox-profile-content {
+
+            > ul {
+                align-items: flex-start;
+                width: 100%;
+                height: calc(100vh - 56px);
+
+                > li {
+                    width: 100%;
+                    
+                    > a {
+                        box-sizing: border-box;
+                        padding: 20px;
+                        width: 100%;
+                    }
+
+                    > .corebox-logout {
+                        border: none;
+                        border-radius: 0;
+                        padding: 30px;
+                    }
+                }
+
+                > .corebox-li-profile-info {
+                    display: none;
+                }
+
+                > .corebox-li-my-profile {
+                    > .corebox-my-profile {
+                        border: none;
+                        border-radius: 0;
+                        box-sizing: border-box;
+                        font-size: 16px;
+                        margin: 0;
+                        padding: 30px;
+                    }
+                }
+
+                > .corebox-li-divisor {
+                    display: none;
+                }
+            }
+        }
+    }
+}

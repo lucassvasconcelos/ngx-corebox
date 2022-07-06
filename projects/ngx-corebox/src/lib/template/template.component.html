@@ -1,0 +1,17 @@
+<div class="corebox">
+    <div class="corebox-left">
+        <div id="nav-menu" class="corebox-menu" [ngClass]="{'corebox-closed': useClosedMenuClass(), 'corebox-opened': useMenuOpenedClass()}">
+            <corebox-menu [menuClosed]="menuClosed" [menuItems]="menuItems" [menuOptions]="getMenuOptions()" (alterarMenuEvent)="changeMenuState($event)"></corebox-menu>
+        </div>
+    </div>
+
+    <div class="corebox-right">
+        <div id="header" class="corebox-header">
+            <corebox-header [menuClosed]="menuClosed" [profileOptions]="profileOptions" [appItems]="appItems" (menuStateEvent)="setMenuState($event)" (appsOpenedEvent)="appsOpened($event)"></corebox-header>
+        </div>
+        <section class="corebox-content" [ngClass]="{'corebox-closed': useClosedMenuClass()}" (click)="closeSubMenu()">
+            <router-outlet></router-outlet>
+        </section>
+        <corebox-footer [menuClosed]="menuClosed" [companyName]="profileOptions?.companyName"></corebox-footer>
+    </div>
+</div>

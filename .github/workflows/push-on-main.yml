@@ -1,0 +1,57 @@
+name: On Push To Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    name: Update Version and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: GitVersion Setup
+      uses: gittools/actions/gitversion/setup@v0.9.7
+      with:
+        versionSpec: '5.x'
+
+    - name: GitVersion Execute
+      uses: gittools/actions/gitversion/execute@v0.9.7
+      id: gitversion
+      with:
+        useConfigFile: true
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    - name: Install Angular
+      run: npm i -g @angular/cli
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run: ng b ngx-corebox
+
+    - name: Add Git Credentials
+      run: |
+          git config --global user.email "${{ secrets.INFRA_EMAIL }}"
+          git config --global user.name "Kenkko group"
+
+    - name: Set Version
+      run: |
+          cd dist/ngx-corebox
+          npm version ${{ steps.gitversion.outputs.semVer }}
+
+    - name: Publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        package: ./dist/ngx-corebox/package.json
+        token: ${{ secrets.NPM_TOKEN }}

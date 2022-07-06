@@ -1,0 +1,4 @@
+<section class="corebox-avatar" [ngClass]="size">
+    <span *ngIf="!pathToAvatarImage || (pathToAvatarImage && pathToAvatarImage.length === 0)">{{letters}}</span>
+    <img [src]="pathToAvatarImage" *ngIf="pathToAvatarImage && pathToAvatarImage.length > 0">
+</section>
