@@ -1,0 +1,14 @@
+<section class="apps-section" [ngClass]="{'show': appsIsOpen}">
+    <div class="apps row">
+        <div *ngFor="let app of appItems" class="app block">
+            <div style="position: relative;
+            top: 50%;
+            transform: translateY(-50%); cursor: pointer;">
+                <a [routerLink]="app.url">
+                    <fa-icon [icon]="['fas', app.icon]"></fa-icon><br />
+                    <span>{{app.title}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+<div class="content-all">
+
+    <div class="content-left">
+        <div id="nav-menu" class="nav-menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+            <corebox-menu 
+                [menuIsOpen]="menuIsOpen" 
+                [menuItems]="menuItems"
+                [menuOptions]="obterOpcoesDeMenu()"
+                (alterarMenuEvent)="alterarEstadoDoMenu($event)"
+            >
+            </corebox-menu>
+        </div>
+    </div>
+
+    <div class="content-right">
+
+        <div id="navHeaderRight" class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+            <corebox-header
+                (openMenuEvent)="menuOpened($event)"
+                (appsOpenedEvent)="appsOpened($event)"
+                [profileOptions]="profileOptions"
+                [appItems]="appItems"
+            ></corebox-header>
+        </div>
+
+        <div class="content" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="footer">
+            <corebox-footer 
+                [menuIsOpen]="menuIsOpen" 
+                [companyName]="profileOptions.companyName"
+            >
+            </corebox-footer>
+        </div>
+
+    </div>
+
+</div>
