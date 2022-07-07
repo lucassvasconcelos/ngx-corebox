@@ -1,0 +1,22 @@
+<corebox-header
+    (appsOpened)="appsOpened($event)"
+    (menuOpened)="menuOpened($event)"
+>
+</corebox-header>
+
+<corebox-menu
+    [menuIsOpen]="menuIsOpen"
+    [menuItems]="menuItems"
+>
+</corebox-menu>
+
+<corebox-apps
+    [appsIsOpen]="appsIsOpen"
+    [appItems]="appItems"
+>
+</corebox-apps>
+
+<corebox-footer
+    [companyName]="companyName"
+>
+</corebox-footer>

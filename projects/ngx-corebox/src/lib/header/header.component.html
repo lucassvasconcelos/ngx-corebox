@@ -1,8 +1,20 @@
 <header>
-    <img src="{{logoPath}}" alt="Logo da empresa">
-    <button class="menu" (click)="openMenu()">
-        <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-        <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-        <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-    </button>
+    <div class="header-container" [ngClass]="{'header-container-end': appsIsOpen}">
+        <button class="menu" (click)="openMenu()" *ngIf="!appsIsOpen">
+            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
+            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
+            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
+        </button>
+        <button class="apps" (click)="openApps()" *ngIf="!menuIsOpen">
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+        </button>
+    </div>
 </header>

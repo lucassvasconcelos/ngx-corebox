@@ -1,0 +1,16 @@
+.apps-container {
+    background-color: #470066;
+    display: block;
+    min-height: calc(100vh - 55px);
+    right: 0;
+    top: 0;
+    width: 100vw;
+    transition: width .3s;
+}
+
+.apps-container-closed {
+    right: 0;
+    top: 0;
+    transition: width .3s;
+    width: 0;
+}

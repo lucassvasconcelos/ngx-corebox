@@ -1,1 +1,35 @@
-<p>menu works!</p>
+<nav [ngClass]="{'nav-closed': !menuIsOpen}">
+    <div *ngIf="menuIsOpen">
+        <ul>
+            <li *ngFor="let menuItem of menuItems">
+                <a
+                    *ngIf="!menuItem.children"
+                    [routerLink]="menuItem.url"
+                    [queryParams]="menuItem.queryParams"
+                    routerLinkActive="active"
+                >
+                    <span>{{menuItem.title}}</span>
+                </a>
+                <a
+                    *ngIf="menuItem.children"
+                    routerLinkActive="active"
+                    (click)="menuItem.viewChildren = !menuItem.viewChildren"
+                >
+                    <span>{{menuItem.title}}</span>
+                </a>
+
+                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.viewChildren}">
+                    <li *ngFor="let subMenuItem of menuItem.children">
+                        <a
+                            [routerLink]="subMenuItem.url"
+                            [queryParams]="subMenuItem.queryParams"
+                            routerLinkActive="active"
+                        >
+                            <span>{{subMenuItem.title}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
