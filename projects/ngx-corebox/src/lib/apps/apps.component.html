@@ -1,8 +1,10 @@
 <section>
-    <div *ngFor="let app of appItems" class="app">
-        <a [routerLink]="app.url">
-            <fa-icon [icon]="['fas', app.icon]"></fa-icon>
-            <span>{{app.title}}</span>
-        </a>
+    <div class="apps" [ngClass]="{'show': appsIsOpen}">
+        <div *ngFor="let app of appItems" class="app">
+            <a [routerLink]="app.url">
+                <fa-icon [icon]="['fas', app.icon]"></fa-icon>
+                <span>{{app.title}}</span>
+            </a>
+        </div>
     </div>
 </section>

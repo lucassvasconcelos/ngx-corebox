@@ -1,9 +1,16 @@
-section {
+.apps {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     width: 100vw;
+    min-height: calc(100vh - 55px);
     flex-wrap: wrap;
+    visibility: hidden;
+    background-color: #470066;
+}
+
+.show {
+    visibility: visible;
 }
 
 .app a {
