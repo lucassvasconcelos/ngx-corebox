@@ -12,15 +12,73 @@ export class AppComponent {
   appItems: AppItem[] = [
     {
       title: 'App1',
-      url: '/url1'
+      url: '/url1',
+      icon: 'user'
     },
     {
       title: 'App2',
-      url: '/url2'
+      url: '/url2',
+      icon: 'wallet'
     },
     {
       title: 'App3',
-      url: '/url3'
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App1',
+      url: '/url1',
+      icon: 'user'
+    },
+    {
+      title: 'App2',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'App3',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App3',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App1',
+      url: '/url1',
+      icon: 'user'
+    },
+    {
+      title: 'App2',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'App3',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App3',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App1',
+      url: '/url1',
+      icon: 'user'
+    },
+    {
+      title: 'App2',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'App3',
+      url: '/url3',
+      icon: 'dollar'
     }
   ];
 

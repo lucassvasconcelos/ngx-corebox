@@ -7,11 +7,11 @@ nav {
     left: 0;
     width: 100vw;
     top: 0;
-    transition: width ease .3s;
+    transition: width ease .8s;
 }
 
 .nav-closed {
-    transition: width ease .3s;
+    transition: width ease .8s;
     width: 0;
 }
 

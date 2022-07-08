@@ -1,16 +1,22 @@
-.apps-container {
-    background-color: #470066;
-    display: block;
-    min-height: calc(100vh - 55px);
-    right: 0;
-    top: 0;
+section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
     width: 100vw;
-    transition: width .3s;
+    flex-wrap: wrap;
 }
 
-.apps-container-closed {
-    right: 0;
-    top: 0;
-    transition: width .3s;
-    width: 0;
+.app a {
+    color: #FFF;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.app a:hover {
+    color: blueviolet;
 }

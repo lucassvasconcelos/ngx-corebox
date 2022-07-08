@@ -1,5 +1,8 @@
-<div 
-    class="apps-container"
-    [ngClass]="{'apps-container-closed': !appsIsOpen}"
->
-</div>
+<section>
+    <div *ngFor="let app of appItems" class="app">
+        <a [routerLink]="app.url">
+            <fa-icon [icon]="['fas', app.icon]"></fa-icon>
+            <span>{{app.title}}</span>
+        </a>
+    </div>
+</section>

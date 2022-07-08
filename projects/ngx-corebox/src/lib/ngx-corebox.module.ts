@@ -7,6 +7,9 @@ import { TemplateComponent } from './template/template.component';
 import { RouterModule } from '@angular/router';
 import { AppsComponent } from './apps/apps.component';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -17,6 +20,7 @@ import { AppsComponent } from './apps/apps.component';
   ],
   imports: [
     CommonModule,
+    FontAwesomeModule,
     RouterModule
   ],
   exports: [
@@ -26,4 +30,8 @@ import { AppsComponent } from './apps/apps.component';
     TemplateComponent
   ]
 })
-export class NgxCoreboxModule { }
+export class NgxCoreboxModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas);
+  }
+}

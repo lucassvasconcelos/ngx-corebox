@@ -4,17 +4,19 @@
 >
 </corebox-header>
 
-<corebox-menu
-    [menuIsOpen]="menuIsOpen"
-    [menuItems]="menuItems"
->
-</corebox-menu>
+<div class="navs">
+    <corebox-menu
+        [menuIsOpen]="menuIsOpen"
+        [menuItems]="menuItems"
+    >
+    </corebox-menu>
 
-<corebox-apps
-    [appsIsOpen]="appsIsOpen"
-    [appItems]="appItems"
->
-</corebox-apps>
+    <corebox-apps
+        [appsIsOpen]="appsIsOpen"
+        [appItems]="appItems"
+    >
+    </corebox-apps>
+</div>
 
 <corebox-footer
     [companyName]="companyName"
