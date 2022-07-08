@@ -19,4 +19,5 @@ section {
 
 .app a:hover {
     color: blueviolet;
+    transition: .2s;
 }

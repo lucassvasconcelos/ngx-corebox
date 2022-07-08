@@ -31,6 +31,11 @@ ul>li>a {
     text-decoration: none;
 }
 
+ul>li>a:hover {
+    color: blueviolet;
+    transition: .2s;
+}
+
 .hide-submenu {
     max-height: 0;
     overflow: hidden;
