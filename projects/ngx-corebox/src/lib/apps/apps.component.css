@@ -1,3 +1,11 @@
+section {
+    position: absolute;
+    left: 100vw;
+    top: 0;
+    width: 0;
+    transition: .8s;
+}
+
 .apps {
     display: flex;
     justify-content: space-around;
@@ -5,12 +13,12 @@
     width: 100vw;
     min-height: calc(100vh - 55px);
     flex-wrap: wrap;
-    visibility: hidden;
     background-color: #470066;
 }
 
 .show {
-    visibility: visible;
+    left: 0vw;
+    transition: .8s;
 }
 
 .app a {

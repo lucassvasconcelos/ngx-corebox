@@ -1,5 +1,5 @@
-<section>
-    <div class="apps" [ngClass]="{'show': appsIsOpen}">
+<section [ngClass]="{'show': appsIsOpen}">
+    <div class="apps">
         <div *ngFor="let app of appItems" class="app">
             <a [routerLink]="app.url">
                 <fa-icon [icon]="['fas', app.icon]"></fa-icon>
