@@ -1,22 +1,23 @@
 <corebox-header
     (appsOpened)="appsOpened($event)"
     (menuOpened)="menuOpened($event)"
+    [mainColor]="'#c1c1c1'"
 >
 </corebox-header>
 
-<div class="navs">
-    <corebox-menu
-        [menuIsOpen]="menuIsOpen"
-        [menuItems]="menuItems"
-    >
-    </corebox-menu>
+<corebox-menu
+    [menuIsOpen]="menuIsOpen"
+    [menuItems]="menuItems"
+    [mainColor]="'#c1c1c1'"
+>
+</corebox-menu>
 
-    <corebox-apps
-        [appsIsOpen]="appsIsOpen"
-        [appItems]="appItems"
-    >
-    </corebox-apps>
-</div>
+<corebox-apps
+    [appsIsOpen]="appsIsOpen"
+    [appItems]="appItems"
+    [mainColor]="'#c1c1c1'"
+>
+</corebox-apps>
 
 <div class="content">
     <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-<nav [ngClass]="{'nav-closed': !menuIsOpen}">
+<nav [style.background-color]="mainColor" [ngClass]="{'nav-closed': !menuIsOpen}">
     <div *ngIf="menuIsOpen">
         <ul>
             <li *ngFor="let menuItem of menuItems">

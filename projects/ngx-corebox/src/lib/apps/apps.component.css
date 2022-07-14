@@ -1,24 +1,24 @@
 section {
-    position: absolute;
-    left: 100vw;
-    top: 0;
+    height: 100%;
     width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 55px;
+    right: 0;
+    overflow-x: hidden;
+    transition: .8s;
+}
+
+.show {
+    width: 100vw;
     transition: .8s;
 }
 
 .apps {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
-    width: 100vw;
-    min-height: calc(100vh - 55px);
     flex-wrap: wrap;
-    background-color: #470066;
-}
-
-.show {
-    left: 0vw;
-    transition: .8s;
+    width: 100vw;
 }
 
 .app a {
@@ -33,6 +33,5 @@ section {
 }
 
 .app a:hover {
-    color: blueviolet;
     transition: .2s;
 }

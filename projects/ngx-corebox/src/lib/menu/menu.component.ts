@@ -9,4 +9,6 @@ import { MenuItem } from '../types/menu-item';
 export class MenuComponent {
   @Input() menuIsOpen: boolean = false;
   @Input() menuItems: MenuItem[] = [];
+  @Input() mainColor: string = '#470066';
+  @Input() secondaryColor: string = '#8a2be2';
 }

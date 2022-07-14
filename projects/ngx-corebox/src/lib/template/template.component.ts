@@ -11,6 +11,8 @@ export class TemplateComponent {
   @Input() companyName: string = 'companyName';
   @Input() menuItems: MenuItem[] = [];
   @Input() appItems: AppItem[] = [];
+  @Input() mainColor: string = '#470066';
+  @Input() secondaryColor: string = '#8a2be2';
   menuIsOpen: boolean = false;
   appsIsOpen: boolean = false;
 

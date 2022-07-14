@@ -1,4 +1,4 @@
-<header>
+<header [style.background-color]="mainColor">
     <div class="header-container" [ngClass]="{'header-container-end': appsIsOpen}">
         <button class="menu" (click)="openMenu()" *ngIf="!appsIsOpen">
             <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
