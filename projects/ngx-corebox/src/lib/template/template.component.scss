@@ -1,7 +1,12 @@
 :root {
     --main-color: #470066;
     --secondary-color: #8a2be2;
+    --desktop-menu-color: #f3f3f3;
+    --mobile-menu-color: #470066;
     --content-color: #f9f9f9;
+    --default-text-color: #000000;
+    --text-color-on-main: #ffffff;
+    --text-color-on-menu: #000000;
 }
 
 /************************************* Template *************************************/
@@ -23,7 +28,7 @@ corebox-menu {
 /************************************* Menu *************************************/
 
 nav {
-    background-color: var(--main-color);
+    background-color: var(--desktop-menu-color);
     font-size: 30px;
     font-weight: 600;
     min-height: calc(100vh - 55px);
@@ -60,7 +65,7 @@ ul>li {
 }
 
 ul>li>a {
-    color: #fff;
+    color: var(--text-color-on-menu);
     text-decoration: none;
 }
 
@@ -122,7 +127,7 @@ header>.header-container>.menu {
 }
 
 header>.header-container>.menu>.line {
-    background-color: #FFF;
+    background-color: var(--text-color-on-main);
     display: block;
     height: 3px;
     margin-bottom: 4px;
@@ -131,7 +136,7 @@ header>.header-container>.menu>.line {
 }
 
 header>.header-container>.menu>.line:last-child {
-    background-color: #FFF;
+    background-color: var(--text-color-on-main);
     display: block;
     height: 3px;
     margin-bottom: 0;
@@ -165,7 +170,7 @@ header>.header-container>.apps {
 }
 
 header>.header-container>.apps>.dot {
-    background-color: #FFF;
+    background-color: var(--text-color-on-main);
     display: block;
     height: 4px;
     margin-right: 4px;
