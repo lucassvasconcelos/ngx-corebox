@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'corebox-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  templateUrl: './footer.component.html'
 })
 export class FooterComponent {
   @Input() companyName: string = 'companyName';

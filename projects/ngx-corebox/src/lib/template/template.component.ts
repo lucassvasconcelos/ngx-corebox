@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppItem } from '../types/app-item';
 import { MenuItem } from '../types/menu-item';
 import { isMobile } from '../utils/mobile/mobile.check';
@@ -6,10 +6,10 @@ import { isMobile } from '../utils/mobile/mobile.check';
 @Component({
   selector: 'corebox-template',
   templateUrl: './template.component.html',
-  styleUrls: ['./template.component.css']
+  styleUrls: ['./template.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TemplateComponent implements OnInit {
-
   @Input() companyName: string = 'companyName';
   @Input() menuItems: MenuItem[] = [];
   @Input() appItems: AppItem[] = [];
@@ -21,6 +21,8 @@ export class TemplateComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuIsOpen = !isMobile();
+    document.documentElement.style.setProperty('--main-color', this.mainColor);
+    document.documentElement.style.setProperty('--secondary-color', this.secondaryColor);
   }
 
   appsOpened($event: boolean): void {

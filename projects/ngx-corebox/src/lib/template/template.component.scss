@@ -1,8 +1,89 @@
-button {
-    cursor: pointer;
+:root {
+    --main-color: #470066;
+    --secondary-color: #8a2be2;
+    --content-color: #f9f9f9;
 }
 
+/************************************* Template *************************************/
+
+corebox-apps {
+    position: absolute;
+}
+
+corebox-menu {
+    position: absolute;
+}
+
+.content {
+    background-color: var(--content-color);
+    height: calc(100vh - 95px);
+    width: 100vw;
+}
+
+/************************************* Menu *************************************/
+
+nav {
+    background-color: var(--main-color);
+    font-size: 30px;
+    font-weight: 600;
+    min-height: calc(100vh - 55px);
+    left: 0;
+    width: 100vw;
+    top: 0;
+    transition: width ease .8s;
+}
+
+.nav-closed {
+    transition: width ease .8s;
+    width: 0;
+}
+
+.nav-desktop {
+    font-size: 30px;
+    font-weight: 600;
+    min-height: 100vh;
+    left: 0;
+    width: 17vw;
+    top: 0;
+    transition: width ease .8s;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+ul>li {
+    padding-bottom: 25px;
+}
+
+ul>li>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul>li>a:hover {
+    color: var(--secondary-color);
+    transition: .2s;
+}
+
+.hide-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+}
+
+.show-submenu {
+    max-height: 1000px;
+    transition: max-height 0.25s ease-in;
+}
+
+/************************************* Header *************************************/
+
 header {
+    background-color: var(--main-color);
     font-size: 16px;
     font-weight: 400;
     left: 0;
@@ -10,6 +91,10 @@ header {
     position: relative;
     right: 0;
     top: 0;
+}
+
+button {
+    cursor: pointer;
 }
 
 header>.header-container {
@@ -131,4 +216,72 @@ header>.header-container>.apps>.appsOpened:last-child {
 
 @media (max-width: 1200px)
 {
+}
+
+/************************************* Footer *************************************/
+
+footer {
+    background: white;
+    border-top: 1px solid #e7eaec;
+    bottom: 0;
+    display: none;
+    left: 0;
+    padding: 10px 20px;
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+}
+
+footer>span {
+    font-size: 13px;
+    color: #676a6c;
+}
+
+@media (min-width: 992px)
+{
+    footer {
+        display: block;
+    }
+}
+
+/************************************* Apps *************************************/
+
+.apps-section {
+    background-color: var(--main-color);
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 55px;
+    right: 0;
+    overflow-x: hidden;
+    transition: .8s;
+}
+
+.show {
+    width: 100vw;
+    transition: .8s;
+}
+
+.apps {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.app a {
+    color: #FFF;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.app a:hover {
+    transition: .2s;
+    color: var(--secondary-color);
 }

@@ -1,4 +1,4 @@
-<section [style.background-color]="mainColor" [ngClass]="{'show': appsIsOpen}">
+<section class="apps-section" [ngClass]="{'show': appsIsOpen}">
     <div class="apps">
         <div *ngFor="let app of appItems" class="app">
             <a [routerLink]="app.url">

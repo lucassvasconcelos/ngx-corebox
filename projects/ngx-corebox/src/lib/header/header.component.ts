@@ -3,13 +3,10 @@ import { isMobile } from '../utils/mobile/mobile.check';
 
 @Component({
   selector: 'corebox-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent {
 
-  @Input() mainColor: string = '#470066';
-  
   menuIsOpen: boolean = !isMobile();
   appsIsOpen: boolean = false;
 
