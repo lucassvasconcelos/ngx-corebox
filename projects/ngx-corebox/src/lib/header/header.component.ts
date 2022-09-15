@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { isMobile } from '../utils/mobile/mobile.check';
 
 @Component({
   selector: 'corebox-header',
@@ -6,9 +7,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
   @Input() mainColor: string = '#470066';
   
-  menuIsOpen: boolean = false;
+  menuIsOpen: boolean = !isMobile();
   appsIsOpen: boolean = false;
 
   @Output() menuOpened: EventEmitter<boolean> = new EventEmitter<boolean>();

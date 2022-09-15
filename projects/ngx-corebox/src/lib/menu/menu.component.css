@@ -8,6 +8,16 @@ nav {
     transition: width ease .8s;
 }
 
+.nav-desktop {
+    font-size: 30px;
+    font-weight: 600;
+    min-height: 100vh;
+    left: 0;
+    width: 17vw;
+    top: 0;
+    transition: width ease .8s;
+}
+
 .nav-closed {
     transition: width ease .8s;
     width: 0;
