@@ -1,26 +1,20 @@
-<corebox-header
-    (appsOpened)="appsOpened($event)"
-    (menuOpened)="menuOpened($event)"
->
-</corebox-header>
+<div class="nav-header-menu">
+    <div class="nav-header">
+        <corebox-header></corebox-header>
+    </div>
+    <div class="nav-menu">
+        <corebox-menu [menuIsOpen]="menuIsOpen" [menuItems]="menuItems">
+        </corebox-menu>
+    </div>
+</div>
 
-<corebox-menu
-    [menuIsOpen]="menuIsOpen"
-    [menuItems]="menuItems"
->
-</corebox-menu>
 
-<corebox-apps
-    [appsIsOpen]="appsIsOpen"
-    [appItems]="appItems"
->
+<corebox-apps [appsIsOpen]="appsIsOpen" [appItems]="appItems">
 </corebox-apps>
 
 <div class="content">
     <router-outlet></router-outlet>
 </div>
 
-<corebox-footer
-    [companyName]="companyName"
->
+<corebox-footer [companyName]="companyName">
 </corebox-footer>

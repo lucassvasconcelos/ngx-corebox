@@ -10,7 +10,4 @@ export class MenuComponent {
   @Input() menuIsOpen: boolean = false;
   @Input() menuItems: MenuItem[] = [];
 
-  public ehDesktop(): boolean {
-    return !isMobile();
-  }
 }

@@ -1,11 +1,11 @@
 <header>
     <div class="header-container" [ngClass]="{'header-container-end': appsIsOpen}">
         <button class="menu" (click)="openMenu()" *ngIf="!appsIsOpen">
-            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
         </button>
-        <button class="apps" (click)="openApps()" *ngIf="!menuIsOpen">
+        <button class="apps">
             <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
             <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
             <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>

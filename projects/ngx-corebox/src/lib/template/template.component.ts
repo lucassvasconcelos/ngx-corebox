@@ -32,12 +32,10 @@ export class TemplateComponent implements OnInit {
   @Input() darkModeTextColorOnMain: string = '#000000';
   @Input() darkModeTextColorOnMenu: string = '#000000';
 
-  menuIsOpen: boolean = false;
+  menuIsOpen: boolean = true;
   appsIsOpen: boolean = false;
 
   ngOnInit(): void {
-    this.menuIsOpen = !isMobile();
-    
     if (this.darkMode) {
       document.documentElement.style.setProperty('--main-color', this.darkModeMainColor);
       document.documentElement.style.setProperty('--secondary-color', this.darkModeSecondaryColor);

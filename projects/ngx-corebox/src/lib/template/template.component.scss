@@ -31,25 +31,105 @@ nav {
     background-color: var(--desktop-menu-color);
     font-size: 30px;
     font-weight: 600;
-    min-height: calc(100vh - 55px);
+    min-height: 100vh;
     left: 0;
-    width: 100vw;
     top: 0;
-    transition: width ease .8s;
+    width: 15vw;
+    display: block;
+    box-shadow: 0 4px 4px #00000040;
+}
+
+.nav-header-menu {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.nav-header {
+    width: 85vw;
+    float: right;
+}
+
+.nav-menu {
+    width: 15vw;
+    float: left;
+}
+
+.footer {
+    width: 83vw;
+    margin-left: auto;
+    margin-right: 0;
+    z-index: -1;
+    display: block;
+}
+
+@media (max-width: 1680px) {
+    nav {
+        background-color: var(--desktop-menu-color);
+        font-size: 30px;
+        font-weight: 600;
+        min-height: 100vh;
+        left: 0;
+        top: 0;
+        width: 20vw;
+        display: block;
+    }
+
+    .nav-header-menu {
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .nav-header {
+        width: 80vw;
+        float: right;
+    }
+
+    .nav-menu {
+        width: 20vw;
+        float: left;
+    }
+
+    .footer {
+        width: 77vw;
+        margin-left: auto;
+        margin-right: 0;
+        z-index: -1;
+        display: block;
+    }
+}
+
+@media (max-width: 1280px) {
+    nav {
+        background-color: var(--desktop-menu-color);
+        font-size: 30px;
+        font-weight: 600;
+        min-height: 100vh;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+
+    .nav-header-menu {
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .nav-header {
+        width: 100vw;
+        float: top;
+    }
+
+    .nav-menu {
+        width: 100vw;
+        float: bottom;
+    }
+
+    .footer {
+        display: none;
+    }
 }
 
 .nav-closed {
-    transition: width ease .8s;
-    width: 0;
-}
-
-.nav-desktop {
-    font-size: 30px;
-    font-weight: 600;
-    min-height: 100vh;
-    left: 0;
-    width: 17vw;
-    top: 0;
     transition: width ease .8s;
 }
 
@@ -215,13 +295,9 @@ header>.header-container>.apps>.appsOpened:last-child {
     width: 22px;
 }
 
-@media (max-width: 992px)
-{
-}
+@media (max-width: 992px) {}
 
-@media (max-width: 1200px)
-{
-}
+@media (max-width: 1200px) {}
 
 /************************************* Footer *************************************/
 
@@ -242,8 +318,7 @@ footer>span {
     color: #676a6c;
 }
 
-@media (min-width: 992px)
-{
+@media (min-width: 992px) {
     footer {
         display: block;
     }
