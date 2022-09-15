@@ -62,6 +62,24 @@ nav {
     display: block;
 }
 
+nav.closed {
+    width: 5vw !important;
+    overflow: hidden;
+}
+
+.nav-menu.closed {
+    display: contents;
+}
+
+.nav-header.closed {
+    width: 95vw;
+    float: right;
+}
+
+.footer.closed {
+    width: 93vw;
+}
+
 @media (max-width: 1680px) {
     nav {
         background-color: var(--desktop-menu-color);
