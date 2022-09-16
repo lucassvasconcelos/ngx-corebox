@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterComponent {
   @Input() companyName: string = 'companyName';
+  @Input() menuIsOpen: boolean = false;
+
   currentYear: number = (new Date()).getFullYear();
 }

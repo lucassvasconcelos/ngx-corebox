@@ -1,8 +1,8 @@
 <div class="nav-header-menu">
-    <div class="nav-header closed">
-        <corebox-header></corebox-header>
+    <div class="nav-header" [ngClass]="{'closed': menuIsOpen}">
+        <corebox-header (openMenuEvent)="menuOpened($event)"></corebox-header>
     </div>
-    <div class="nav-menu closed">
+    <div class="nav-menu" [ngClass]="{'closed': menuIsOpen}">
         <corebox-menu [menuIsOpen]="menuIsOpen" [menuItems]="menuItems">
         </corebox-menu>
     </div>
@@ -16,5 +16,5 @@
     <router-outlet></router-outlet>
 </div>
 
-<corebox-footer [companyName]="companyName">
+<corebox-footer [menuIsOpen]="menuIsOpen" [companyName]="companyName">
 </corebox-footer>

@@ -1,5 +1,5 @@
-<nav class="closed">
-    <div *ngIf="menuIsOpen">
+<nav [ngClass]="{'closed': menuIsOpen}">
+    <div>
         <ul>
             <li *ngFor="let menuItem of menuItems">
                 <a *ngIf="!menuItem.children" [routerLink]="menuItem.url" [queryParams]="menuItem.queryParams"

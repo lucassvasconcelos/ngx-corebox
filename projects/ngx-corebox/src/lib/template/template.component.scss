@@ -63,21 +63,25 @@ nav {
 }
 
 nav.closed {
-    width: 5vw !important;
+    width: 5vw;
     overflow: hidden;
+    transition: all .4s;
 }
 
 .nav-menu.closed {
     display: contents;
+    transition: all .4s;
 }
 
 .nav-header.closed {
     width: 95vw;
     float: right;
+    transition: all .4s;
 }
 
 .footer.closed {
     width: 93vw;
+    transition: all .4s;
 }
 
 @media (max-width: 1680px) {
@@ -113,6 +117,24 @@ nav.closed {
         margin-right: 0;
         z-index: -1;
         display: block;
+    }
+
+    nav.closed {
+        width: 5vw;
+        overflow: hidden;
+    }
+
+    .nav-menu.closed {
+        display: contents;
+    }
+
+    .nav-header.closed {
+        width: 95vw;
+        float: right;
+    }
+
+    .footer.closed {
+        width: 93vw;
     }
 }
 

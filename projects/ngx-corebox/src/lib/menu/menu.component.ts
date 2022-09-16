@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { MenuItem } from '../types/menu-item';
-import { isMobile } from '../utils/mobile/mobile.check';
 
 @Component({
   selector: 'corebox-menu',
