@@ -1,20 +1,46 @@
 <header>
     <div class="header-container" [ngClass]="{'header-container-end': appsIsOpen}">
-        <button class="menu" (click)="toogleMenu()" *ngIf="!appsIsOpen">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <button class="apps">
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-        </button>
+        <div>
+            <button class="menu" (click)="toogleMenu()" *ngIf="!appsIsOpen">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <div class="session-container">
+            <button class="apps">
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+            </button>
+            <div class="session" (click)="sessionIsOpen = !sessionIsOpen">
+                <corebox-avatar [sessionName]="sessionName" [pathToAvatarImage]="pathToAvatarImage" [ngClass]="{'corebox-avatar-text': pathToAvatarImage === ''}"></corebox-avatar>
+                <div class="dropdown">
+                    <fa-icon [icon]="['fas', 'angle-down']"></fa-icon>
+                </div>
+                <div class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+                    <ul>
+                        <li>
+                            <a href="http://perfil">
+                                <fa-icon [icon]="['fas', 'user']"></fa-icon>
+                                <span>Meu perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://sair">
+                                <fa-icon [icon]="['fas', 'door-open']"></fa-icon>
+                                <span>Sair</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </header>

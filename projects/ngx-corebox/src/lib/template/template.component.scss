@@ -240,13 +240,13 @@ header>.header-container-end {
     padding: 0 15px;
 }
 
-header>.header-container>.menu {
+header>.header-container>div>.menu {
     background-color: transparent;
     border: none;
     padding: 10px 0 11px 9px;
 }
 
-header>.header-container>.menu>.line {
+header>.header-container>div>.menu>.line {
     background-color: var(--text-color-on-main);
     display: block;
     height: 3px;
@@ -255,7 +255,7 @@ header>.header-container>.menu>.line {
     width: 22px;
 }
 
-header>.header-container>.menu>.line:last-child {
+header>.header-container>div>.menu>.line:last-child {
     background-color: var(--text-color-on-main);
     display: block;
     height: 3px;
@@ -264,22 +264,94 @@ header>.header-container>.menu>.line:last-child {
     width: 22px;
 }
 
-header>.header-container>.menu>.menuOpened:first-child {
+header>.header-container>div>.menu>.menuOpened:first-child {
     transform: rotate(-45deg);
     transition: .3s;
 }
 
-header>.header-container>.menu>.menuOpened:nth-child(2) {
+header>.header-container>div>.menu>.menuOpened:nth-child(2) {
     display: none;
 }
 
-header>.header-container>.menu>.menuOpened:last-child {
+header>.header-container>div>.menu>.menuOpened:last-child {
     transform: rotate(45deg);
     margin-top: -7px;
     transition: .3s;
 }
 
-header>.header-container>.apps {
+header>.header-container>.session-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+header>.header-container>.session-container>.session {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+header>.header-container>.session-container>.session>corebox-avatar {
+    margin-left: 15px;
+    margin-right: 5px;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+}
+
+header>.header-container>.session-container>.session>.dropdown {
+    color: var(--text-color-on-main);
+}
+
+header>.header-container>.session-container>.session>.dropdown-content {
+    position: absolute;
+    background: var(--main-color);
+    color: var(--text-color-on-main);
+    margin: 55px 0 0 0;
+    top: 0;
+    right: 0;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+header>.header-container>.session-container>.session>.dropdown-content>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header>.header-container>.session-container>.session>.dropdown-content>ul>li {
+    padding: 10px 20px;
+}
+
+header>.header-container>.session-container>.session>.dropdown-content>ul>li>fa-icon {
+    margin-right: 10px;
+}
+
+header>.header-container>.session-container>.session>.dropdown-content>ul>li:last-child {
+    padding-bottom: 20px;
+}
+
+.corebox-avatar-text {
+    color: var(--text-color-on-main);
+    background-color: var(--secondary-color);
+}
+
+header>.header-container>.session-container>.session>corebox-avatar>img {
+    height: 30px;
+    border-radius: 50%;
+}
+
+header>.header-container>.session-container>.apps {
     background-color: transparent;
     border: none;
     display: flex;
@@ -289,7 +361,7 @@ header>.header-container>.apps {
     width: 36px;
 }
 
-header>.header-container>.apps>.dot {
+header>.header-container>.session-container>.apps>.dot {
     background-color: var(--text-color-on-main);
     display: block;
     height: 4px;
@@ -299,36 +371,36 @@ header>.header-container>.apps>.dot {
     width: 4px;
 }
 
-header>.header-container>.apps>.dot:nth-child(3),
-header>.header-container>.apps>.dot:nth-child(6),
-header>.header-container>.apps>.dot:nth-child(9) {
+header>.header-container>.session-container>.apps>.dot:nth-child(3),
+header>.header-container>.session-container>.apps>.dot:nth-child(6),
+header>.header-container>.session-container>.apps>.dot:nth-child(9) {
     margin-right: 0;
 }
 
-header>.header-container>.apps>.dot:nth-child(7),
-header>.header-container>.apps>.dot:nth-child(8),
-header>.header-container>.apps>.dot:nth-child(9) {
+header>.header-container>.session-container>.apps>.dot:nth-child(7),
+header>.header-container>.session-container>.apps>.dot:nth-child(8),
+header>.header-container>.session-container>.apps>.dot:nth-child(9) {
     margin-bottom: 0;
 }
 
-header>.header-container>.apps>.appsOpened:nth-child(2),
-header>.header-container>.apps>.appsOpened:nth-child(3),
-header>.header-container>.apps>.appsOpened:nth-child(4),
-header>.header-container>.apps>.appsOpened:nth-child(5),
-header>.header-container>.apps>.appsOpened:nth-child(6),
-header>.header-container>.apps>.appsOpened:nth-child(7),
-header>.header-container>.apps>.appsOpened:nth-child(8) {
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(2),
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(3),
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(4),
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(5),
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(6),
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(7),
+header>.header-container>.session-container>.apps>.appsOpened:nth-child(8) {
     display: none;
 }
 
-header>.header-container>.apps>.appsOpened:first-child {
+header>.header-container>.session-container>.apps>.appsOpened:first-child {
     margin-bottom: 0;
     transform: rotate(-45deg);
     transition: .3s;
     width: 22px;
 }
 
-header>.header-container>.apps>.appsOpened:last-child {
+header>.header-container>.session-container>.apps>.appsOpened:last-child {
     transform: rotate(45deg);
     margin-top: -4px;
     transition: .3s;

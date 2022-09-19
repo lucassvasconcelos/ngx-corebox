@@ -4,9 +4,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   selector: 'corebox-header',
   templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  @Input() sessionName: string = '';
+  @Input() pathToAvatarImage: string = '';
 
   appsIsOpen: boolean = false;
+  sessionIsOpen: boolean = false;
 
   @Output() openMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 

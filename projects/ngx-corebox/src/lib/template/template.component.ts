@@ -10,6 +10,8 @@ import { isMobile } from '../utils/mobile/mobile.check';
   encapsulation: ViewEncapsulation.None
 })
 export class TemplateComponent implements OnInit {
+  @Input() sessionName: string = '';
+  @Input() pathToAvatarImage: string = '';
   @Input() companyName: string = 'companyName';
   @Input() menuItems: MenuItem[] = [];
   @Input() appItems: AppItem[] = [];

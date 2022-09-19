@@ -1,6 +1,10 @@
 <div class="nav-header-menu">
     <div class="nav-header" [ngClass]="{'closed': menuIsOpen}">
-        <corebox-header (openMenuEvent)="menuOpened($event)"></corebox-header>
+        <corebox-header
+            (openMenuEvent)="menuOpened($event)"
+            [sessionName]="sessionName"
+            [pathToAvatarImage]="pathToAvatarImage"
+        ></corebox-header>
     </div>
     <div class="nav-menu" [ngClass]="{'closed': menuIsOpen}">
         <corebox-menu [menuIsOpen]="menuIsOpen" [menuItems]="menuItems">
