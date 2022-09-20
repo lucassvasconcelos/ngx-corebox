@@ -19,6 +19,7 @@
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
             </button>
+            <corebox-notifications></corebox-notifications>
             <div class="session" (click)="sessionIsOpen = !sessionIsOpen">
                 <corebox-avatar [sessionName]="sessionName" [pathToAvatarImage]="pathToAvatarImage" [ngClass]="{'corebox-avatar-text': pathToAvatarImage === ''}"></corebox-avatar>
                 <div class="dropdown">

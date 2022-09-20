@@ -10,6 +10,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     MenuComponent,
     TemplateComponent,
     AppsComponent,
-    AvatarComponent
+    AvatarComponent,
+    NotificationsComponent
   ],
   imports: [
     CommonModule,
