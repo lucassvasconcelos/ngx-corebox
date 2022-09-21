@@ -9,4 +9,12 @@ export class MenuComponent {
   @Input() menuIsOpen: boolean = false;
   @Input() menuItems: MenuItem[] = [];
 
+  useMenuClosedClass(): boolean {
+    return this.menuIsOpen && window.innerWidth > 1280;
+  }
+
+  useMenuOpenedClass(): boolean {
+    return this.menuIsOpen && window.innerWidth <= 1280;
+  }
+
 }

@@ -1,12 +1,12 @@
 <div class="nav-header-menu">
-    <div class="nav-header" [ngClass]="{'closed': menuIsOpen}">
+    <div class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
         <corebox-header
             (openMenuEvent)="menuOpened($event)"
             [sessionName]="sessionName"
             [pathToAvatarImage]="pathToAvatarImage"
         ></corebox-header>
     </div>
-    <div class="nav-menu" [ngClass]="{'closed': menuIsOpen}">
+    <div class="nav-menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
         <corebox-menu [menuIsOpen]="menuIsOpen" [menuItems]="menuItems">
         </corebox-menu>
     </div>

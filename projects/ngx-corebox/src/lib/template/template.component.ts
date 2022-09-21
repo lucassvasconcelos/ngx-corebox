@@ -66,4 +66,12 @@ export class TemplateComponent implements OnInit {
   menuOpened($event: boolean): void {
     this.menuIsOpen = $event;
   }
+
+  useMenuClosedClass(): boolean {
+    return this.menuIsOpen && window.innerWidth > 1280;
+  }
+
+  useMenuOpenedClass(): boolean {
+    return this.menuIsOpen && window.innerWidth <= 1280;
+  }
 }

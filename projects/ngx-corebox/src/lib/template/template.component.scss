@@ -10,13 +10,13 @@
 }
 
 corebox-notifications {
-    > section {
+    >section {
         color: white;
         cursor: pointer;
         font-size: 20px;
         padding: 10px 15px;
 
-        > small {
+        >small {
             background-color: red;
             border-radius: 3px;
             font-size: 12px;
@@ -30,20 +30,20 @@ corebox-notifications {
 }
 
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-	}
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
 
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-	}
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
 
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	}
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 /************************************* Template *************************************/
@@ -89,6 +89,13 @@ nav {
 .nav-menu {
     width: 15vw;
     float: left;
+    display: block;
+}
+
+.nav-menu-mobile {
+    width: 100vw;
+    float: left;
+    display: none;
 }
 
 .footer {
@@ -146,6 +153,11 @@ nav.closed {
     .nav-menu {
         width: 20vw;
         float: left;
+        display: block;
+    }
+
+    .nav-menu-mobile {
+        display: none;
     }
 
     .footer {
@@ -199,6 +211,19 @@ nav.closed {
     .nav-menu {
         width: 100vw;
         float: bottom;
+        display: none;
+    }
+
+    .nav-menu-mobile {
+        display: block;
+    }
+
+    .nav-menu-mobile.opened {
+        width: 100vw;
+    }
+
+    .nav-menu-mobile.opened nav {
+        display: block;
     }
 
     .footer {

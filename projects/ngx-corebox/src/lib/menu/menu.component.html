@@ -1,4 +1,4 @@
-<nav [ngClass]="{'closed': menuIsOpen}">
+<nav [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
     <div>
         <ul>
             <li *ngFor="let menuItem of menuItems">

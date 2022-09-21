@@ -9,4 +9,12 @@ export class FooterComponent {
   @Input() menuIsOpen: boolean = false;
 
   currentYear: number = (new Date()).getFullYear();
+
+  useMenuClosedClass(): boolean {
+    return this.menuIsOpen && window.innerWidth > 1280;
+  }
+
+  useMenuOpenedClass(): boolean {
+    return this.menuIsOpen && window.innerWidth <= 1280;
+  }
 }

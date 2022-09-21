@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'corebox-header',
@@ -18,7 +18,11 @@ export class HeaderComponent {
   }
 
   toogleMenu() {
-    const menuIsOpen = document.querySelectorAll('.closed').length === 0;
+    debugger;
+    const menuIsOpen = document.querySelectorAll('.closed').length === 0
+      && document.querySelectorAll('.opened').length === 0
     this.openMenuEvent.emit(menuIsOpen);
   }
+
+
 }
