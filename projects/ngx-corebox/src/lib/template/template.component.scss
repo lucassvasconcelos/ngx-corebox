@@ -112,6 +112,13 @@ nav.closed {
     transition: all .4s;
 }
 
+nav.opened {
+    width: 100vw;
+    overflow: hidden;
+    transition: all .4s;
+    display: block;
+}
+
 .nav-menu.closed {
     display: contents;
     transition: all .4s;
@@ -212,6 +219,19 @@ nav.closed {
         width: 100vw;
         float: bottom;
         display: none;
+    }
+
+    .nav-menu.opened {
+        width: 100vw;
+        float: bottom;
+        display: block;
+    }
+
+    nav.opened {
+        width: 100vw;
+        overflow: hidden;
+        transition: all .4s;
+        display: block;
     }
 
     .nav-menu-mobile {
