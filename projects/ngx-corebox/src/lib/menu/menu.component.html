@@ -1,4 +1,9 @@
 <nav [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+    <div class="logotipo" *ngIf="menuOptions.logotipo"
+        [ngStyle]="{'background-image': menuOptions.backgroundImage ? getBackgroundImage() : null}">
+        <img class="logotipo" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}" [src]="menuOptions.logotipo" />
+        <img *ngIf="useMenuClosedClass()" class="logotipoMobile" [src]="menuOptions.logotipoMobile" />
+    </div>
     <div>
         <ul>
             <li *ngFor="let menuItem of menuItems">

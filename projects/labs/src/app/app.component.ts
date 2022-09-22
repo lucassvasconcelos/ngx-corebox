@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuOptions } from 'dist/ngx-corebox/lib/types/menu-options';
 import { AppItem, MenuItem } from 'ngx-corebox';
 
 @Component({
@@ -248,4 +249,10 @@ export class AppComponent {
       url: '/url5'
     }
   ];
+
+  public menuOptions = {
+    backgroundImage: '../assets/background-menu.jpeg',
+    logotipo: '../assets/logo-desktop.svg',
+    logotipoMobile: '../assets/logo-mobile.svg'
+  } as MenuOptions;
 }

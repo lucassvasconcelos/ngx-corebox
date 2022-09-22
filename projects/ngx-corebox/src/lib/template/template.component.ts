@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppItem } from '../types/app-item';
 import { MenuItem } from '../types/menu-item';
-import { isMobile } from '../utils/mobile/mobile.check';
+import { MenuOptions } from '../types/menu-options';
 
 @Component({
   selector: 'corebox-template',
@@ -24,6 +24,7 @@ export class TemplateComponent implements OnInit {
   @Input() lightModeDefaultTextColor: string = '#000000';
   @Input() lightModeTextColorOnMain: string = '#ffffff';
   @Input() lightModeTextColorOnMenu: string = '#000000';
+  @Input() menuOptions: MenuOptions = new MenuOptions();
   
   @Input() darkModeMainColor: string = '#470066';
   @Input() darkModeSecondaryColor: string = '#8a2be2';

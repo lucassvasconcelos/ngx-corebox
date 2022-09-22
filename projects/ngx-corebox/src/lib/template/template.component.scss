@@ -135,7 +135,38 @@ nav.opened {
     transition: all .4s;
 }
 
-@media (max-width: 1680px) {
+.closed div.logotipo {
+    height: 55px;
+    width: 40px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logotipo {
+    height: 110px;
+    display: block;
+    margin: 0 auto;
+    background-repeat: round;
+    max-width: -webkit-fill-available;
+    max-width: -moz-available;
+}
+
+.logotipo img {
+    width: 125px;
+}
+
+.logotipo.closed {
+    display: none;
+}
+
+.logotipoMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+@media (max-width: 1480px) {
     nav {
         background-color: var(--desktop-menu-color);
         font-size: 30px;
@@ -176,7 +207,7 @@ nav.opened {
     }
 
     nav.closed {
-        width: 5vw;
+        width: 70px;
         overflow: hidden;
     }
 

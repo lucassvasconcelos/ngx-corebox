@@ -7,7 +7,11 @@
         ></corebox-header>
     </div>
     <div class="nav-menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
-        <corebox-menu [menuIsOpen]="menuIsOpen" [menuItems]="menuItems">
+        <corebox-menu 
+            [menuIsOpen]="menuIsOpen" 
+            [menuItems]="menuItems"
+            [menuOptions]="menuOptions"
+        >
         </corebox-menu>
     </div>
 </div>
