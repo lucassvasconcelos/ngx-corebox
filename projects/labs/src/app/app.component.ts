@@ -215,38 +215,66 @@ export class AppComponent {
 
   menuItems: MenuItem[] = [
     {
-      title: 'MenuItem1',
+      title: 'Painel',
       url: '/url1',
+      icon: 'th',
       children: [
         {
-          title: 'SubMenuItem1',
-          url: '/SubUrl1'
+          title: 'Eventos Quantitativos',
+          url: '/SubUrl1',
+          icon: 'font-awesome'
         },
         {
-          title: 'SubMenuItem2',
-          url: '/SubUrl2'
+          title: 'Eventos por Localidade',
+          url: '/SubUrl2',
+          icon: 'font-awesome'
         },
         {
-          title: 'SubMenuItem3',
-          url: '/SubUrl3'
+          title: 'Eventos por Veículos',
+          url: '/SubUrl3',
+          icon: 'font-awesome'
         }
       ]
     },
     {
-      title: 'MenuItem2',
-      url: '/url2'
+      title: 'Inadimplências',
+      url: '/url2',
+      icon: 'dollar-sign'
     },
     {
-      title: 'MenuItem3',
-      url: '/url3'
+      title: 'Oficinas',
+      url: '/url3',
+      icon: 'car-battery'
     },
     {
-      title: 'MenuItem4',
-      url: '/url4'
+      title: 'Consultas Pagas',
+      url: '/url4',
+      icon: 'search'
     },
     {
-      title: 'MenuItem5',
-      url: '/url5'
+      title: 'Comunicação de Vendas',
+      url: '/url5',
+      icon: 'tty'
+    },
+    {
+      title: 'Tabela Fipe',
+      url: '/url5',
+      icon: 'table'
+    },
+    {
+      title: 'Monitoria de Processos Judiciais',
+      url: '/url5',
+      icon: 'satellite-dish'
+    },
+    {
+      title: 'Suporte',
+      url: '/url5',
+      icon: 'headset'
+    },
+    {
+      title: 'Perguntas Frequentes',
+      url: '/url5',
+      icon: 'question-circle'
     }
   ];
 

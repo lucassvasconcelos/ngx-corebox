@@ -163,7 +163,7 @@ nav.opened {
 .logotipoMobile {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 @media (max-width: 1480px) {
@@ -298,8 +298,11 @@ ul>li {
 }
 
 ul>li>a {
-    color: var(--text-color-on-menu);
     text-decoration: none;
+    text-decoration: none;
+    color: #00000073;
+    font-weight: 400;
+    font-size: medium;
 }
 
 ul>li>a:hover {
@@ -329,6 +332,7 @@ header {
     position: relative;
     right: 0;
     top: 0;
+    background: rgba(30, 82, 148, 0.15);
 }
 
 button {
