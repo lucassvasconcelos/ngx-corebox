@@ -244,7 +244,19 @@ export class AppComponent {
     {
       title: 'Inadimplências',
       url: '/url2',
-      icon: 'dollar-sign'
+      icon: 'dollar-sign',
+      children: [
+        {
+          title: 'Buscar Inadimplências',
+          url: '/SubUrl1',
+          icon: 'font-awesome'
+        },
+        {
+          title: 'Nova Inadimplência',
+          url: '/SubUrl2',
+          icon: 'font-awesome'
+        }
+      ]
     },
     {
       title: 'Oficinas',

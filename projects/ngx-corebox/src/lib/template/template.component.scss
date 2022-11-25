@@ -9,6 +9,10 @@
     --text-color-on-menu: #000000;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 corebox-notifications {
     >section {
         color: white;
@@ -332,6 +336,7 @@ header {
     position: relative;
     right: 0;
     top: 0;
+    padding-right: 22px;
 }
 
 button {
