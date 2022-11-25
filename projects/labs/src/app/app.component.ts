@@ -240,11 +240,12 @@ export class AppComponent {
       title: 'Eventos',
       url: '/url2',
       icon: 'car-crash'
-    },
+    } as MenuItem,
     {
       title: 'Inadimplências',
       url: '/url2',
       icon: 'dollar-sign',
+      opened: true,
       children: [
         {
           title: 'Buscar Inadimplências',
@@ -257,7 +258,7 @@ export class AppComponent {
           icon: 'font-awesome'
         }
       ]
-    },
+    } as MenuItem,
     {
       title: 'Oficinas',
       url: '/url3',
