@@ -262,7 +262,7 @@ export class AppComponent {
       icon: 'table'
     },
     {
-      title: 'Monitoria de Processos Judiciais',
+      title: 'Processos Judiciais',
       url: '/url5',
       icon: 'satellite-dish'
     },

@@ -332,7 +332,6 @@ header {
     position: relative;
     right: 0;
     top: 0;
-    background: rgba(30, 82, 148, 0.15);
 }
 
 button {
@@ -595,4 +594,42 @@ footer>span {
 .app a:hover {
     transition: .2s;
     color: var(--secondary-color);
+}
+
+nav.menu {
+    display: inline-block;
+}
+
+nav.menu div.menu {
+    position: relative;
+}
+
+nav.menu ul {
+    margin: revert;
+    position: relative;
+    padding-left: unset;
+    padding-top: unset;
+    width: 100%;
+}
+
+nav.menu li {
+    display: block;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: unset;
+}
+
+nav.menu li a {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 20px 10px;
+}
+
+nav.menu li a:hover {
+    display: block;
+    width: auto;
+    position: relative;
+    background-color: rgba(30, 82, 148, 0.15);
 }
