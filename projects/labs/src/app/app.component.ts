@@ -215,7 +215,7 @@ export class AppComponent {
 
   menuItems: MenuItem[] = [
     {
-      title: 'Painel',
+      title: 'Painéis',
       url: '/url1',
       icon: 'th',
       children: [
@@ -235,6 +235,11 @@ export class AppComponent {
           icon: 'font-awesome'
         }
       ]
+    },
+    {
+      title: 'Eventos',
+      url: '/url2',
+      icon: 'car-crash'
     },
     {
       title: 'Inadimplências',
