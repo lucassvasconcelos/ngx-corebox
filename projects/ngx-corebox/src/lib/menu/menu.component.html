@@ -17,7 +17,7 @@
                     class="d-flex justify-content-between align-items-center"
                 >
                     <div [ngClass]="{'d-flex align-items-center' : !true }"> <!-- Criar menuItem.enabled -->
-                        <fa-icon [icon]="['fas', menuItem.icon || 'font-awesome']"></fa-icon>
+                        <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
                         &nbsp;<span class="nav-label">{{menuItem.title}}</span>
                     </div>
                     <small *ngIf="!true" class="ml-1 badge nav-label">Em breve</small><!-- Criar menuItem.enabled -->
@@ -29,7 +29,7 @@
                     routerLinkActive="active"
                     (click)="menuItem.viewChildren = !menuItem.viewChildren"
                 >
-                    <fa-icon [icon]="['fas', menuItem.icon || 'font-awesome']"></fa-icon>
+                    <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
                     &nbsp;<span>{{menuItem.title}}</span>
                 </a>
 
