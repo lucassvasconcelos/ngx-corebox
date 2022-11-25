@@ -602,6 +602,7 @@ nav.menu {
 
 nav.menu div.menu {
     position: relative;
+    top: -30px;
 }
 
 nav.menu ul {
@@ -624,7 +625,7 @@ nav.menu li a {
     display: block;
     width: 100%;
     position: relative;
-    padding: 20px 10px;
+    padding: 20px 20px;
 }
 
 nav.menu li a:hover {
