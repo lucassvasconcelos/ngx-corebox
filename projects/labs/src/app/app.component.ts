@@ -218,6 +218,7 @@ export class AppComponent {
       title: 'Painéis',
       url: '/url1',
       icon: 'th',
+      opened: true,
       children: [
         {
           title: 'Eventos Quantitativos',

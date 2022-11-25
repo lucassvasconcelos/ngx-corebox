@@ -630,7 +630,7 @@ nav.menu li a {
     display: block;
     width: auto;
     position: relative;
-    padding: 20px 20px;
+    padding: 20px 27px;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -o-transition: all 0.4s;
@@ -651,6 +651,11 @@ nav.menu li a:hover {
     width: auto;
     position: relative;
     background-color: rgba(30, 82, 148, 0.15);
+}
+
+nav.menu.closed li a {
+    text-align: center;
+    padding: 20px;
 }
 
 nav.menu li a:active {

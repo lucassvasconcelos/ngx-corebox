@@ -16,12 +16,10 @@
                     routerLinkActive="active" 
                     class="d-flex justify-content-between align-items-center"
                 >
-                    <div [ngClass]="{'d-flex align-items-center' : !true }"> <!-- Criar menuItem.enabled -->
+                    <div [ngClass]="{'d-flex align-items-center' : !true }">
                         <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
-                        &nbsp;<span class="nav-label">{{menuItem.title}}</span>
+                        <ng-container *ngIf="!useMenuClosedClass()">&nbsp;<span class="nav-label">{{menuItem.title}}</span></ng-container>
                     </div>
-                    <small *ngIf="!true" class="ml-1 badge nav-label">Em breve</small><!-- Criar menuItem.enabled -->
-                    <span *ngIf="menuItem.children" class="fa arrow"></span><!-- Criar menuItem.enabled -->
                 </a>
                 
                 <a 
@@ -31,8 +29,10 @@
                     [ngClass]="{'menuOpened': menuItem.opened}"
                 >
                     <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
-                    &nbsp;<span>{{menuItem.title}}</span>
-                    &nbsp;<span class="seta"><fa-icon *ngIf="!menuItem.opened" [icon]="'chevron-left'"></fa-icon><fa-icon *ngIf="menuItem.opened" [icon]="'chevron-down'"></fa-icon></span>
+                    <ng-container *ngIf="!useMenuClosedClass()">
+                        &nbsp;<span>{{menuItem.title}}</span>
+                        &nbsp;<span class="seta"><fa-icon *ngIf="!menuItem.opened" [icon]="'chevron-left'"></fa-icon><fa-icon *ngIf="menuItem.opened" [icon]="'chevron-down'"></fa-icon></span>
+                    </ng-container>
                 </a>
 
                 <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.opened}">
