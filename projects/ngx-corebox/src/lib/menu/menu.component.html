@@ -27,7 +27,7 @@
                 <a 
                     *ngIf="menuItem.children" 
                     routerLinkActive="active"
-                    (click)="menuItem.opened = !(menuItem.opened ?? false)"
+                    (click)="this.selecionarMenu(menuItem)"
                     [ngClass]="{'menuOpened': menuItem.opened}"
                 >
                     <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
