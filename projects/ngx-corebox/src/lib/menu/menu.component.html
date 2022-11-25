@@ -27,17 +27,23 @@
                 <a 
                     *ngIf="menuItem.children" 
                     routerLinkActive="active"
-                    (click)="menuItem.viewChildren = !menuItem.viewChildren"
+                    (click)="menuItem.opened = !(menuItem.opened ?? false)"
+                    [ngClass]="{'menuOpened': menuItem.opened}"
                 >
                     <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
                     &nbsp;<span>{{menuItem.title}}</span>
+                    &nbsp;<span class="seta"><fa-icon *ngIf="!menuItem.opened" [icon]="'chevron-left'"></fa-icon><fa-icon *ngIf="menuItem.opened" [icon]="'chevron-down'"></fa-icon></span>
                 </a>
 
-                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.viewChildren}">
+                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.opened}">
                     <li *ngFor="let subMenuItem of menuItem.children">
-                        <a [routerLink]="subMenuItem.url" [queryParams]="subMenuItem.queryParams"
-                            routerLinkActive="active">
-                            <span>{{subMenuItem.title}}</span>
+                        <a 
+                            [routerLink]="subMenuItem.url" 
+                            [queryParams]="subMenuItem.queryParams"
+                            routerLinkActive="active"
+                            class="menuOpened"
+                        >
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{subMenuItem.title}}</span>
                         </a>
                     </li>
                 </ul>

@@ -628,14 +628,40 @@ nav.menu li {
 
 nav.menu li a {
     display: block;
-    width: 100%;
+    width: auto;
     position: relative;
     padding: 20px 20px;
+}
+
+nav.menu li a.menuOpened {
+    display: block;
+    width: auto;
+    position: relative;
+    padding: 20px 20px;
+    background-color: rgba(30, 82, 148, 0.15);
+    border-left: 4px solid var(--secondary-color);
 }
 
 nav.menu li a:hover {
     display: block;
     width: auto;
     position: relative;
+    background-color: rgba(30, 82, 148, 0.15);
+}
+
+nav.menu li a:active {
+    color: var(--secondary-color);
+}
+
+nav.menu li a span.seta {
+    float: right;
+}
+
+nav.menu ul.show-submenu li {
+    line-height: 0px;
+}
+
+nav.menu ul.show-submenu li:hover {
+    line-height: 0px;
     background-color: rgba(30, 82, 148, 0.15);
 }

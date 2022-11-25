@@ -6,6 +6,6 @@ export class MenuItem {
     icon?: IconName = 'font-awesome';
     title?: string;
     children?: MenuItem[];
-    viewChildren?: boolean = false;
     allowedRoles?: string[];
+    opened?: boolean = false;
 }

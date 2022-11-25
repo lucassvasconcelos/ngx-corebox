@@ -218,6 +218,7 @@ export class AppComponent {
       title: 'Painéis',
       url: '/url1',
       icon: 'th',
+      opened: true,
       children: [
         {
           title: 'Eventos Quantitativos',
@@ -235,7 +236,7 @@ export class AppComponent {
           icon: 'font-awesome'
         }
       ]
-    },
+    } as MenuItem,
     {
       title: 'Eventos',
       url: '/url2',
