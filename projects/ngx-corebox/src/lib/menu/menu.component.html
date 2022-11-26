@@ -7,7 +7,7 @@
     </div>
     <div class="menu">
         <ul>
-            <li [ngClass]="{'selecionado': menuItem === menuSelecionado}" *ngFor="let menuItem of menuItems">
+            <li *ngFor="let menuItem of menuItems">
                 
                 <a 
                     *ngIf="!menuItem.children" 
@@ -15,6 +15,7 @@
                     [queryParams]="menuItem.queryParams"
                     (click)="this.selecionarMenu(menuItem)"
                     routerLinkActive="active" 
+                    [ngClass]="{'selecionado': menuItem === menuSelecionado}"
                 >
                     <div [ngClass]="{'d-flex align-items-center' : !true }">
                         <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
@@ -26,7 +27,7 @@
                     *ngIf="menuItem.children" 
                     routerLinkActive="active"
                     (click)="this.selecionarMenu(menuItem)"
-                    [ngClass]="{'menuOpened': menuItem.opened}"
+                    [ngClass]="{'menuOpened': menuItem.opened, 'selecionado': menuItem === menuSelecionado}"
                 >
                     <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
                     <ng-container *ngIf="!useMenuClosedClass()">
@@ -41,7 +42,7 @@
                             [routerLink]="subMenuItem.url" 
                             [queryParams]="subMenuItem.queryParams"
                             routerLinkActive="active"
-                            class="menuOpened"
+                            [ngClass]="{'menuOpened': menuItem.opened, 'selecionado': menuItem === menuSelecionado}"
                         >
                             <ng-container *ngIf="!useMenuClosedClass()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ng-container><span>{{subMenuItem.title}}</span>
                         </a>

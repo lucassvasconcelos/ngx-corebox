@@ -218,7 +218,6 @@ export class AppComponent {
       title: 'Painéis',
       url: '/url1',
       icon: 'th',
-      opened: true,
       children: [
         {
           title: 'Eventos Quantitativos',
@@ -246,7 +245,6 @@ export class AppComponent {
       title: 'Inadimplências',
       url: '/url2',
       icon: 'dollar-sign',
-      opened: true,
       children: [
         {
           title: 'Buscar Inadimplências',
