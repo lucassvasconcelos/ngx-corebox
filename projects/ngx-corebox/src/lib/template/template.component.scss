@@ -224,6 +224,14 @@ nav.opened {
     .footer.closed {
         width: 93vw;
     }
+
+    nav.menu.closed ul.show-submenu {
+        max-height: 1000px;
+        position: absolute !important;
+        top: 0px;
+        left: 5.1vw !important;
+        width: max-content !important;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -284,6 +292,14 @@ nav.opened {
 
     .logotipo {
         display: none;
+    }
+
+    nav.menu.closed ul.show-submenu {
+        max-height: 1000px;
+        position: absolute !important;
+        top: 0px;
+        left: 5.5vw !important;
+        width: max-content !important;
     }
 }
 
