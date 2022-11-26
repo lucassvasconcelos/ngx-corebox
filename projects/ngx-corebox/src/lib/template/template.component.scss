@@ -311,18 +311,15 @@ ul>li>a {
 
 ul>li>a:hover {
     color: var(--secondary-color);
-    transition: .2s;
 }
 
 .hide-submenu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.15s ease-out;
 }
 
 .show-submenu {
     max-height: 1000px;
-    transition: max-height 0.25s ease-in;
 }
 
 /************************************* Header *************************************/
@@ -372,7 +369,6 @@ header>.header-container>div>.menu>.line {
     display: block;
     height: 3px;
     margin-bottom: 4px;
-    transition: .3s;
     width: 22px;
 }
 
@@ -381,13 +377,7 @@ header>.header-container>div>.menu>.line:last-child {
     display: block;
     height: 3px;
     margin-bottom: 0;
-    transition: .3s;
     width: 22px;
-}
-
-header>.header-container>div>.menu>.menuOpened:first-child {
-    transform: rotate(-45deg);
-    transition: .3s;
 }
 
 header>.header-container>div>.menu>.menuOpened:nth-child(2) {
@@ -395,9 +385,7 @@ header>.header-container>div>.menu>.menuOpened:nth-child(2) {
 }
 
 header>.header-container>div>.menu>.menuOpened:last-child {
-    transform: rotate(45deg);
     margin-top: -7px;
-    transition: .3s;
 }
 
 header>.header-container>.session-container {
@@ -490,7 +478,6 @@ header>.header-container>.session-container>.apps>.dot {
     height: 4px;
     margin-right: 4px;
     margin-bottom: 4px;
-    transition: .3s;
     width: 4px;
 }
 
@@ -519,14 +506,12 @@ header>.header-container>.session-container>.apps>.appsOpened:nth-child(8) {
 header>.header-container>.session-container>.apps>.appsOpened:first-child {
     margin-bottom: 0;
     transform: rotate(-45deg);
-    transition: .3s;
     width: 22px;
 }
 
 header>.header-container>.session-container>.apps>.appsOpened:last-child {
     transform: rotate(45deg);
     margin-top: -4px;
-    transition: .3s;
     width: 22px;
 }
 
