@@ -112,13 +112,11 @@ nav {
 
 nav.closed {
     width: 5vw;
-    overflow: hidden;
     transition: all .4s;
 }
 
 nav.opened {
     width: 100vw;
-    overflow: hidden;
     transition: all .4s;
     display: block;
 }
@@ -212,7 +210,6 @@ nav.opened {
 
     nav.closed {
         width: 70px;
-        overflow: hidden;
     }
 
     .nav-menu.closed {
@@ -658,4 +655,12 @@ nav.menu ul.show-submenu li {
 nav.menu ul.show-submenu li:hover {
     line-height: 0px;
     background-color: rgba(30, 82, 148, 0.15);
+}
+
+nav.menu.closed ul.show-submenu {
+    max-height: 1000px;
+    position: absolute !important;
+    top: 0px;
+    left: 5vw;
+    width: max-content !important;
 }
