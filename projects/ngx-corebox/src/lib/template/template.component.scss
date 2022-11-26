@@ -634,7 +634,6 @@ nav.menu li a.menuOpened {
     position: relative;
     padding: 20px 20px;
     background-color: rgba(30, 82, 148, 0.15);
-    border-left: 4px solid var(--secondary-color);
 }
 
 nav.menu li a:hover {
@@ -691,4 +690,8 @@ nav.menu.closed ul.show-submenu li a {
 .content-right {
     width: 80vw;
     float: right;
+}
+
+.selecionado {
+    border-left: 4px solid var(--secondary-color);   
 }

@@ -7,14 +7,14 @@
     </div>
     <div class="menu">
         <ul>
-            <li *ngFor="let menuItem of menuItems">
+            <li [ngClass]="{'selecionado': menuItem === menuSelecionado}" *ngFor="let menuItem of menuItems">
                 
                 <a 
                     *ngIf="!menuItem.children" 
                     [routerLink]="menuItem.url" 
                     [queryParams]="menuItem.queryParams"
+                    (click)="this.selecionarMenu(menuItem)"
                     routerLinkActive="active" 
-                    class="d-flex justify-content-between align-items-center"
                 >
                     <div [ngClass]="{'d-flex align-items-center' : !true }">
                         <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
