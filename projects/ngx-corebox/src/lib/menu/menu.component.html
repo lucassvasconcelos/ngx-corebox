@@ -43,7 +43,7 @@
                             routerLinkActive="active"
                             class="menuOpened"
                         >
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{subMenuItem.title}}</span>
+                            <ng-container *ngIf="!useMenuClosedClass()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ng-container><span>{{subMenuItem.title}}</span>
                         </a>
                     </li>
                 </ul>
