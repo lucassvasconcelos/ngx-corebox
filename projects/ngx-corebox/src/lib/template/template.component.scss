@@ -668,3 +668,7 @@ nav.menu.closed ul.show-submenu {
     left: 5vw;
     width: max-content !important;
 }
+
+nav.menu.closed ul.show-submenu li a {
+    border-left: none;
+}
