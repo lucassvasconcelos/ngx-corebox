@@ -166,6 +166,30 @@ nav.opened {
     align-items: center;
 }
 
+header {
+    background-color: var(--main-color);
+    font-size: 16px;
+    font-weight: 400;
+    min-height: 55px;
+    padding-right: 22px;
+    position: fixed;
+    top: 0px;
+    left: 15vw;
+    width: 85vw;
+    z-index: 1;
+    transition: .2s;
+}
+
+.nav-header.closed header {
+    position: fixed;
+    top: 0px;
+    left: 5vw;
+    width: 95vw;
+    z-index: 1;
+    transition: .4s;
+}
+
+
 @media (max-width: 1480px) {
     nav {
         background-color: var(--desktop-menu-color);
@@ -176,6 +200,29 @@ nav.opened {
         top: 0;
         width: 20vw;
         display: block;
+    }
+
+    header {
+        background-color: var(--main-color);
+        font-size: 16px;
+        font-weight: 400;
+        min-height: 55px;
+        padding-right: 22px;
+        position: fixed;
+        top: 0px;
+        left: 20vw;
+        width: 80vw;
+        z-index: 1;
+        transition: .2s;
+    }
+
+    .nav-header.closed header {
+        position: fixed;
+        top: 0px;
+        left: 5vw;
+        width: 95vw;
+        z-index: 1;
+        transition: .4s;
     }
 
     .nav-header {
@@ -332,30 +379,6 @@ ul>li>a:hover {
 }
 
 /************************************* Header *************************************/
-
-header {
-    background-color: var(--main-color);
-    font-size: 16px;
-    font-weight: 400;
-    min-height: 55px;
-    padding-right: 22px;
-    position: fixed;
-    top: 0px;
-    left: 20vw;
-    width: 80vw;
-    z-index: 1;
-    transition: .2s;
-}
-
-.nav-header.closed header {
-    position: fixed;
-    top: 0px;
-    left: 5vw;
-    width: 95vw;
-    z-index: 1;
-    transition: .4s;
-}
-
 button {
     cursor: pointer;
 }
@@ -698,7 +721,8 @@ nav.menu.closed ul.show-submenu li a {
 
 .content-left {
     width: 20vw;
-    float: left;;
+    float: left;
+    ;
 }
 
 .content-right {
@@ -707,7 +731,7 @@ nav.menu.closed ul.show-submenu li a {
 }
 
 .selecionado {
-    border-left: 4px solid var(--secondary-color);   
+    border-left: 4px solid var(--secondary-color);
     background-color: rgba(30, 82, 148, 0.15);
 }
 
