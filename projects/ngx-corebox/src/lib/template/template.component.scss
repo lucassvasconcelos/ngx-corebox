@@ -64,6 +64,9 @@ corebox-menu {
     background-color: var(--content-color);
     height: calc(100vh - 95px);
     width: 100vw;
+    position: absolute;
+    top: 4vw;
+    background: red;
 }
 
 /************************************* Menu *************************************/
@@ -334,12 +337,23 @@ header {
     background-color: var(--main-color);
     font-size: 16px;
     font-weight: 400;
-    left: 0;
     min-height: 55px;
-    position: relative;
-    right: 0;
-    top: 0;
     padding-right: 22px;
+    position: fixed;
+    top: 0px;
+    left: 20vw;
+    width: 80vw;
+    z-index: 1;
+    transition: .2s;
+}
+
+.nav-header.closed header {
+    position: fixed;
+    top: 0px;
+    left: 5vw;
+    width: 95vw;
+    z-index: 1;
+    transition: .4s;
 }
 
 button {
