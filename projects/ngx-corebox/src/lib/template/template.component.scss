@@ -369,6 +369,12 @@ header {
         position: absolute;
         left: 0px;
     }
+
+    footer {
+        width: 100vw !important;
+        position: fixed !important;
+        left: 0px !important;
+    }
 }
 
 .nav-closed {
