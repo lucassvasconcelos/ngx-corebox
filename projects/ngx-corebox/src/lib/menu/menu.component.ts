@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
   @Input() menuOptions: MenuOptions = new MenuOptions();
 
   menuSelecionado?: MenuItem;
+  submenuSelecionado?: MenuItem;
 
   ngOnInit(): void {
     let itens = this.menuItems.filter(menu => menu.opened);
@@ -48,6 +49,21 @@ export class MenuComponent implements OnInit {
     } else {
       this.menuSelecionado = menu;
       this.menuSelecionado.opened = true;
+    }
+  }
+
+  selecionarSubMenuMenu(submenu: MenuItem): void {
+    if (this.submenuSelecionado) {
+      if (this.submenuSelecionado === submenu) {
+        this.submenuSelecionado.opened = !this.submenuSelecionado.opened;
+      } else {
+        this.submenuSelecionado.opened = false;
+        this.submenuSelecionado = submenu;
+        this.submenuSelecionado.opened = true;
+      }
+    } else {
+      this.submenuSelecionado = submenu;
+      this.submenuSelecionado.opened = true;
     }
   }
 

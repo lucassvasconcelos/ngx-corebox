@@ -710,3 +710,9 @@ nav.menu.closed ul.show-submenu li a {
     border-left: 4px solid var(--secondary-color);   
     background-color: rgba(30, 82, 148, 0.15);
 }
+
+.subemenuSelecionado {
+    line-height: 0px;
+    background-color: #1e52945c !important;
+    color: var(--secondary-color);
+}
