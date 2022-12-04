@@ -66,7 +66,6 @@ corebox-menu {
     width: 100vw;
     position: absolute;
     top: 4vw;
-    background: red;
     z-index: -1;
 }
 
@@ -99,14 +98,6 @@ nav {
     width: 100vw;
     float: left;
     display: none;
-}
-
-.footer {
-    width: 83vw;
-    margin-left: auto;
-    margin-right: 0;
-    z-index: -1;
-    display: block;
 }
 
 nav.closed {
@@ -241,14 +232,6 @@ header {
         display: none;
     }
 
-    .footer {
-        width: 77vw;
-        margin-left: auto;
-        margin-right: 0;
-        z-index: -1;
-        display: block;
-    }
-
     nav.closed {
         width: 5vw;
     }
@@ -272,6 +255,26 @@ header {
         top: 0px;
         left: 5vw !important;
         width: max-content !important;
+    }
+
+    footer {
+        background: white;
+        border-top: 1px solid #e7eaec;
+        bottom: 0;
+        left: 0;
+        padding: 10px 20px;
+        position: fixed;
+        right: 0;
+        z-index: -1;
+        width: 80vw !important;
+        left: 20vw !important;
+        transition: .2s;
+    }
+
+    footer.closed {
+        width: 95vw !important;
+        left: 5vw !important;
+        transition: .4s;
     }
 }
 
@@ -343,10 +346,6 @@ header {
 
     .nav-menu-mobile.opened nav {
         display: block;
-    }
-
-    .footer {
-        display: none;
     }
 
     .logotipo {
@@ -598,12 +597,20 @@ footer {
     background: white;
     border-top: 1px solid #e7eaec;
     bottom: 0;
-    display: none;
     left: 0;
     padding: 10px 20px;
     position: fixed;
     right: 0;
-    z-index: 1000;
+    z-index: -1;
+    width: 85vw;
+    left: 15vw;
+    transition: .2s;
+}
+
+footer.closed {
+    width: 95vw;
+    left: 5vw;
+    transition: .4s;
 }
 
 footer>span {
