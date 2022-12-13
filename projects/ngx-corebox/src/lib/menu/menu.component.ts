@@ -14,15 +14,22 @@ export class MenuComponent implements OnInit {
 
   menuSelecionado?: MenuItem;
   submenuSelecionado?: MenuItem;
+  submenuAberto = true;
 
   ngOnInit(): void {
     let itens = this.menuItems.filter(menu => menu.opened);
-    
+
     if (itens.length > 0) {
       itens.forEach(item => item.opened = false);
       itens[0].opened = true;
       this.menuSelecionado = itens[0];
     }
+
+    document.body.onclick = () => {
+      if (this.menuIsOpen) {
+        this.toogleSubmenuSelecionado();
+      }
+    };
   }
 
   useMenuClosedClass(): boolean {
@@ -35,6 +42,14 @@ export class MenuComponent implements OnInit {
 
   getBackgroundImage(): string {
     return `url(${this.menuOptions.backgroundImage})`;
+  }
+
+  toogleSubmenuSelecionado(): void {
+    this.submenuAberto = !this.submenuAberto;
+    if (!this.submenuAberto) {
+      let menuItem = this.menuItems.filter(menuItem => menuItem.opened)[0];
+      menuItem.opened = false;
+    }
   }
 
   selecionarMenu(menu: MenuItem): void {
