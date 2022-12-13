@@ -38,8 +38,6 @@ export class MenuComponent implements OnInit {
   }
 
   selecionarMenu(menu: MenuItem): void {
-    this.submenuSelecionado = undefined;
-
     if (this.menuSelecionado) {
       if (this.menuSelecionado === menu) {
         this.menuSelecionado.opened = !this.menuSelecionado.opened;
