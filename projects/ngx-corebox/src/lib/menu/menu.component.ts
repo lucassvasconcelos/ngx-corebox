@@ -14,7 +14,8 @@ export class MenuComponent implements OnInit {
 
   menuSelecionado?: MenuItem;
   submenuSelecionado?: MenuItem;
-  submenuAberto = true;
+  submenuAberto = false;
+  menuClicado = false;
 
   ngOnInit(): void {
     let itens = this.menuItems.filter(menu => menu.opened);
@@ -25,7 +26,12 @@ export class MenuComponent implements OnInit {
       this.menuSelecionado = itens[0];
     }
 
-    this.fecharSubmenuAbertoAoClicarNaTela();
+    document.body.onclick = () => {
+      if (this.menuIsOpen && this.menuSelecionado && !this.menuClicado && this.menuSelecionado.opened) {
+        this.menuSelecionado.opened = false;
+      }
+      this.menuClicado = false;
+    }
   }
 
   useMenuClosedClass(): boolean {
@@ -41,6 +47,8 @@ export class MenuComponent implements OnInit {
   }
 
   selecionarMenu(menu: MenuItem): void {
+    this.menuClicado = true;
+
     if (this.menuSelecionado) {
       if (this.menuSelecionado === menu) {
         this.menuSelecionado.opened = !this.menuSelecionado.opened;
@@ -56,6 +64,8 @@ export class MenuComponent implements OnInit {
   }
 
   selecionarSubMenuMenu(submenu: MenuItem): void {
+    this.menuClicado = true;
+
     if (this.submenuSelecionado) {
       if (this.submenuSelecionado === submenu) {
         this.submenuSelecionado.opened = !this.submenuSelecionado.opened;
@@ -68,15 +78,8 @@ export class MenuComponent implements OnInit {
       this.submenuSelecionado = submenu;
       this.submenuSelecionado.opened = true;
     }
-  }
-
-  fecharSubmenuAbertoAoClicarNaTela(): void {
-    document.body.onclick = () => {
-      if (this.menuIsOpen) {
-        let menuItem = this.menuItems.filter(menuItem => menuItem.opened)[0];
-        this.selecionarSubMenuMenu(menuItem);
-      }
-    };
+    if (this.menuIsOpen && this.menuSelecionado)
+      this.menuSelecionado.opened = false;
   }
 
 }

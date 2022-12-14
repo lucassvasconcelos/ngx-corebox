@@ -44,7 +44,6 @@
                             routerLinkActive="active"
                             (click)="selecionarSubMenuMenu(subMenuItem)"
                             [ngClass]="{'menuOpened': menuItem.opened, 'selecionado': menuItem === menuSelecionado, 'subemenuSelecionado': subMenuItem === submenuSelecionado}"
-                            (click)="submenuAberto = true"
                         >
                             <ng-container *ngIf="!useMenuClosedClass()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ng-container><span>{{subMenuItem.title}}</span>
                         </a>
