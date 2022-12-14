@@ -72,8 +72,10 @@ export class MenuComponent implements OnInit {
 
   fecharSubmenuAbertoAoClicarNaTela(): void {
     document.body.onclick = () => {
-      let menuItem = this.menuItems.filter(menuItem => menuItem.opened)[0];
-      this.selecionarSubMenuMenu(menuItem);
+      if (this.menuIsOpen) {
+        let menuItem = this.menuItems.filter(menuItem => menuItem.opened)[0];
+        this.selecionarSubMenuMenu(menuItem);
+      }
     };
   }
 
