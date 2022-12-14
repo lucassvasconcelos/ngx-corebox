@@ -25,11 +25,7 @@ export class MenuComponent implements OnInit {
       this.menuSelecionado = itens[0];
     }
 
-    document.body.onclick = () => {
-      if (this.menuIsOpen) {
-        this.toogleSubmenuSelecionado();
-      }
-    };
+    this.fecharSubmenuAbertoAoClicarNaTela();
   }
 
   useMenuClosedClass(): boolean {
@@ -42,14 +38,6 @@ export class MenuComponent implements OnInit {
 
   getBackgroundImage(): string {
     return `url(${this.menuOptions.backgroundImage})`;
-  }
-
-  toogleSubmenuSelecionado(): void {
-    this.submenuAberto = !this.submenuAberto;
-    if (!this.submenuAberto) {
-      let menuItem = this.menuItems.filter(menuItem => menuItem.opened)[0];
-      menuItem.opened = false;
-    }
   }
 
   selecionarMenu(menu: MenuItem): void {
@@ -80,6 +68,13 @@ export class MenuComponent implements OnInit {
       this.submenuSelecionado = submenu;
       this.submenuSelecionado.opened = true;
     }
+  }
+
+  fecharSubmenuAbertoAoClicarNaTela(): void {
+    document.body.onclick = () => {
+      let menuItem = this.menuItems.filter(menuItem => menuItem.opened)[0];
+      this.selecionarSubMenuMenu(menuItem);
+    };
   }
 
 }
