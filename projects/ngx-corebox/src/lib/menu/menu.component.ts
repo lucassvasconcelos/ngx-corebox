@@ -64,8 +64,10 @@ export class MenuComponent implements OnInit {
       this.menuSelecionado.opened = true;
     }
 
-    if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
-      this.alterarMenuEvent.emit(false);
+    if (window.innerWidth <= 1280) {
+      if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
+        this.alterarMenuEvent.emit(false);
+      }
     }
   }
 
@@ -84,10 +86,13 @@ export class MenuComponent implements OnInit {
       this.submenuSelecionado = submenu;
       this.submenuSelecionado.opened = true;
     }
-    if (this.menuIsOpen && this.menuSelecionado)
+    if (this.menuIsOpen && this.menuSelecionado) {
       this.menuSelecionado.opened = false;
+    }
 
-    this.alterarMenuEvent.emit(false);
+    if (window.innerWidth <= 1280) {
+      this.alterarMenuEvent.emit(false);
+    }
   }
 
 }
