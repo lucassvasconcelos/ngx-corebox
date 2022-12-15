@@ -19,7 +19,7 @@ export class HeaderComponent {
 
   toogleMenu() {
     const menuIsOpen = document.querySelectorAll('.closed').length === 0
-      && document.querySelectorAll('.opened').length === 0
+      && document.querySelectorAll('.opened').length === 0;
     this.openMenuEvent.emit(menuIsOpen);
   }
 

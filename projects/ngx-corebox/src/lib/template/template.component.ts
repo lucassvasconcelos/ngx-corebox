@@ -25,7 +25,7 @@ export class TemplateComponent implements OnInit {
   @Input() lightModeTextColorOnMain: string = '#ffffff';
   @Input() lightModeTextColorOnMenu: string = '#000000';
   @Input() menuOptions: MenuOptions = new MenuOptions();
-  
+
   @Input() darkModeMainColor: string = '#470066';
   @Input() darkModeSecondaryColor: string = '#8a2be2';
   @Input() darkModeDesktopMenuColor: string = '#201f1e';
@@ -74,5 +74,9 @@ export class TemplateComponent implements OnInit {
 
   useMenuOpenedClass(): boolean {
     return this.menuIsOpen && window.innerWidth <= 1280;
+  }
+
+  alterarEstadoDoMenu(opened: boolean): void {
+    this.menuIsOpen = opened;
   }
 }

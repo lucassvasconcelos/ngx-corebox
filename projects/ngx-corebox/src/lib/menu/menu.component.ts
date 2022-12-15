@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/menu-options';
 
@@ -11,6 +11,8 @@ export class MenuComponent implements OnInit {
   @Input() menuIsOpen: boolean = false;
   @Input() menuItems: MenuItem[] = [];
   @Input() menuOptions: MenuOptions = new MenuOptions();
+
+  @Output() alterarMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>;
 
   menuSelecionado?: MenuItem;
   submenuSelecionado?: MenuItem;
@@ -61,6 +63,10 @@ export class MenuComponent implements OnInit {
       this.menuSelecionado = menu;
       this.menuSelecionado.opened = true;
     }
+
+    if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
+      this.alterarMenuEvent.emit(false);
+    }
   }
 
   selecionarSubMenuMenu(submenu: MenuItem): void {
@@ -80,6 +86,8 @@ export class MenuComponent implements OnInit {
     }
     if (this.menuIsOpen && this.menuSelecionado)
       this.menuSelecionado.opened = false;
+
+    this.alterarMenuEvent.emit(false);
   }
 
 }

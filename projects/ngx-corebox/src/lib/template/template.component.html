@@ -1,11 +1,12 @@
 <div class="content-all">
 
     <div class="content-left">
-        <div class="nav-menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+        <div id="nav-menu" class="nav-menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
             <corebox-menu 
                 [menuIsOpen]="menuIsOpen" 
                 [menuItems]="menuItems"
                 [menuOptions]="menuOptions"
+                (alterarMenuEvent)="alterarEstadoDoMenu($event)"
             >
             </corebox-menu>
         </div>
@@ -13,7 +14,7 @@
 
     <div class="content-right">
 
-        <div class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+        <div id="navHeaderRight" class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
             <corebox-header
                 (openMenuEvent)="menuOpened($event)"
                 [sessionName]="sessionName"
