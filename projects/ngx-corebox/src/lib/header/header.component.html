@@ -7,7 +7,7 @@
                 <span class="line"></span>
             </button>
         </div>
-        <div class="session-container">
+        <div class="session-container" style="position: relative">
             <button class="apps">
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
@@ -22,19 +22,22 @@
             <corebox-notifications></corebox-notifications>
             <div class="session" (click)="sessionIsOpen = !sessionIsOpen">
                 <corebox-avatar [sessionName]="sessionName" [pathToAvatarImage]="pathToAvatarImage" [ngClass]="{'corebox-avatar-text': pathToAvatarImage === ''}"></corebox-avatar>
-                <div class="dropdown">
-                    <fa-icon [icon]="['fas', 'angle-down']"></fa-icon>
-                </div>
                 <div class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
                     <ul>
+                        <li style="border-bottom: 1px solid #dedede; text-align: center;">
+                            <a href="http://perfil" style="color: #00000073">
+                                <span><strong>{{companyName}}</strong></span>
+                                <span><br/>{{sessionName}}</span>
+                            </a>
+                        </li>
                         <li>
-                            <a href="http://perfil">
+                            <a href="http://perfil" style="color: #00000073">
                                 <fa-icon [icon]="['fas', 'user']"></fa-icon>
                                 <span>Meu perfil</span>
                             </a>
                         </li>
                         <li>
-                            <a href="http://sair">
+                            <a href="http://sair" style="color: #00000073">
                                 <fa-icon [icon]="['fas', 'door-open']"></fa-icon>
                                 <span>Sair</span>
                             </a>

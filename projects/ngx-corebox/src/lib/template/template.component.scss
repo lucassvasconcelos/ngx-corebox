@@ -425,6 +425,7 @@ header>.header-container {
     margin: 0 auto;
     min-height: 55px;
     padding: 0 15px;
+    padding-right: 40px;
 }
 
 header>.header-container-end {
@@ -494,10 +495,15 @@ header>.header-container>.session-container>.session>.dropdown {
 
 header>.header-container>.session-container>.session>.dropdown-content {
     position: absolute;
-    background: var(--main-color);
-    margin: 55px 0 0 0;
-    top: 0;
-    right: 0;
+    background: var(--desktop-menu-color);
+    margin: 55px 0 0;
+    top: 0px;
+    right: 0px;
+    width: 179px;
+    height: inherit;
+    padding: 10px;
+    padding-bottom: 0px;
+    box-shadow: 0px 0px 5px #00000073;
 }
 
 .d-none {
@@ -531,8 +537,8 @@ header>.header-container>.session-container>.session>.dropdown-content>ul>li:las
 }
 
 .corebox-avatar-text {
-    color: var(--text-color-on-main);
-    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    background-color: var(--text-color-on-main);
 }
 
 header>.header-container>.session-container>.session>corebox-avatar>img {
@@ -591,6 +597,7 @@ header>.header-container>.session-container>.apps>.appsOpened:last-child {
     transform: rotate(45deg);
     margin-top: -4px;
     width: 22px;
+    position: relative;
 }
 
 @media (max-width: 992px) {}

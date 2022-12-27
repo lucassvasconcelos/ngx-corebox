@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class HeaderComponent {
   @Input() sessionName: string = '';
   @Input() pathToAvatarImage: string = '';
+  @Input() companyName: string = '';
 
   appsIsOpen: boolean = false;
   sessionIsOpen: boolean = false;
