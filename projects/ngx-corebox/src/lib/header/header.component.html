@@ -23,8 +23,8 @@
             <div class="session" (click)="sessionIsOpen = !sessionIsOpen">
                 <corebox-avatar 
                     [sessionName]="profileOptions.userName" 
-                    [pathToAvatarImage]="pathToAvatarImage" 
-                    [ngClass]="{'corebox-avatar-text': pathToAvatarImage === ''}"
+                    [pathToAvatarImage]="profileOptions.avatarUrl" 
+                    [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"
                 ></corebox-avatar>
                 <div class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
                     <ul>

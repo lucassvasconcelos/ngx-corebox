@@ -7,12 +7,12 @@ import { AppItem } from '../types/app-item';
 })
 export class AvatarComponent implements OnInit {
   @Input() sessionName: string = 'John Doe';
-  @Input() pathToAvatarImage: string = '';
+  @Input() pathToAvatarImage?: string = undefined;
 
   public iniciais: string = '';
   
   ngOnInit(): void {
-    if (this.pathToAvatarImage === '')
+    if (this.pathToAvatarImage === undefined || this.pathToAvatarImage === '')
       this.iniciais = this.getFirstLettersOfEachName();
   }
   

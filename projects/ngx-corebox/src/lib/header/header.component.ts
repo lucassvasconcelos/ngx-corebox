@@ -6,7 +6,6 @@ import { ProfileOptions } from '../types/profile-options';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Input() pathToAvatarImage: string = '';
   @Input() profileOptions: ProfileOptions = new ProfileOptions();
 
   appsIsOpen: boolean = false;
