@@ -31,6 +31,8 @@ export class HeaderComponent {
     this.pressionouBotao = pressionouBotao;
     if (pressionouBotao) {
       this.sessionIsOpen = !this.sessionIsOpen;
+      if (window.innerWidth <= 1280)
+        this.openMenuEvent.emit(false);
     } else {
       this.sessionIsOpen = false;
     }
