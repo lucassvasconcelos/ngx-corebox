@@ -299,12 +299,12 @@ export class AppComponent {
   profileOptions = {
     companyName: 'Kenkko Group',
     userName: 'Gilberto Ferreira',
-    profileUrl: 'http://localhost:4200/profile',
+    profileUrl: '/profile',
     profileIcon: 'user',
     profileLabel: 'Meu Perfil',
     logoutIcon: 'sign-out',
     logoutLabel: 'Sair',
-    logoutUrl: 'http://localhost:4200/logout'
+    logoutUrl: '/logout'
   } as ProfileOptions;
 
   public menuOptions = {
