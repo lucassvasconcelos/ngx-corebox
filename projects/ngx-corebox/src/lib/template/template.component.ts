@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppItem } from '../types/app-item';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/menu-options';
+import { ProfileOptions } from '../types/profile-options';
 
 @Component({
   selector: 'corebox-template',
@@ -10,9 +11,7 @@ import { MenuOptions } from '../types/menu-options';
   encapsulation: ViewEncapsulation.None
 })
 export class TemplateComponent implements OnInit {
-  @Input() sessionName: string = '';
   @Input() pathToAvatarImage: string = '';
-  @Input() companyName: string = 'companyName';
   @Input() menuItems: MenuItem[] = [];
   @Input() appItems: AppItem[] = [];
   @Input() darkMode: boolean = false;
@@ -25,8 +24,7 @@ export class TemplateComponent implements OnInit {
   @Input() lightModeTextColorOnMain: string = '#ffffff';
   @Input() lightModeTextColorOnMenu: string = '#000000';
   @Input() menuOptions: MenuOptions = new MenuOptions();
-  @Input() profileLink: string = '';
-  @Input() logoutLink: string = '';
+  @Input() profileOptions: ProfileOptions = new ProfileOptions();
 
   @Input() darkModeMainColor: string = '#470066';
   @Input() darkModeSecondaryColor: string = '#8a2be2';

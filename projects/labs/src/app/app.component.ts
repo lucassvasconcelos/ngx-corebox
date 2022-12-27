@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuOptions } from 'dist/ngx-corebox/lib/types/menu-options';
+import { ProfileOptions } from 'dist/ngx-corebox/lib/types/profile-options';
 import { AppItem, MenuItem } from 'ngx-corebox';
 
 @Component({
@@ -294,6 +295,17 @@ export class AppComponent {
       icon: 'question-circle'
     }
   ];
+
+  profileOptions = {
+    companyName: 'Kenkko Group',
+    userName: 'Gilberto Ferreira',
+    profileUrl: 'http://localhost:4200/profile',
+    profileIcon: 'user',
+    profileLabel: 'Meu Perfil',
+    logoutIcon: 'door-open',
+    logoutLabel: 'Sair',
+    logoutUrl: 'http://localhost:4200'
+  } as ProfileOptions;
 
   public menuOptions = {
     backgroundImage: '../assets/background-menu.jpeg',

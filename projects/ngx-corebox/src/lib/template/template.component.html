@@ -17,11 +17,8 @@
         <div id="navHeaderRight" class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
             <corebox-header
                 (openMenuEvent)="menuOpened($event)"
-                [sessionName]="sessionName"
                 [pathToAvatarImage]="pathToAvatarImage"
-                [companyName]="companyName"
-                [profileLink]="profileLink"
-                [logoutLink]="logoutLink"
+                [profileOptions]="profileOptions"
             ></corebox-header>
         </div>
 
@@ -33,7 +30,7 @@
         </div>
 
         <div class="footer">
-            <corebox-footer [menuIsOpen]="menuIsOpen" [companyName]="companyName">
+            <corebox-footer [menuIsOpen]="menuIsOpen" [companyName]="profileOptions.companyName">
             </corebox-footer>
         </div>
 

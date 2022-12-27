@@ -1,15 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ProfileOptions } from '../types/profile-options';
 
 @Component({
   selector: 'corebox-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Input() sessionName: string = '';
   @Input() pathToAvatarImage: string = '';
-  @Input() companyName: string = '';
-  @Input() profileLink: string = '';
-  @Input() logoutLink: string = '';
+  @Input() profileOptions: ProfileOptions = new ProfileOptions();
 
   appsIsOpen: boolean = false;
   sessionIsOpen: boolean = false;
@@ -27,15 +25,15 @@ export class HeaderComponent {
   }
 
   informouProfile = (): boolean => {
-    return this.profileLink.length > 0;
+    return this.profileOptions.profileLabel?.length > 0;
   }
 
   abrirMeuPerfil = (): void => {
-    location.href = this.profileLink;
+    location.href = this.profileOptions.profileUrl;
   }
 
   desconectar = (): void => {
-    location.href = this.logoutLink;
+    location.href = this.profileOptions.logoutUrl;
   }
 
 
