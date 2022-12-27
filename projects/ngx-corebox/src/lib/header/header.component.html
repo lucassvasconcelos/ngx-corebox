@@ -8,7 +8,7 @@
             </button>
         </div>
         <div class="session-container" style="position: relative">
-            <button class="apps">
+            <button class="apps" (click)="openApps()">
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
@@ -19,13 +19,13 @@
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
             </button>
-            <div class="session" (click)="sessionIsOpen = !sessionIsOpen">
+            <div class="session" (click)="toogleMenuProfile(true)">
                 <corebox-avatar 
                     [sessionName]="profileOptions.userName" 
                     [pathToAvatarImage]="profileOptions.avatarUrl" 
                     [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"
                 ></corebox-avatar>
-                <div class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+                <div id="menuProfile" class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
                     <ul>
                         <li style="border-bottom: 1px solid #dedede; text-align: center;">
                             <a href="http://perfil" style="color: #00000073">

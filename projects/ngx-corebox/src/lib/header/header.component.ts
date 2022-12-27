@@ -10,11 +10,30 @@ export class HeaderComponent {
 
   appsIsOpen: boolean = false;
   sessionIsOpen: boolean = false;
+  pressionouBotao = false;
 
   @Output() openMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() appsOpened: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   ngOnInit(): void {
     this.toogleMenu();
+
+    document.body.onclick = (): void => {
+      if (!this.pressionouBotao) {
+        this.toogleMenuProfile(false);
+      } else {
+        this.pressionouBotao = false;
+      }
+    }
+  }
+
+  toogleMenuProfile = (pressionouBotao: boolean): void => {
+    this.pressionouBotao = pressionouBotao;
+    if (pressionouBotao) {
+      this.sessionIsOpen = !this.sessionIsOpen;
+    } else {
+      this.sessionIsOpen = false;
+    }
   }
 
   toogleMenu() {
@@ -33,6 +52,10 @@ export class HeaderComponent {
 
   desconectar = (): void => {
     location.href = this.profileOptions.logoutUrl;
+  }
+
+  openApps() {
+    this.appsIsOpen = !this.appsIsOpen;
   }
 
 
