@@ -304,7 +304,7 @@ export class AppComponent {
     profileLabel: 'Meu Perfil',
     logoutIcon: 'sign-out',
     logoutLabel: 'Sair',
-    logoutUrl: 'http://localhost:4200'
+    logoutUrl: 'http://localhost:4200/logout'
   } as ProfileOptions;
 
   public menuOptions = {
