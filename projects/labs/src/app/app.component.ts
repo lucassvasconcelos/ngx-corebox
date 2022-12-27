@@ -302,7 +302,7 @@ export class AppComponent {
     profileUrl: 'http://localhost:4200/profile',
     profileIcon: 'user',
     profileLabel: 'Meu Perfil',
-    logoutIcon: 'door-open',
+    logoutIcon: 'sign-out',
     logoutLabel: 'Sair',
     logoutUrl: 'http://localhost:4200'
   } as ProfileOptions;

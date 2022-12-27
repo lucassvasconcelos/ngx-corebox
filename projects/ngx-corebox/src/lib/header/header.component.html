@@ -36,13 +36,13 @@
                         </li>
                         <li *ngIf="informouProfile()">
                             <a (click)="abrirMeuPerfil()" style="color: #00000073">
-                                <fa-icon [icon]="['fas', 'user']"></fa-icon>
+                                <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>
                                 <span>{{profileOptions.profileLabel}}</span>
                             </a>
                         </li>
                         <li>
                             <a (click)="desconectar()" style="color: #00000073">
-                                <fa-icon [icon]="['fas', 'door-open']"></fa-icon>
+                                <fa-icon [icon]="profileOptions.logoutIcon"></fa-icon>
                                 <span>{{profileOptions.logoutLabel}}</span>
                             </a>
                         </li>
