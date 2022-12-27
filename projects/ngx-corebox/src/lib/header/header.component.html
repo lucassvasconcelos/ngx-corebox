@@ -30,14 +30,14 @@
                                 <span><br/>{{sessionName}}</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="http://perfil" style="color: #00000073">
+                        <li *ngIf="informouProfile()">
+                            <a (click)="abrirMeuPerfil()" style="color: #00000073">
                                 <fa-icon [icon]="['fas', 'user']"></fa-icon>
                                 <span>Meu perfil</span>
                             </a>
                         </li>
                         <li>
-                            <a href="http://sair" style="color: #00000073">
+                            <a (click)="desconectar()" style="color: #00000073">
                                 <fa-icon [icon]="['fas', 'door-open']"></fa-icon>
                                 <span>Sair</span>
                             </a>

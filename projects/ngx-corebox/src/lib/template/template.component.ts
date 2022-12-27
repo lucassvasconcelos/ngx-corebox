@@ -25,6 +25,8 @@ export class TemplateComponent implements OnInit {
   @Input() lightModeTextColorOnMain: string = '#ffffff';
   @Input() lightModeTextColorOnMenu: string = '#000000';
   @Input() menuOptions: MenuOptions = new MenuOptions();
+  @Input() profileLink: string = '';
+  @Input() logoutLink: string = '';
 
   @Input() darkModeMainColor: string = '#470066';
   @Input() darkModeSecondaryColor: string = '#8a2be2';
