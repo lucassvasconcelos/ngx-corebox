@@ -1,2 +1,2 @@
-<span>{{iniciais}}</span>
-<img [src]="pathToAvatarImage" alt="" style="box-shadow: 0 0px 3px #000000">
+<span *ngIf="!pathToAvatarImage || (pathToAvatarImage && pathToAvatarImage.length === 0)">{{iniciais}}</span>
+<img [src]="pathToAvatarImage" *ngIf="pathToAvatarImage && pathToAvatarImage.length > 0" alt="" style="box-shadow: 0 0px 3px #000000">

@@ -8,17 +8,19 @@
             </button>
         </div>
         <div class="session-container" style="position: relative">
-            <button class="apps" *ngIf="appItems && appItems.length > 0" (click)="toogleMenuApps(true)">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </button>
+            <div>
+                <button class="apps" *ngIf="appItems && appItems.length > 0" (click)="toogleMenuApps(true)">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </button>
+            </div>
             <div class="menuApps" *ngIf="appsIsOpen && !ehVisaoMobile()">
                 <div class="container">
                     <div *ngFor="let app of appItems" class="app">
@@ -30,7 +32,7 @@
                 </div>
             </div>
             <div class="session" (click)="toogleMenuProfile(true)">
-                <corebox-avatar [sessionName]="profileOptions.userName" [pathToAvatarImage]="profileOptions.avatarUrl"
+                <corebox-avatar style="position: relative; top: 10px" [sessionName]="profileOptions.userName" [pathToAvatarImage]="profileOptions.avatarUrl"
                     [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
                 <div id="menuProfile" *ngIf="!ehVisaoMobile()" class="dropdown-content"
                     [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
