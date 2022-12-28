@@ -119,6 +119,7 @@ export class AppComponent {
   profileOptions = {
     companyName: 'Kenkko Group',
     userName: 'Gilberto Ferreira',
+    avatarUrl: '../assets/1658493083361.jpeg',
     profileUrl: '/profile',
     profileIcon: 'user',
     profileLabel: 'Meu Perfil',
