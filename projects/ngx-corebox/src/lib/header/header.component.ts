@@ -12,7 +12,8 @@ export class HeaderComponent {
 
   appsIsOpen: boolean = false;
   sessionIsOpen: boolean = false;
-  pressionouBotao = false;
+  pressionouBotaoMenuProfile = false;
+  pressionouBotaoMenuApps = false;
 
   @Output() openMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() appsOpenedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -21,22 +22,39 @@ export class HeaderComponent {
     this.toogleMenu();
 
     document.body.onclick = (): void => {
-      if (!this.pressionouBotao) {
+      if (!this.pressionouBotaoMenuProfile) {
         this.toogleMenuProfile(false);
       } else {
-        this.pressionouBotao = false;
+        this.pressionouBotaoMenuProfile = false;
+      }
+
+      if (!this.pressionouBotaoMenuApps) {
+        this.toogleMenuApps(false);
+      } else {
+        this.pressionouBotaoMenuApps = false;
       }
     }
   }
 
   toogleMenuProfile = (pressionouBotao: boolean): void => {
-    this.pressionouBotao = pressionouBotao;
+    this.pressionouBotaoMenuProfile = pressionouBotao;
     if (pressionouBotao) {
       this.sessionIsOpen = !this.sessionIsOpen;
       if (window.innerWidth <= 1280)
         this.openMenuEvent.emit(false);
     } else {
       this.sessionIsOpen = false;
+    }
+  }
+
+  toogleMenuApps = (pressionouBotao: boolean): void => {
+    this.pressionouBotaoMenuApps = pressionouBotao;
+    if (pressionouBotao) {
+      this.appsIsOpen = !this.appsIsOpen;
+      if (window.innerWidth <= 1280)
+        this.appsOpenedEvent.emit(false);
+    } else {
+      this.appsIsOpen = false;
     }
   }
 
