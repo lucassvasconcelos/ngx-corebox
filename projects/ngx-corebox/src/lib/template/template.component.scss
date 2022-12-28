@@ -633,8 +633,7 @@ footer>span {
 /************************************* Apps *************************************/
 
 .apps-section {
-    background-color: var(--main-color);
-    height: 100%;
+    background-color: var(--desktop-menu-color);
     width: 0;
     position: fixed;
     z-index: 1;
@@ -642,6 +641,37 @@ footer>span {
     right: 0;
     overflow-x: hidden;
     transition: .8s;
+    height: 100%;
+}
+
+.apps-section .apps {
+    background: var(--desktop-menu-color);
+    margin: 0 auto;
+
+}
+
+.apps-section .apps .app {
+    text-align: center;
+}
+
+.apps-section .apps .app:hover {
+    background-color: rgba(30, 82, 148, 0.15);
+    color: var(--secondary-color);
+}
+
+.apps-section .apps a {
+    text-decoration: none;
+    color: #00000073;
+}
+
+.apps-section .row {
+    width: 100%;
+}
+
+.apps-section .block {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
 }
 
 .show {

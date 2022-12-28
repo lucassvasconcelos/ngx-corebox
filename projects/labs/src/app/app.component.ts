@@ -31,6 +31,71 @@ export class AppComponent {
       title: 'Suporte',
       url: '/url3',
       icon: 'dollar'
+    },
+    {
+      title: 'Painel',
+      url: '/url1',
+      icon: 'user'
+    },
+    {
+      title: 'RNE',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'Financeiro',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'Suporte',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'RNE',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'Financeiro',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'Suporte',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'RNE',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'Financeiro',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'Suporte',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'RNE',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'Financeiro',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'Suporte',
+      url: '/url3',
+      icon: 'dollar'
     }
   ];
 
@@ -119,7 +184,6 @@ export class AppComponent {
   profileOptions = {
     companyName: 'Kenkko Group',
     userName: 'Gilberto Ferreira',
-    avatarUrl: '../assets/1658493083361.jpeg',
     profileUrl: '/profile',
     profileIcon: 'user',
     profileLabel: 'Meu Perfil',
