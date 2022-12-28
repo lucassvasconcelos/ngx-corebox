@@ -85,5 +85,8 @@ export class HeaderComponent {
     return window.innerWidth <= 1280;
   }
 
+  navegar = (url: string): void => {
+    location.href = url;
+  }
 
 }

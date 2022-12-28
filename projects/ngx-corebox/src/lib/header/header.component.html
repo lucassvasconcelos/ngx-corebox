@@ -21,8 +21,8 @@
             </button>
             <div class="menuApps" *ngIf="appsIsOpen && !ehVisaoMobile()">
                 <div *ngFor="let app of appItems" class="app">
-                    <div class="item">
-                        <fa-icon [icon]="['fas', app.icon]"></fa-icon><br/>
+                    <div class="item" (click)="navegar(app.url)">
+                        <fa-icon [icon]="['fas', app.icon]"></fa-icon><br />
                         <span>{{app.title}}</span>
                     </div>
                 </div>
