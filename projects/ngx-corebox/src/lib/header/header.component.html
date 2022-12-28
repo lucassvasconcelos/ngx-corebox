@@ -8,7 +8,7 @@
             </button>
         </div>
         <div class="session-container" style="position: relative">
-            <button class="apps" (click)="toogleMenuApps(true)">
+            <button class="apps" *ngIf="appItems && appItems.length > 0" (click)="toogleMenuApps(true)">
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
