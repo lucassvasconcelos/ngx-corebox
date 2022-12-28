@@ -79,4 +79,8 @@ export class TemplateComponent implements OnInit {
   alterarEstadoDoMenu(opened: boolean): void {
     this.menuIsOpen = opened;
   }
+
+  ehVisaoMobile = (): boolean => {
+    return window.innerWidth <= 1280;
+  }
 }

@@ -17,11 +17,13 @@
         <div id="navHeaderRight" class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
             <corebox-header
                 (openMenuEvent)="menuOpened($event)"
+                (appsOpenedEvent)="appsOpened($event)"
                 [profileOptions]="profileOptions"
+                [appItems]="appItems"
             ></corebox-header>
         </div>
 
-        <corebox-apps [appsIsOpen]="appsIsOpen" [appItems]="appItems">
+        <corebox-apps *ngIf="ehVisaoMobile()" [appsIsOpen]="appsIsOpen" [appItems]="appItems">
         </corebox-apps>
 
         <div class="content">

@@ -656,29 +656,6 @@ footer>span {
     transition: .8s;
 }
 
-.apps {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100vw;
-}
-
-.app a {
-    color: #FFF;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.app a:hover {
-    transition: .2s;
-    color: var(--secondary-color);
-}
-
 nav.menu {
     display: inline-block;
 }
@@ -818,5 +795,30 @@ nav.menu.closed ul.show-submenu li a {
     background-color: #1e529426;
     padding: 20px 27px;
     margin-left: -19px;
+    color: var(--secondary-color);
+}
+
+.menuApps {
+    position: absolute;
+    top: 52px;
+    right: 47px;
+    width: 300px;
+    background-color: var(--desktop-menu-color);
+    text-align: center;
+    overflow-y: auto;
+    padding: 10px;
+    box-shadow: 0 0 5px #00000073;
+    max-height: 300px;
+}
+
+.menuApps .app {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.menuApps .app:hover {
+    background-color: rgba(30, 82, 148, 0.15);
     color: var(--secondary-color);
 }

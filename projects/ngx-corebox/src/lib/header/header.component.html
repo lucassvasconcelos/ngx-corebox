@@ -1,7 +1,7 @@
 <header>
-    <div class="header-container" [ngClass]="{'header-container-end': appsIsOpen}">
+    <div class="header-container">
         <div>
-            <button class="menu" (click)="toogleMenu()" *ngIf="!appsIsOpen">
+            <button class="menu" (click)="toogleMenu()">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
@@ -9,16 +9,22 @@
         </div>
         <div class="session-container" style="position: relative">
             <button class="apps" (click)="openApps()">
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-                <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </button>
+            <div class="menuApps" *ngIf="appsIsOpen && !ehVisaoMobile()">
+                <div *ngFor="let app of appItems" class="app">
+                    <fa-icon [icon]="['fas', app.icon]"></fa-icon>
+                    <span>{{app.title}}</span>
+                </div>
+            </div>
             <div class="session" (click)="toogleMenuProfile(true)">
                 <corebox-avatar [sessionName]="profileOptions.userName" [pathToAvatarImage]="profileOptions.avatarUrl"
                     [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
@@ -49,7 +55,8 @@
         </div>
     </div>
 </header>
-<div id="menuProfileMobile" *ngIf="ehVisaoMobile()" class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+<div id="menuProfileMobile" *ngIf="ehVisaoMobile()" class="dropdown-content"
+    [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
     <ul>
         <li *ngIf="informouProfile()">
             <a (click)="abrirMeuPerfil()">

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AppItem } from '../types/app-item';
 import { ProfileOptions } from '../types/profile-options';
 
 @Component({
@@ -7,13 +8,14 @@ import { ProfileOptions } from '../types/profile-options';
 })
 export class HeaderComponent {
   @Input() profileOptions: ProfileOptions = new ProfileOptions();
+  @Input() appItems: AppItem[] = [];
 
   appsIsOpen: boolean = false;
   sessionIsOpen: boolean = false;
   pressionouBotao = false;
 
   @Output() openMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() appsOpened: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() appsOpenedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   ngOnInit(): void {
     this.toogleMenu();
@@ -58,6 +60,7 @@ export class HeaderComponent {
 
   openApps() {
     this.appsIsOpen = !this.appsIsOpen;
+    this.appsOpenedEvent.emit(this.appsIsOpen);
   }
 
   ehVisaoMobile = (): boolean => {
