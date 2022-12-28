@@ -5,7 +5,7 @@
             <corebox-menu 
                 [menuIsOpen]="menuIsOpen" 
                 [menuItems]="menuItems"
-                [menuOptions]="menuOptions"
+                [menuOptions]="obterOpcoesDeMenu()"
                 (alterarMenuEvent)="alterarEstadoDoMenu($event)"
             >
             </corebox-menu>

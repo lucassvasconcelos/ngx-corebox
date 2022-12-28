@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuOptions } from 'dist/ngx-corebox/lib/types/menu-options';
 import { ProfileOptions } from 'dist/ngx-corebox/lib/types/profile-options';
-import { Font, Menu, Theme } from 'dist/ngx-corebox/lib/types/theme';
+import { Menu, Theme } from 'dist/ngx-corebox/lib/types/theme';
 import { AppItem, MenuItem } from 'ngx-corebox';
 
 @Component({
@@ -15,13 +15,14 @@ export class AppComponent {
   themes = [
     {
       selected: true,
-      mainColor: '#1c5297',
+      name: 'Light',
+      backgroundImage: '../assets/background-menu.jpeg',
+      logotipo: '../assets/logo-desktop.svg',
+      logotipoMobile: '../assets/logo-mobile.svg',
+      primaryColor: '#1c5297',
+      secondaryColor: '#1c5297',
       backgroundColor: '#f9f9f9',
-      font: {
-        color: '#7d8185',
-        colorFeatured: '#1c5297'
-      } as Font,
-      menuDesktop: {
+      menu: {
         fontColor: '#7d8185',
         backgroundColor: '#f3f3f3'
       } as Menu
@@ -208,10 +209,4 @@ export class AppComponent {
     logoutLabel: 'Sair',
     logoutUrl: '/logout'
   } as ProfileOptions;
-
-  public menuOptions = {
-    backgroundImage: '../assets/background-menu.jpeg',
-    logotipo: '../assets/logo-desktop.svg',
-    logotipoMobile: '../assets/logo-mobile.svg'
-  } as MenuOptions;
 }

@@ -1,8 +1,3 @@
-export class Font {
-    color: string = '';
-    colorFeatured: string = '';
-}
-
 export class Menu {
     backgroundColor: string = '';
     fontColor: string = ''
@@ -11,9 +6,11 @@ export class Menu {
 export class Theme {
     selected: boolean = false;
     name: string = 'Light';
-    mainColor: string = '';
+    backgroundImage: string = '';
+    logotipo: string = '';
+    logotipoMobile: string = '';
+    primaryColor: string = '';
+    secondaryColor: string = '';
     backgroundColor: string = '';
-    font: Font = new Font();
-    menuDesktop: Menu = new Menu();
-    menuMobile: Menu = new Menu();
+    menu: Menu = new Menu();
 }

@@ -28,14 +28,23 @@ export class TemplateComponent implements OnInit {
 
   ngOnInit(): void {
     let theme = this.themes.filter(theme => theme.selected)[0];
-    document.documentElement.style.setProperty('--main-color', theme.mainColor);
-    document.documentElement.style.setProperty('--secondary-color', theme.font.colorFeatured);
-    document.documentElement.style.setProperty('--desktop-menu-color', theme.menuDesktop.backgroundColor);
+    document.documentElement.style.setProperty('--main-color', theme.primaryColor);
+    document.documentElement.style.setProperty('--secondary-color', theme.secondaryColor);
+    document.documentElement.style.setProperty('--desktop-menu-color', theme.menu.backgroundColor);
     document.documentElement.style.setProperty('--mobile-menu-color', 'red');
     document.documentElement.style.setProperty('--content-color', theme.backgroundColor);
-    document.documentElement.style.setProperty('--default-text-color', theme.font.color);
-    document.documentElement.style.setProperty('--text-color-on-main', theme.menuDesktop.backgroundColor);
-    document.documentElement.style.setProperty('--text-color-on-menu', theme.menuDesktop.fontColor);
+    // document.documentElement.style.setProperty('--default-text-color', theme.font.color);
+    document.documentElement.style.setProperty('--text-color-on-main', theme.menu.backgroundColor);
+    document.documentElement.style.setProperty('--text-color-on-menu', theme.menu.fontColor);
+  }
+
+  obterOpcoesDeMenu = (): MenuOptions => {
+    let theme = this.themes.filter(theme => theme.selected)[0];
+    return {
+      backgroundImage: theme.backgroundImage,
+      logotipo: theme.logotipo,
+      logotipoMobile: theme.logotipoMobile
+    } as MenuOptions;
   }
 
   appsOpened($event: boolean): void {
