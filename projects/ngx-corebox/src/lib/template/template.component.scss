@@ -804,7 +804,6 @@ nav.menu.closed ul.show-submenu li a {
     right: 47px;
     width: 220px;
     background-color: var(--desktop-menu-color);
-    text-align: center;
     overflow-y: auto;
     padding: 10px;
     box-shadow: 0 0 5px #00000073;
@@ -819,12 +818,18 @@ nav.menu.closed ul.show-submenu li a {
     color: #00000073;
     font-size: 14px;
     cursor: pointer;
+    text-align: center;
 }
 
 .menuApps .app .item {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
 }
 
 .menuApps .app:hover {

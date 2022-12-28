@@ -12,6 +12,26 @@ export class AppComponent {
   title = 'labs';
 
   appItems: AppItem[] = [
+    {
+      title: 'Painel',
+      url: '/url1',
+      icon: 'user'
+    },
+    {
+      title: 'RNE',
+      url: '/url2',
+      icon: 'wallet'
+    },
+    {
+      title: 'Financeiro',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'Suporte',
+      url: '/url3',
+      icon: 'dollar'
+    }
   ];
 
   menuItems: MenuItem[] = [
