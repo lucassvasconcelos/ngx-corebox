@@ -79,5 +79,5 @@
     </ul>
 </div>
 
-<corebox-apps *ngIf="ehVisaoMobile()" [appsIsOpen]="appsIsOpen" [appItems]="appItems">
+<corebox-apps *ngIf="appsIsOpen && ehVisaoMobile()" [appsIsOpen]="appsIsOpen" [appItems]="appItems">
 </corebox-apps>

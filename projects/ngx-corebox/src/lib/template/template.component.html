@@ -23,7 +23,7 @@
             ></corebox-header>
         </div>
 
-        <div class="content">
+        <div class="content" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
             <router-outlet></router-outlet>
         </div>
 
