@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuOptions } from 'dist/ngx-corebox/lib/types/menu-options';
 import { ProfileOptions } from 'dist/ngx-corebox/lib/types/profile-options';
+import { Font, Menu, Theme } from 'dist/ngx-corebox/lib/types/theme';
 import { AppItem, MenuItem } from 'ngx-corebox';
 
 @Component({
@@ -10,6 +11,22 @@ import { AppItem, MenuItem } from 'ngx-corebox';
 })
 export class AppComponent {
   title = 'labs';
+
+  themes = [
+    {
+      selected: true,
+      mainColor: '#1c5297',
+      backgroundColor: '#f9f9f9',
+      font: {
+        color: '#7d8185',
+        colorFeatured: '#1c5297'
+      } as Font,
+      menuDesktop: {
+        fontColor: '#7d8185',
+        backgroundColor: '#f3f3f3'
+      } as Menu
+    } as Theme
+  ];
 
   appItems: AppItem[] = [
     {
