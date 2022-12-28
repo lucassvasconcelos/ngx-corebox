@@ -800,9 +800,9 @@ nav.menu.closed ul.show-submenu li a {
 
 .menuApps {
     position: absolute;
-    top: 52px;
+    top: 54px;
     right: 47px;
-    width: 300px;
+    width: 240px;
     background-color: var(--desktop-menu-color);
     text-align: center;
     overflow-y: auto;
@@ -816,6 +816,15 @@ nav.menu.closed ul.show-submenu li a {
     height: 70px;
     display: inline-block;
     border-radius: 3px;
+    color: #00000073;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menuApps .app .item {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .menuApps .app:hover {
