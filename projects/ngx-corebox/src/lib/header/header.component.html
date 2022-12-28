@@ -20,17 +20,15 @@
                 <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
             </button>
             <div class="session" (click)="toogleMenuProfile(true)">
-                <corebox-avatar 
-                    [sessionName]="profileOptions.userName" 
-                    [pathToAvatarImage]="profileOptions.avatarUrl" 
-                    [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"
-                ></corebox-avatar>
-                <div id="menuProfile" class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+                <corebox-avatar [sessionName]="profileOptions.userName" [pathToAvatarImage]="profileOptions.avatarUrl"
+                    [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
+                <div id="menuProfile" *ngIf="!ehVisaoMobile()" class="dropdown-content"
+                    [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
                     <ul>
                         <li style="border-bottom: 1px solid #dedede; text-align: center;">
                             <a href="http://perfil" style="color: #00000073">
                                 <span><strong>{{profileOptions.companyName}}</strong></span>
-                                <span><br/>{{profileOptions.userName}}</span>
+                                <span><br />{{profileOptions.userName}}</span>
                             </a>
                         </li>
                         <li *ngIf="informouProfile()">
@@ -51,3 +49,19 @@
         </div>
     </div>
 </header>
+<div id="menuProfileMobile" *ngIf="ehVisaoMobile()" class="dropdown-content" [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+    <ul>
+        <li *ngIf="informouProfile()">
+            <a (click)="abrirMeuPerfil()">
+                <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>&nbsp;
+                <span>{{profileOptions.profileLabel}}</span>
+            </a>
+        </li>
+        <li>
+            <a (click)="desconectar()">
+                <fa-icon [icon]="profileOptions.logoutIcon"></fa-icon>&nbsp;
+                <span>{{profileOptions.logoutLabel}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

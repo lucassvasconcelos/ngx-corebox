@@ -60,5 +60,9 @@ export class HeaderComponent {
     this.appsIsOpen = !this.appsIsOpen;
   }
 
+  ehVisaoMobile = (): boolean => {
+    return window.innerWidth <= 1280;
+  }
+
 
 }
