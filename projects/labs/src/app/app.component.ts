@@ -39,13 +39,18 @@ export class AppComponent {
       backgroundImage: '../assets/background-menu.jpeg',
       logotipo: '../assets/logo-desktop.svg',
       logotipoMobile: '../assets/logo-mobile.svg',
-      primaryColor: '#181b1f',
+      primaryColor: '#164279',
       secondaryColor: '#676a6c',
-      backgroundColor: '#111217',
+      backgroundColor: '#1b1e1f',
       fontColor: '#676a6c',
       menu: {
-        fontColor: '#676a6c',
-        backgroundColor: '#111217'
+        fontColor: '#989082',
+        fontHoverColor: '#79b3e6',
+        backgroundColor: '#1f2123',
+        backgroundHoverColor: '#18427626',
+        borderLeftColor: '#1f5caa',
+        subMenuSelectedBackgroundColor: '#18427626',
+        menuSelectedFontColor: '#79b3e6'
       } as Menu
     } as Theme
   ];
