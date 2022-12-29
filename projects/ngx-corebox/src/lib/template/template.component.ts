@@ -55,7 +55,6 @@ export class TemplateComponent implements OnInit {
   obterOpcoesDeMenu = (): MenuOptions => {
     let theme = this.themes.filter(theme => theme.selected)[0];
     return {
-      backgroundImage: theme.backgroundImage,
       logotipo: theme.logotipo,
       logotipoMobile: theme.logotipoMobile
     } as MenuOptions;

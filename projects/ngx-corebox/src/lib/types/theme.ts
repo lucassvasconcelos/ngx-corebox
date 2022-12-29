@@ -24,7 +24,6 @@ export class Footer {
 export class Theme {
     selected: boolean = false;
     name: string = 'Light';
-    backgroundImage: string = '';
     logotipo: string = '';
     logotipoMobile: string = '';
     primaryColor: string = '';

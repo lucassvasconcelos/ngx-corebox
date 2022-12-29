@@ -15,9 +15,8 @@ export class AppComponent {
     {
       selected: false,
       name: 'Light',
-      // backgroundImage: '../assets/background-menu.jpeg',
-      // logotipo: '../assets/logo-desktop.svg',
-      // logotipoMobile: '../assets/logo-mobile.svg',
+      logotipo: '../assets/logo-desktop.svg',
+      logotipoMobile: '../assets/logo-mobile.svg',
       backgroundColor: '#f9f9f9',
       header: {
         backgroundColor: '#1c5297',
@@ -43,9 +42,8 @@ export class AppComponent {
     {
       selected: true,
       name: 'Dark',
-      // backgroundImage: '../assets/background-menu.jpeg',
-      // logotipo: '../assets/logo-desktop.svg',
-      // logotipoMobile: '../assets/logo-mobile.svg',
+      logotipo: '../assets/logo-desktop.svg',
+      logotipoMobile: '../assets/logo-mobile.svg',
       backgroundColor: '#1b1e1f',
       header: {
         backgroundColor: '#1c5297',
