@@ -37,6 +37,7 @@ export class TemplateComponent implements OnInit {
     document.documentElement.style.setProperty('--header-background-color', theme.header.backgroundColor);
     document.documentElement.style.setProperty('--header-icon--background-color', theme.header.iconBackgroundColor);
     document.documentElement.style.setProperty('--header-icon--font-color', theme.header.iconFontColor);
+    document.documentElement.style.setProperty('--header-border-shadow-color', theme.header.borderShadowColor);
 
     document.documentElement.style.setProperty('--menu-font-color', theme.menu.fontColor);
     document.documentElement.style.setProperty('--menu-font-hover-color', theme.menu.fontHoverColor);

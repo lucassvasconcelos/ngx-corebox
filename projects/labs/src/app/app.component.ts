@@ -22,7 +22,8 @@ export class AppComponent {
       header: {
         backgroundColor: '#1c5297',
         iconBackgroundColor: 'white',
-        iconFontColor: '#1c5297'
+        iconFontColor: '#1c5297',
+        borderShadowColor: '#00000040'
       },
       menu: {
         fontColor: '#7d8185',
@@ -49,7 +50,8 @@ export class AppComponent {
       header: {
         backgroundColor: '#1c5297',
         iconBackgroundColor: '#181a1b',
-        iconFontColor: '#8bbeea'
+        iconFontColor: '#8bbeea',
+        borderShadowColor: '#00000040'
       },
       menu: {
         fontColor: '#989082',

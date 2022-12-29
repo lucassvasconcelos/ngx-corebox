@@ -2,6 +2,7 @@ export class Header {
     backgroundColor: string = '';
     iconBackgroundColor: string = '';
     iconFontColor: string = '';
+    borderShadowColor: string = '';
 }
 
 export class Menu {
