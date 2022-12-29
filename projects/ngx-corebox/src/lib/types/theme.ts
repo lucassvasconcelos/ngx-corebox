@@ -1,6 +1,11 @@
 export class Menu {
     backgroundColor: string = '';
-    fontColor: string = ''
+    backgroundHoverColor: string = '';
+    fontColor: string = '';
+    fontHoverColor: string = '';
+    borderLeftColor: string = '';
+    subMenuSelectedBackgroundColor: string = '';
+    menuSelectedFontColor: string = '';
 }
 
 export class Theme {
@@ -12,5 +17,6 @@ export class Theme {
     primaryColor: string = '';
     secondaryColor: string = '';
     backgroundColor: string = '';
+    fontColor: string = '';
     menu: Menu = new Menu();
 }

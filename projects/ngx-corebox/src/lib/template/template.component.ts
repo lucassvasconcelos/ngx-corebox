@@ -28,14 +28,18 @@ export class TemplateComponent implements OnInit {
 
   ngOnInit(): void {
     let theme = this.themes.filter(theme => theme.selected)[0];
-    document.documentElement.style.setProperty('--main-color', theme.primaryColor);
+
+    document.documentElement.style.setProperty('--primary-color', theme.primaryColor);
     document.documentElement.style.setProperty('--secondary-color', theme.secondaryColor);
-    document.documentElement.style.setProperty('--desktop-menu-color', theme.menu.backgroundColor);
-    document.documentElement.style.setProperty('--mobile-menu-color', 'red');
-    document.documentElement.style.setProperty('--content-color', theme.backgroundColor);
-    // document.documentElement.style.setProperty('--default-text-color', theme.font.color);
-    document.documentElement.style.setProperty('--text-color-on-main', theme.menu.backgroundColor);
-    document.documentElement.style.setProperty('--text-color-on-menu', theme.menu.fontColor);
+    document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
+    document.documentElement.style.setProperty('--font-color', theme.fontColor);
+    document.documentElement.style.setProperty('--menu-font-color', theme.menu.fontColor);
+    document.documentElement.style.setProperty('--menu-font-hover-color', theme.menu.fontHoverColor);
+    document.documentElement.style.setProperty('--menu-background-color', theme.menu.backgroundColor);
+    document.documentElement.style.setProperty('--menu-background-hover-color', theme.menu.backgroundHoverColor);
+    document.documentElement.style.setProperty('--menu-border-left-color', theme.menu.borderLeftColor);
+    document.documentElement.style.setProperty('--menu-submenu-selected-background-color', theme.menu.subMenuSelectedBackgroundColor);
+    document.documentElement.style.setProperty('--menu-selected-font-color', theme.menu.menuSelectedFontColor);
   }
 
   obterOpcoesDeMenu = (): MenuOptions => {

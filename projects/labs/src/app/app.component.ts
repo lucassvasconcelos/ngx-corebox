@@ -22,9 +22,30 @@ export class AppComponent {
       primaryColor: '#1c5297',
       secondaryColor: '#1c5297',
       backgroundColor: '#f9f9f9',
+      fontColor: '#dedede',
       menu: {
         fontColor: '#7d8185',
-        backgroundColor: '#f3f3f3'
+        fontHoverColor: '#1c5297',
+        backgroundColor: '#f3f3f3',
+        backgroundHoverColor: 'rgba(30, 82, 148, 0.15)',
+        borderLeftColor: '#1c5297',
+        subMenuSelectedBackgroundColor: '#1e52945c',
+        menuSelectedFontColor: '#1c5297'
+      } as Menu
+    } as Theme,
+    {
+      selected: false,
+      name: 'Dark',
+      backgroundImage: '../assets/background-menu.jpeg',
+      logotipo: '../assets/logo-desktop.svg',
+      logotipoMobile: '../assets/logo-mobile.svg',
+      primaryColor: '#181b1f',
+      secondaryColor: '#676a6c',
+      backgroundColor: '#111217',
+      fontColor: '#676a6c',
+      menu: {
+        fontColor: '#676a6c',
+        backgroundColor: '#111217'
       } as Menu
     } as Theme
   ];
