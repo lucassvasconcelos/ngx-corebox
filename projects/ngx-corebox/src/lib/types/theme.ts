@@ -1,3 +1,9 @@
+export class Header {
+    backgroundColor: string = '';
+    iconBackgroundColor: string = '';
+    iconFontColor: string = '';
+}
+
 export class Menu {
     backgroundColor: string = '';
     backgroundHoverColor: string = '';
@@ -6,6 +12,12 @@ export class Menu {
     borderLeftColor: string = '';
     subMenuSelectedBackgroundColor: string = '';
     menuSelectedFontColor: string = '';
+}
+
+export class Footer {
+    backgroundColor: string = '';
+    fontColor: string = '';
+    borderTopColor: string = '';
 }
 
 export class Theme {
@@ -18,5 +30,7 @@ export class Theme {
     secondaryColor: string = '';
     backgroundColor: string = '';
     fontColor: string = '';
+    header: Header = new Header();
     menu: Menu = new Menu();
+    footer: Footer = new Footer();
 }

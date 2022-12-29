@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { MenuOptions } from 'dist/ngx-corebox/lib/types/menu-options';
 import { ProfileOptions } from 'dist/ngx-corebox/lib/types/profile-options';
-import { Menu, Theme } from 'dist/ngx-corebox/lib/types/theme';
+import { Footer, Menu, Theme } from 'dist/ngx-corebox/lib/types/theme';
 import { AppItem, MenuItem } from 'ngx-corebox';
 
 @Component({
@@ -14,15 +13,17 @@ export class AppComponent {
 
   themes = [
     {
-      selected: true,
+      selected: false,
       name: 'Light',
-      backgroundImage: '../assets/background-menu.jpeg',
-      logotipo: '../assets/logo-desktop.svg',
-      logotipoMobile: '../assets/logo-mobile.svg',
-      primaryColor: '#1c5297',
-      secondaryColor: '#1c5297',
+      // backgroundImage: '../assets/background-menu.jpeg',
+      // logotipo: '../assets/logo-desktop.svg',
+      // logotipoMobile: '../assets/logo-mobile.svg',
       backgroundColor: '#f9f9f9',
-      fontColor: '#dedede',
+      header: {
+        backgroundColor: '#1c5297',
+        iconBackgroundColor: 'white',
+        iconFontColor: '#1c5297'
+      },
       menu: {
         fontColor: '#7d8185',
         fontHoverColor: '#1c5297',
@@ -31,18 +32,25 @@ export class AppComponent {
         borderLeftColor: '#1c5297',
         subMenuSelectedBackgroundColor: '#1e52945c',
         menuSelectedFontColor: '#1c5297'
-      } as Menu
+      } as Menu,
+      footer: {
+        backgroundColor: 'white',
+        fontColor: '#7d8185',
+        borderTopColor: '#e7eaec'
+      } as Footer
     } as Theme,
     {
-      selected: false,
+      selected: true,
       name: 'Dark',
-      backgroundImage: '../assets/background-menu.jpeg',
-      logotipo: '../assets/logo-desktop.svg',
-      logotipoMobile: '../assets/logo-mobile.svg',
-      primaryColor: '#164279',
-      secondaryColor: '#676a6c',
+      // backgroundImage: '../assets/background-menu.jpeg',
+      // logotipo: '../assets/logo-desktop.svg',
+      // logotipoMobile: '../assets/logo-mobile.svg',
       backgroundColor: '#1b1e1f',
-      fontColor: '#676a6c',
+      header: {
+        backgroundColor: '#1c5297',
+        iconBackgroundColor: '#181a1b',
+        iconFontColor: '#8bbeea'
+      },
       menu: {
         fontColor: '#989082',
         fontHoverColor: '#79b3e6',
@@ -51,7 +59,12 @@ export class AppComponent {
         borderLeftColor: '#1f5caa',
         subMenuSelectedBackgroundColor: '#18427626',
         menuSelectedFontColor: '#79b3e6'
-      } as Menu
+      } as Menu,
+      footer: {
+        backgroundColor: '#181a1b',
+        fontColor: '#989082',
+        borderTopColor: '#1c5297'
+      } as Footer
     } as Theme
   ];
 

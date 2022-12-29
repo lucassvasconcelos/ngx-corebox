@@ -33,6 +33,11 @@ export class TemplateComponent implements OnInit {
     document.documentElement.style.setProperty('--secondary-color', theme.secondaryColor);
     document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
     document.documentElement.style.setProperty('--font-color', theme.fontColor);
+
+    document.documentElement.style.setProperty('--header-background-color', theme.header.backgroundColor);
+    document.documentElement.style.setProperty('--header-icon--background-color', theme.header.iconBackgroundColor);
+    document.documentElement.style.setProperty('--header-icon--font-color', theme.header.iconFontColor);
+
     document.documentElement.style.setProperty('--menu-font-color', theme.menu.fontColor);
     document.documentElement.style.setProperty('--menu-font-hover-color', theme.menu.fontHoverColor);
     document.documentElement.style.setProperty('--menu-background-color', theme.menu.backgroundColor);
@@ -40,6 +45,10 @@ export class TemplateComponent implements OnInit {
     document.documentElement.style.setProperty('--menu-border-left-color', theme.menu.borderLeftColor);
     document.documentElement.style.setProperty('--menu-submenu-selected-background-color', theme.menu.subMenuSelectedBackgroundColor);
     document.documentElement.style.setProperty('--menu-selected-font-color', theme.menu.menuSelectedFontColor);
+
+    document.documentElement.style.setProperty('--footer-background-color', theme.footer.backgroundColor);
+    document.documentElement.style.setProperty('--footer-font-color', theme.footer.fontColor);
+    document.documentElement.style.setProperty('--footer-border-top-color', theme.footer.borderTopColor);
   }
 
   obterOpcoesDeMenu = (): MenuOptions => {
