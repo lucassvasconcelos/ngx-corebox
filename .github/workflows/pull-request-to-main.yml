@@ -39,7 +39,7 @@ jobs:
           git-tag-version: 'true'
 
       - run: npm install -g @angular/cli
-      - run: ng build --configuration production
+      - run: ng build ngx-corebox --configuration production
       - run: npm ci
       - run: npm publish
         env:
