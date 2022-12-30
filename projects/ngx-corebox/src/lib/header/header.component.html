@@ -1,20 +1,83 @@
-<header [style.background-color]="mainColor">
-    <div class="header-container" [ngClass]="{'header-container-end': appsIsOpen}">
-        <button class="menu" (click)="openMenu()" *ngIf="!appsIsOpen">
-            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-            <span class="line" [ngClass]="{'menuOpened': menuIsOpen}"></span>
-        </button>
-        <button class="apps" (click)="openApps()" *ngIf="!menuIsOpen">
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-            <span class="dot" [ngClass]="{'appsOpened': appsIsOpen}"></span>
-        </button>
+<header>
+    <div class="header-container">
+        <div>
+            <button class="menu" (click)="toogleMenu()">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <div class="session-container" style="position: relative">
+            <div>
+                <button class="apps" *ngIf="appItems && appItems.length > 0" (click)="toogleMenuApps(true)">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </button>
+            </div>
+            <div class="menuApps" *ngIf="appsIsOpen && !ehVisaoMobile()">
+                <div class="container">
+                    <div *ngFor="let app of appItems" class="app">
+                        <div class="item" (click)="navegar(app.url)">
+                            <fa-icon [icon]="['fas', app.icon]"></fa-icon><br />
+                            <span>{{app.title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="session" (click)="toogleMenuProfile(true)">
+                <corebox-avatar style="position: relative; top: 10px" [sessionName]="profileOptions.userName" [pathToAvatarImage]="profileOptions.avatarUrl"
+                    [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
+                <div id="menuProfile" *ngIf="!ehVisaoMobile()" class="dropdown-content"
+                    [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+                    <ul>
+                        <li style="border-bottom: 1px solid #dedede; text-align: center;">
+                            <a href="http://perfil" style="color: var(--menu-font-color)">
+                                <span><strong>{{profileOptions.companyName}}</strong></span>
+                                <span><br />{{profileOptions.userName}}</span>
+                            </a>
+                        </li>
+                        <li *ngIf="informouProfile()">
+                            <a (click)="abrirMeuPerfil()" style="color: var(--menu-font-color)">
+                                <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>
+                                <span>{{profileOptions.profileLabel}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="desconectar()" style="color: var(--menu-font-color)">
+                                <fa-icon [icon]="profileOptions.logoutIcon"></fa-icon>
+                                <span>{{profileOptions.logoutLabel}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
+<div id="menuProfileMobile" *ngIf="ehVisaoMobile()" class="dropdown-content"
+    [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
+    <ul>
+        <li *ngIf="informouProfile()">
+            <a (click)="abrirMeuPerfil()">
+                <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>&nbsp;
+                <span>{{profileOptions.profileLabel}}</span>
+            </a>
+        </li>
+        <li>
+            <a (click)="desconectar()">
+                <fa-icon [icon]="profileOptions.logoutIcon"></fa-icon>&nbsp;
+                <span>{{profileOptions.logoutLabel}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<corebox-apps *ngIf="appsIsOpen && ehVisaoMobile()" [appsIsOpen]="appsIsOpen" [appItems]="appItems">
+</corebox-apps>

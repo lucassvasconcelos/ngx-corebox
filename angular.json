@@ -23,14 +23,6 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ngx-corebox/src/test.ts",
-            "tsConfig": "projects/ngx-corebox/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-corebox/karma.conf.js"
-          }
         }
       }
     },
@@ -113,26 +105,11 @@
           "options": {
             "browserTarget": "labs:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/labs/src/test.ts",
-            "polyfills": "projects/labs/src/polyfills.ts",
-            "tsConfig": "projects/labs/tsconfig.spec.json",
-            "karmaConfig": "projects/labs/karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/labs/src/favicon.ico",
-              "projects/labs/src/assets"
-            ],
-            "styles": [
-              "projects/labs/src/styles.scss"
-            ],
-            "scripts": []
-          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b09ef4f1-cc83-40bd-a262-773a9fd14f37"
   }
 }

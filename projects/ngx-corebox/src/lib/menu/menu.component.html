@@ -1,31 +1,50 @@
-<nav [style.background-color]="mainColor" [ngClass]="{'nav-closed': !menuIsOpen}">
-    <div *ngIf="menuIsOpen">
+<nav class="menu" id="menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+    <div class="logotipo" *ngIf="menuOptions.logotipo">
+        <img id="imgLogotipo" class="logotipo" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}"
+            [src]="menuOptions.logotipo" />
+        <img *ngIf="useMenuClosedClass()" class="logotipoMobile" [src]="menuOptions.logotipoMobile" />
+    </div>
+    <div class="menu">
         <ul>
             <li *ngFor="let menuItem of menuItems">
-                <a
-                    *ngIf="!menuItem.children"
-                    [routerLink]="menuItem.url"
+                
+                <a 
+                    *ngIf="!menuItem.children" 
+                    [routerLink]="menuItem.url" 
                     [queryParams]="menuItem.queryParams"
-                    routerLinkActive="active"
+                    (click)="this.selecionarMenu(menuItem)"
+                    routerLinkActive="active" 
+                    [ngClass]="{'selecionado': menuItem === menuSelecionado}"
                 >
-                    <span>{{menuItem.title}}</span>
+                    <div [ngClass]="{'d-flex align-items-center' : !true }">
+                        <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
+                        <ng-container *ngIf="!useMenuClosedClass()">&nbsp;<span class="nav-label">{{menuItem.title}}</span></ng-container>
+                    </div>
                 </a>
-                <a
-                    *ngIf="menuItem.children"
+                
+                <a 
+                    *ngIf="menuItem.children" 
                     routerLinkActive="active"
-                    (click)="menuItem.viewChildren = !menuItem.viewChildren"
+                    (click)="this.selecionarMenu(menuItem)"
+                    [ngClass]="{'menuOpened': menuItem.opened, 'selecionado': menuItem === menuSelecionado}"
                 >
-                    <span>{{menuItem.title}}</span>
+                    <fa-icon [icon]="menuItem.icon || 'th'"></fa-icon>
+                    <ng-container *ngIf="!useMenuClosedClass()">
+                        &nbsp;<span>{{menuItem.title}}</span>
+                        &nbsp;<span class="seta"><fa-icon *ngIf="!menuItem.opened" [icon]="'chevron-left'"></fa-icon><fa-icon *ngIf="menuItem.opened" [icon]="'chevron-down'"></fa-icon></span>
+                    </ng-container>
                 </a>
 
-                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.viewChildren}">
+                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.opened}">
                     <li *ngFor="let subMenuItem of menuItem.children">
-                        <a
-                            [routerLink]="subMenuItem.url"
+                        <a 
+                            [routerLink]="subMenuItem.url" 
                             [queryParams]="subMenuItem.queryParams"
                             routerLinkActive="active"
+                            (click)="selecionarSubMenuMenu(subMenuItem)"
+                            [ngClass]="{'menuOpened': menuItem.opened, 'selecionado': menuItem === menuSelecionado, 'subemenuSelecionado': subMenuItem === submenuSelecionado}"
                         >
-                            <span>{{subMenuItem.title}}</span>
+                            <ng-container *ngIf="!useMenuClosedClass()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ng-container><span>{{subMenuItem.title}}</span>
                         </a>
                     </li>
                 </ul>

@@ -6,9 +6,11 @@ import { CommonModule } from '@angular/common';
 import { TemplateComponent } from './template/template.component';
 import { RouterModule } from '@angular/router';
 import { AppsComponent } from './apps/apps.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     HeaderComponent,
     MenuComponent,
     TemplateComponent,
-    AppsComponent
+    AppsComponent,
+    AvatarComponent,
+    NotificationsComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +31,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
     FooterComponent,
     HeaderComponent,
     MenuComponent,
+    AppsComponent,
+    AvatarComponent,
     TemplateComponent
   ]
 })
