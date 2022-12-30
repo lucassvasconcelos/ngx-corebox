@@ -17,11 +17,19 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Bump version and push tag
-        uses: hennejg/github-tag-action@v4.1.jh1
-        id: gitversion
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Process version of the tag
+        id: version
+        uses: ncipollo/semantic-version-action@v1
+      
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps.version.outputs) }}
+        run: echo "$STEPS_CONTEXT"
+      
+      - name: Dump previous tag
+        env:
+          PREVIOUS_TAG: ${{ steps.version.outputs.previous_tag }}
+        run: echo "$PREVIOUS_TAG"
 
       - name: 'change version'
         uses: reedyuk/npm-version@1.1.1
