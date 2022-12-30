@@ -40,7 +40,7 @@ export class AppComponent {
       } as Footer
     } as Theme,
     {
-      selected: false,
+      selected: true,
       name: 'Dark',
       logotipo: '../assets/logo-desktop-black.png',
       logotipoMobile: '../assets/logo-mobile-black.png',
