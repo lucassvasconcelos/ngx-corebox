@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
+          scope: 'kenkko-group'
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
