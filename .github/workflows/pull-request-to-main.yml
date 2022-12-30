@@ -5,11 +5,11 @@ on:
 
 jobs:
   job1:
-    name: "Analyze, Build and Test"
+    name: "On Push To Main"
     runs-on: ubuntu-test
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@master
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
