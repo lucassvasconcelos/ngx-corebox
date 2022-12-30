@@ -16,6 +16,26 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
+      
+      - name: GitVersion Setup
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.x'
+
+      - name: GitVersion Execute
+        uses: gittools/actions/gitversion/execute@v0.9.7
+        id: gitversion
+        with:
+          useConfigFile: true
+
+      - name: 'change version'
+        uses: reedyuk/npm-version@1.1.1
+        with:
+          version: '${{ steps.gitversion.outputs.semVer }}'
+          package: 'subproject-directory/'
+          git-tag-version: 'true'
+
+      - run: npm run-script build
       - run: npm ci
       - run: npm publish
         env:
