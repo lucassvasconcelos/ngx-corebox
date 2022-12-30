@@ -41,6 +41,6 @@ jobs:
       - run: npm install
       - run: ng build ngx-corebox --configuration production
       - run: npm ci
-      - run: npm publish
+      - run: NPM_TOKEN=${{ secrets.NPM_TOKEN }} npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
