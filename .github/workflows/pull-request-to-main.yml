@@ -12,11 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:fetch-depth: 0
+
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-          fetch-depth: 0
 
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
