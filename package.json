@@ -1,6 +1,6 @@
 {
   "name": "@kenkko-group/ngx-corebox",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Kenkko Group <infra@kenkko.group> (https://kenkko.group)",
   "scripts": {
     "ng": "ng",
