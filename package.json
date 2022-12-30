@@ -1,6 +1,6 @@
 {
   "name": "ngx-corebox",
-  "version": "0.0.1",
+  "version": "${{ steps.gitversion.outputs.semVer }}",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
