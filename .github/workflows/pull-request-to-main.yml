@@ -26,6 +26,7 @@ jobs:
           versionSpec: '5.x'
 
       - name: Determine Version
+        id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
         with:
           useConfigFile: true
@@ -37,7 +38,8 @@ jobs:
           package: 'subproject-directory/'
           git-tag-version: 'true'
 
-      - run: npm run-script build
+      - run: npm install -g @angular/cli
+      - run: ng build --configuration production
       - run: npm ci
       - run: npm publish
         env:
