@@ -35,8 +35,8 @@ jobs:
           git config --global user.email "infra@kenkko.group"
           git config --global user.name "Tecnologia Kenkko group"
           
-      - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: npm install -g @angular/cli
+      - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: npm install
       - run: ng build ngx-corebox --configuration production
       - run: npm publish --access public --_authToken=${{ secrets.NPM_TOKEN }}
