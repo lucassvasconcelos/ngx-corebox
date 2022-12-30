@@ -32,9 +32,13 @@ jobs:
         with:
           useConfigFile: true
 
+      - run: |
+          git config --global user.email "infra@kenkko.group"
+          git config --global user.name "Tecnologia Kenkko group"
+          
+      - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: npm install -g @angular/cli
       - run: npm install
-      - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: ng build ngx-corebox --configuration production
       - run: npm ci
       - run: npm publish
