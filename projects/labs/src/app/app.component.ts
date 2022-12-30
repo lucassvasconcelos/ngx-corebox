@@ -13,7 +13,7 @@ export class AppComponent {
 
   themes = [
     {
-      selected: false,
+      selected: true,
       name: 'Light',
       logotipo: '../assets/logo-desktop.png',
       logotipoMobile: '../assets/logo-mobile.png',
