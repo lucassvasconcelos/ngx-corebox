@@ -55,14 +55,14 @@ export class AppComponent {
         fontColor: '#dddad6',
         fontHoverColor: '#ee5353',
         backgroundColor: '#181a1b',
-        backgroundHoverColor: '#0d0e0e14',
+        backgroundHoverColor: '#0d0e0ebd',
         borderLeftColor: '#930f0f',
-        subMenuSelectedBackgroundColor: '#0d0e0e14',
+        subMenuSelectedBackgroundColor: '#0d0e0ee0',
         menuSelectedFontColor: '#ee5353'
       } as Menu,
       footer: {
         backgroundColor: '#181a1b',
-        fontColor: '#989082',
+        fontColor: '#dddad6',
         borderTopColor: '#363b3d'
       } as Footer
     } as Theme

@@ -412,12 +412,14 @@ ul>li>a {
     text-decoration: none;
     text-decoration: none;
     color: var(--menu-font-color);
+    background-color: var(--menu-background-color);
     font-weight: 400;
     font-size: medium;
 }
 
 ul>li>a:hover {
     color: var(--menu-font-hover-color);
+    background-color: var(--menu-background-hover-color);
 }
 
 .hide-submenu {
@@ -829,7 +831,7 @@ nav.menu li a:hover {
     position: absolute;
     left: 0px;
     top: 35px;
-    background-color: #f3f3f3;
+    background-color: var(--menu-background-color);
 }
 
 #menuProfileMobile li {
@@ -841,17 +843,19 @@ nav.menu li a:hover {
     width: 100%;
     position: relative;
     padding: 20px 27px;
-    margin-left: -19px
+    margin-left: -19px;
+    cursor: pointer;
+    color: var(--menu-font-color);
+    background-color: var(--menu-background-color);
 }
 
 #menuProfileMobile li a:hover {
     display: block;
     width: 100%;
     position: relative;
-    background-color: #1e529426;
     padding: 20px 27px;
     margin-left: -19px;
-    color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .menuApps {
