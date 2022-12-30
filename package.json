@@ -1,6 +1,11 @@
 {
   "name": "ngx-corebox",
-  "version": "${{ steps.gitversion.outputs.semVer }}",
+  "version": "0.0.1",
+  "author": {
+    "name": "Kenkko Group",
+    "email": "infra@kenkko.group",
+    "url": "https://kenkko.group"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
