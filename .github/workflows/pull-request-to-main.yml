@@ -1,3 +1,5 @@
+name: On Push To Main
+
 on:
   pull_request:
     branches:
@@ -6,7 +8,7 @@ on:
 jobs:
   job1:
     name: "On Push To Main"
-    runs-on: ubuntu-test
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@master
@@ -17,5 +19,4 @@ jobs:
       - run: npm ci
       - run: npm publish
         env:
-        
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
