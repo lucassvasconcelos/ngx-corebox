@@ -32,13 +32,6 @@ jobs:
         with:
           useConfigFile: true
 
-      - name: 'change version'
-        uses: reedyuk/npm-version@1.1.1
-        with:
-          version: '${{ steps.gitversion.outputs.semVer }}'
-          package: './'
-          git-tag-version: 'true'
-
       - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: npm install -g @angular/cli
       - run: npm install
