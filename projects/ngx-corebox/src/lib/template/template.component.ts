@@ -29,35 +29,36 @@ export class TemplateComponent implements OnInit {
   ngOnInit(): void {
     let theme = this.themes.filter(theme => theme.selected)[0];
 
-    document.documentElement.style.setProperty('--primary-color', theme.primaryColor);
-    document.documentElement.style.setProperty('--secondary-color', theme.secondaryColor);
-    document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
-    document.documentElement.style.setProperty('--font-color', theme.fontColor);
+    if (theme) {
+      document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
 
-    document.documentElement.style.setProperty('--header-background-color', theme.header.backgroundColor);
-    document.documentElement.style.setProperty('--header-icon--background-color', theme.header.iconBackgroundColor);
-    document.documentElement.style.setProperty('--header-icon--font-color', theme.header.iconFontColor);
-    document.documentElement.style.setProperty('--header-border-shadow-color', theme.header.borderShadowColor);
+      document.documentElement.style.setProperty('--header-background-color', theme.header.backgroundColor);
+      document.documentElement.style.setProperty('--header-icon--background-color', theme.header.iconBackgroundColor);
+      document.documentElement.style.setProperty('--header-icon--font-color', theme.header.iconFontColor);
+      document.documentElement.style.setProperty('--header-border-shadow-color', theme.header.borderShadowColor);
 
-    document.documentElement.style.setProperty('--menu-font-color', theme.menu.fontColor);
-    document.documentElement.style.setProperty('--menu-font-hover-color', theme.menu.fontHoverColor);
-    document.documentElement.style.setProperty('--menu-background-color', theme.menu.backgroundColor);
-    document.documentElement.style.setProperty('--menu-background-hover-color', theme.menu.backgroundHoverColor);
-    document.documentElement.style.setProperty('--menu-border-left-color', theme.menu.borderLeftColor);
-    document.documentElement.style.setProperty('--menu-submenu-selected-background-color', theme.menu.subMenuSelectedBackgroundColor);
-    document.documentElement.style.setProperty('--menu-selected-font-color', theme.menu.menuSelectedFontColor);
+      document.documentElement.style.setProperty('--menu-font-color', theme.menu.fontColor);
+      document.documentElement.style.setProperty('--menu-font-hover-color', theme.menu.fontHoverColor);
+      document.documentElement.style.setProperty('--menu-background-color', theme.menu.backgroundColor);
+      document.documentElement.style.setProperty('--menu-background-hover-color', theme.menu.backgroundHoverColor);
+      document.documentElement.style.setProperty('--menu-border-left-color', theme.menu.borderLeftColor);
+      document.documentElement.style.setProperty('--menu-submenu-selected-background-color', theme.menu.subMenuSelectedBackgroundColor);
+      document.documentElement.style.setProperty('--menu-selected-font-color', theme.menu.menuSelectedFontColor);
 
-    document.documentElement.style.setProperty('--footer-background-color', theme.footer.backgroundColor);
-    document.documentElement.style.setProperty('--footer-font-color', theme.footer.fontColor);
-    document.documentElement.style.setProperty('--footer-border-top-color', theme.footer.borderTopColor);
+      document.documentElement.style.setProperty('--footer-background-color', theme.footer.backgroundColor);
+      document.documentElement.style.setProperty('--footer-font-color', theme.footer.fontColor);
+      document.documentElement.style.setProperty('--footer-border-top-color', theme.footer.borderTopColor);
+    }
   }
 
   obterOpcoesDeMenu = (): MenuOptions => {
     let theme = this.themes.filter(theme => theme.selected)[0];
-    return {
-      logotipo: theme.logotipo,
-      logotipoMobile: theme.logotipoMobile
-    } as MenuOptions;
+    if (theme)
+      return {
+        logotipo: theme.logotipo,
+        logotipoMobile: theme.logotipoMobile
+      } as MenuOptions;
+    return new MenuOptions();
   }
 
   appsOpened($event: boolean): void {

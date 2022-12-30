@@ -22,15 +22,29 @@ export class Footer {
 }
 
 export class Theme {
-    selected: boolean = false;
+    selected: boolean = true;
     name: string = 'Light';
-    logotipo: string = '';
-    logotipoMobile: string = '';
-    primaryColor: string = '';
-    secondaryColor: string = '';
-    backgroundColor: string = '';
-    fontColor: string = '';
-    header: Header = new Header();
-    menu: Menu = new Menu();
-    footer: Footer = new Footer();
+    logotipo: string = '../assets/logo-desktop.png';
+    logotipoMobile: string = '../assets/logo-mobile.png';
+    backgroundColor: string = '#f9f9f9';
+    header: Header = {
+        backgroundColor: '#111111',
+        iconBackgroundColor: 'white',
+        iconFontColor: '#111111',
+        borderShadowColor: '#00000040'
+    } as Header;
+    menu: Menu = {
+        fontColor: '#111111',
+        fontHoverColor: '#ed4b4b',
+        backgroundColor: '#ffffff',
+        backgroundHoverColor: '#11111114',
+        borderLeftColor: '#ed4b4b',
+        subMenuSelectedBackgroundColor: '#e0e0e0',
+        menuSelectedFontColor: '#ed4b4b'
+    } as Menu;
+    footer: Footer = {
+        backgroundColor: 'white',
+        fontColor: '#111111',
+        borderTopColor: '#e7eaec'
+    } as Footer;
 }

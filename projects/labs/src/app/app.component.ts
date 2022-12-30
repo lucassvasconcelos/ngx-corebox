@@ -13,7 +13,7 @@ export class AppComponent {
 
   themes = [
     {
-      selected: true,
+      selected: false,
       name: 'Light',
       logotipo: '../assets/logo-desktop.png',
       logotipoMobile: '../assets/logo-mobile.png',
@@ -40,7 +40,7 @@ export class AppComponent {
       } as Footer
     } as Theme,
     {
-      selected: true,
+      selected: false,
       name: 'Dark',
       logotipo: '../assets/logo-desktop-black.png',
       logotipoMobile: '../assets/logo-mobile-black.png',
