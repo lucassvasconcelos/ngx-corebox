@@ -40,5 +40,4 @@ jobs:
       - run: npm install -g @angular/cli
       - run: npm install
       - run: ng build ngx-corebox --configuration production
-      - run: npm ci
-      - run: echo "//https://registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}">.npmrc && npm publish --access public
+      - run: npm publish --access public --_authToken=${{ secrets.NPM_TOKEN }}
