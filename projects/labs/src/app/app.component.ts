@@ -13,226 +13,181 @@ export class AppComponent {
 
   themes = [
     {
-      selected: false,
+      selected: true,
       name: 'Light',
-      logotipo: '../assets/logo-desktop.svg',
-      logotipoMobile: '../assets/logo-mobile.svg',
+      logotipo: '../assets/logo-desktop.png',
+      logotipoMobile: '../assets/logo-mobile.png',
       backgroundColor: '#f9f9f9',
       header: {
-        backgroundColor: '#1c5297',
+        backgroundColor: '#111111',
         iconBackgroundColor: 'white',
-        iconFontColor: '#1c5297',
+        iconFontColor: '#111111',
         borderShadowColor: '#00000040'
       },
       menu: {
-        fontColor: '#7d8185',
-        fontHoverColor: '#1c5297',
-        backgroundColor: '#f3f3f3',
-        backgroundHoverColor: 'rgba(30, 82, 148, 0.15)',
-        borderLeftColor: '#1c5297',
-        subMenuSelectedBackgroundColor: '#1e52945c',
-        menuSelectedFontColor: '#1c5297'
+        fontColor: '#111111',
+        fontHoverColor: '#ed4b4b',
+        backgroundColor: '#ffffff',
+        backgroundHoverColor: '#11111114',
+        borderLeftColor: '#ed4b4b',
+        subMenuSelectedBackgroundColor: '#e0e0e0',
+        menuSelectedFontColor: '#ed4b4b'
       } as Menu,
       footer: {
         backgroundColor: 'white',
-        fontColor: '#7d8185',
+        fontColor: '#111111',
         borderTopColor: '#e7eaec'
       } as Footer
     } as Theme,
     {
       selected: true,
       name: 'Dark',
-      logotipo: '../assets/logo-desktop.svg',
-      logotipoMobile: '../assets/logo-mobile.svg',
+      logotipo: '../assets/logo-desktop-black.png',
+      logotipoMobile: '../assets/logo-mobile-black.png',
       backgroundColor: '#1b1e1f',
       header: {
-        backgroundColor: '#1c5297',
-        iconBackgroundColor: '#181a1b',
-        iconFontColor: '#8bbeea',
+        backgroundColor: '#0d0e0e',
+        iconBackgroundColor: '#dddad6',
+        iconFontColor: '#0d0e0e',
         borderShadowColor: '#00000040'
       },
       menu: {
-        fontColor: '#989082',
-        fontHoverColor: '#79b3e6',
-        backgroundColor: '#1f2123',
-        backgroundHoverColor: '#18427626',
-        borderLeftColor: '#1f5caa',
-        subMenuSelectedBackgroundColor: '#18427626',
-        menuSelectedFontColor: '#79b3e6'
+        fontColor: '#dddad6',
+        fontHoverColor: '#ee5353',
+        backgroundColor: '#181a1b',
+        backgroundHoverColor: '#0d0e0e14',
+        borderLeftColor: '#930f0f',
+        subMenuSelectedBackgroundColor: '#0d0e0e14',
+        menuSelectedFontColor: '#ee5353'
       } as Menu,
       footer: {
         backgroundColor: '#181a1b',
         fontColor: '#989082',
-        borderTopColor: '#1c5297'
+        borderTopColor: '#363b3d'
       } as Footer
     } as Theme
   ];
 
   appItems: AppItem[] = [
     {
-      title: 'Painel',
+      title: 'App1',
       url: '/url1',
-      icon: 'user'
+      icon: 'th-large'
     },
     {
-      title: 'RNE',
+      title: 'App2',
       url: '/url2',
       icon: 'wallet'
     },
     {
-      title: 'Financeiro',
+      title: 'App3',
       url: '/url3',
-      icon: 'dollar'
+      icon: 'pen-to-square'
     },
     {
-      title: 'Suporte',
+      title: 'App4',
       url: '/url3',
-      icon: 'dollar'
+      icon: 'database'
     },
     {
-      title: 'Painel',
+      title: 'App5',
       url: '/url1',
-      icon: 'user'
+      icon: 'sack-dollar'
     },
     {
-      title: 'RNE',
+      title: 'App6',
       url: '/url2',
-      icon: 'wallet'
+      icon: 'users'
     },
     {
-      title: 'Financeiro',
+      title: 'App7',
       url: '/url3',
       icon: 'dollar'
     },
     {
-      title: 'Suporte',
+      title: 'App8',
       url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'RNE',
-      url: '/url2',
-      icon: 'wallet'
-    },
-    {
-      title: 'Financeiro',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'RNE',
-      url: '/url2',
-      icon: 'wallet'
-    },
-    {
-      title: 'Financeiro',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'RNE',
-      url: '/url2',
-      icon: 'wallet'
-    },
-    {
-      title: 'Financeiro',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
+      icon: 'headset'
     }
   ];
 
   menuItems: MenuItem[] = [
     {
-      title: 'Painéis',
+      title: 'Item 1',
       url: '/url1',
       icon: 'th',
       children: [
         {
-          title: 'Eventos Quantitativos',
+          title: 'Item 1.1',
           url: '/SubUrl1',
           icon: 'font-awesome'
         },
         {
-          title: 'Eventos por Localidade',
+          title: 'Item 1.2',
           url: '/SubUrl2',
           icon: 'font-awesome'
         },
         {
-          title: 'Eventos por Veículos',
+          title: 'Item 1.3',
           url: '/SubUrl3',
           icon: 'font-awesome'
         }
       ]
     } as MenuItem,
     {
-      title: 'Eventos',
+      title: 'Item 2',
       url: '/url2',
       icon: 'car-crash'
     } as MenuItem,
     {
-      title: 'Inadimplências',
+      title: 'Item 3',
       url: '/url2',
       icon: 'dollar-sign',
       children: [
         {
-          title: 'Buscar Inadimplências',
+          title: 'Item 3.1',
           url: '/SubUrl1',
           icon: 'font-awesome'
         },
         {
-          title: 'Nova Inadimplência',
+          title: 'Item 3.1',
           url: '/SubUrl2',
           icon: 'font-awesome'
         }
       ]
     } as MenuItem,
     {
-      title: 'Oficinas',
+      title: 'Item 4',
       url: '/url3',
       icon: 'car-battery'
     },
     {
-      title: 'Consultas Pagas',
+      title: 'Item 5',
       url: '/url4',
       icon: 'search'
     },
     {
-      title: 'Comunicação de Vendas',
-      url: '/url5',
+      title: 'Item 6',
+      url: '/url 5',
       icon: 'tty'
     },
     {
-      title: 'Tabela Fipe',
+      title: 'Item 7',
       url: '/url5',
       icon: 'table'
     },
     {
-      title: 'Processos Judiciais',
+      title: 'Item 8',
       url: '/url5',
       icon: 'satellite-dish'
     },
     {
-      title: 'Suporte',
+      title: 'Item 9',
       url: '/url5',
       icon: 'headset'
     },
     {
-      title: 'Perguntas Frequentes',
+      title: 'Item 10',
       url: '/url5',
       icon: 'question-circle'
     }
@@ -240,7 +195,7 @@ export class AppComponent {
 
   profileOptions = {
     companyName: 'Kenkko Group',
-    userName: 'Gilberto Ferreira',
+    userName: 'Severo Wayne',
     profileUrl: '/profile',
     profileIcon: 'user',
     profileLabel: 'Meu Perfil',

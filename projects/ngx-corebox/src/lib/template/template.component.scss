@@ -4,7 +4,7 @@
     --header-icon--background-color: #ffffff;
     --header-icon--font-color: #ffffff;
     --header-border-shadow-color: '#470066;'
-    --menu-font-color: #470066;
+        --menu-font-color: #470066;
     --menu-font-hover-color: #470066;
     --menu-background-color: #f3f3f3;
     --menu-background-hover-color: rgba(30, 82, 148, 0.15);
@@ -154,7 +154,10 @@ nav.opened {
 }
 
 .logotipo img {
-    width: 125px;
+    height: 44px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .logotipo.closed {
@@ -165,6 +168,10 @@ nav.opened {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 34px !important;
+    position: relative !important;
+    top: 0px !important;
+    transform: none !important;
 }
 
 header {
