@@ -39,6 +39,7 @@ jobs:
           package: './'
           git-tag-version: 'true'
 
+      - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: npm install -g @angular/cli
       - run: npm install
       - run: ng build ngx-corebox --configuration production
