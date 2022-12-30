@@ -38,11 +38,11 @@ jobs:
           
       - run: npm version ${{ steps.gitversion.outputs.semVer }}
       - run: npm install -g @angular/cli
-      
       - run: npm install
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        
       - run: ng build ngx-corebox --configuration production
       - run: npm ci
-      - run: npm publish
+      - run: |
+        echo "//https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}">.npmrc
+        npm publish
