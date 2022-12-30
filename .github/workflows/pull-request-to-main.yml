@@ -44,5 +44,4 @@ jobs:
       - run: ng build ngx-corebox --configuration production
       - run: npm ci
       - run: |
-        echo "//https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}">.npmrc
-        npm publish
+        echo "//https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}">.npmrc && npm publish
