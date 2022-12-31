@@ -1,7 +1,57 @@
 {
-  "name": "@kenkko/ngx-corebox",
-  "version": "0.40.1-pr0044.42",
-  "author": "Kenkko Group <infra@kenkko.group> (https://kenkko.group)",
+  "name": "@kenkko.group/ngx-corebox",
+  "version": "1.0.0",
+  "description": "A library with the base template your application needs. Built natively in angular and javascript only.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenkko-group/ngx-corebox.git"
+  },
+  "keywords": [
+    "angular",
+    "spinner",
+    "angular4",
+    "angular5",
+    "angular6",
+    "angular7",
+    "angular8",
+    "angular9",
+    "angular10",
+    "angular11",
+    "angular12",
+    "angular13",
+    "angular14",
+    "angular15",
+    "base template",
+    "admin template",
+    "ngx",
+    "ng4",
+    "ng5",
+    "ng6",
+    "ng7",
+    "ng8",
+    "ng9",
+    "ng10",
+    "ng11",
+    "ng12",
+    "ng13",
+    "ng14",
+    "ng15"
+  ],
+  "author": {
+    "name": "Kenkko Group",
+    "email": "contato@kenkko.group"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kenkko-group/ngx-corebox/issues"
+  },
+  "homepage": "https://github.com/kenkko-group/ngx-corebox#readme",
+  "ng-add": {
+    "save": "dependencies"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +59,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": false,
   "dependencies": {
     "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
@@ -31,16 +80,5 @@
     "@angular/compiler-cli": "^15.0.0",
     "ng-packagr": "^15.0.0",
     "typescript": "^4.8.2"
-  },
-  "description": "npm run watch ngx-corebox",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucassvasconcelos/ngx-corebox.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lucassvasconcelos/ngx-corebox/issues"
-  },
-  "homepage": "https://github.com/lucassvasconcelos/ngx-corebox#readme"
+  }
 }
