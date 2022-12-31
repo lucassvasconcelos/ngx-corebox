@@ -1,5 +1,5 @@
 {
-  "name": "@maess/ngx-corebox",
+  "name": "@kenkko/ngx-corebox",
   "version": "0.40.1-pr0044.42",
   "author": "Kenkko Group <infra@kenkko.group> (https://kenkko.group)",
   "scripts": {
@@ -38,7 +38,7 @@
     "type": "git",
     "url": "git+https://github.com/lucassvasconcelos/ngx-corebox.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lucassvasconcelos/ngx-corebox/issues"
   },
