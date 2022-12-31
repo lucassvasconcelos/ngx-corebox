@@ -45,10 +45,13 @@ jobs:
           git config --global user.email "${{ secrets.INFRA_EMAIL }}"
           git config --global user.name "Kenkko group"
 
-    - name: Publish
+    - name: Set Version
       run: |
           cd dist/ngx-corebox
           npm version ${{ steps.gitversion.outputs.semVer }}
-          npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: Publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        package: './dist/ngx-corebox'
+        token: ${{ secrets.NPM_TOKEN }}
