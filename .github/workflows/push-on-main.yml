@@ -50,10 +50,8 @@ jobs:
           cd dist/ngx-corebox
           npm version ${{ steps.gitversion.outputs.semVer }}
 
-    - run: ls -la
-
     - name: Publish
       uses: JS-DevTools/npm-publish@v1
       with:
-        package: './dist/ngx-corebox'
+        package: ./dist/ngx-corebox
         token: ${{ secrets.NPM_TOKEN }}
