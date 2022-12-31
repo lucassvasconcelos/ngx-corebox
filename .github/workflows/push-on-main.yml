@@ -53,5 +53,5 @@ jobs:
     - name: Publish
       uses: JS-DevTools/npm-publish@v1
       with:
-        package: ./dist/ngx-corebox
+        package: ./dist/ngx-corebox/package.json
         token: ${{ secrets.NPM_TOKEN }}
