@@ -43,6 +43,10 @@ jobs:
     - name: Move to binary folder
       run: cd dist/ngx-corebox
 
+    - run: |
+          git config --global user.email "${{ secrets.INFRA_EMAIL }}"
+          git config --global user.name "Kenkko group"
+
     - name: Set Version
       run: npm version ${{ steps.gitversion.outputs.semVer }}
 
