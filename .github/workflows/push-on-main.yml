@@ -43,7 +43,8 @@ jobs:
     - name: Move to binary folder
       run: cd dist/ngx-corebox
 
-    - run: |
+    - name: Add Git Credentials
+      run: |
           git config --global user.email "${{ secrets.INFRA_EMAIL }}"
           git config --global user.name "Kenkko group"
 
@@ -51,6 +52,6 @@ jobs:
       run: npm version ${{ steps.gitversion.outputs.semVer }}
 
     - name: Publish
-      run: npm publish --access public
+      run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
