@@ -11,6 +11,18 @@ import { AppItem, MenuItem } from 'ngx-corebox';
 export class AppComponent {
   title = 'labs';
 
+  profileOptions = {
+    companyName: 'Kenkko Group',
+    userName: 'Severo Wayne',
+    profileUrl: '/profile',
+    profileIcon: 'user',
+    profileLabel: 'Meu Perfil',
+    logoutIcon: 'sign-out',
+    logoutLabel: 'Sair',
+    logoutUrl: '/logout'
+  } as ProfileOptions;
+  
+
   themes = [
     {
       selected: true,
@@ -192,15 +204,4 @@ export class AppComponent {
       icon: 'question-circle'
     }
   ];
-
-  profileOptions = {
-    companyName: 'Kenkko Group',
-    userName: 'Severo Wayne',
-    profileUrl: '/profile',
-    profileIcon: 'user',
-    profileLabel: 'Meu Perfil',
-    logoutIcon: 'sign-out',
-    logoutLabel: 'Sair',
-    logoutUrl: '/logout'
-  } as ProfileOptions;
 }
