@@ -36,7 +36,7 @@
                     [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
                 <div id="menuProfile" *ngIf="!ehVisaoMobile()" class="dropdown-content"
                     [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
-                    <ul>
+                    <ul class="menuProfile">
                         <li style="border-bottom: 1px solid #dedede; text-align: center;">
                             <a href="http://perfil" style="color: var(--menu-font-color)">
                                 <span><strong>{{profileOptions.companyName}}</strong></span>
@@ -63,7 +63,7 @@
 </header>
 <div id="menuProfileMobile" *ngIf="ehVisaoMobile()" class="dropdown-content"
     [ngClass]="{'d-block': sessionIsOpen, 'd-none': !sessionIsOpen}">
-    <ul>
+    <ul class="teste">
         <li *ngIf="informouProfile()">
             <a (click)="abrirMeuPerfil()">
                 <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>&nbsp;

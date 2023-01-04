@@ -765,7 +765,7 @@ nav.menu li a:hover {
     background-color: var(--menu-background-color);
 }
 
-#menuProfileMobile li a:hover {
+#menuProfileMobile>ul>li>a:hover {
     display: block;
     position: relative;
     padding: 20px 27px;
@@ -850,4 +850,8 @@ nav.menu li a:hover {
 
 #submenu ul li {
     padding: 0px;
+}
+
+ul.menuProfile a:hover {
+    background-color: initial;
 }
