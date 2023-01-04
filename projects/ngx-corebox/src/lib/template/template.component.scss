@@ -809,6 +809,7 @@ nav.menu li a:hover {
 .menuApps .app:hover {
     background-color: var(--menu-background-hover-color);
     color: var(--menu-font-hover-color);
+    transition: all .4s;
 }
 
 .menuApps .container {
