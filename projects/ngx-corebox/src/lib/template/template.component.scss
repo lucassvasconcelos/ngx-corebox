@@ -84,11 +84,11 @@ corebox-menu {
 
 .content {
     background-color: var(--background-color);
-    width: calc(100vw - 300px);
+    width: calc(100vw - 220px);
     height: calc(100vh - (55px + 40px));
     position: absolute;
     z-index: -1;
-    left: 300px;
+    left: 220px;
     top: 55px;
 }
 
@@ -106,7 +106,7 @@ nav {
     min-height: 100vh;
     left: 0;
     top: 0;
-    width: 300px;
+    width: 220px;
     display: block;
     box-shadow: 0 4px 4px #00000040;
 }
@@ -117,7 +117,7 @@ nav {
 }
 
 .nav-menu {
-    width: 300px;
+    width: 220px;
     float: left;
     display: block;
 }
@@ -147,11 +147,6 @@ nav.opened {
 .nav-header.closed {
     width: 95vw;
     float: right;
-    transition: all .4s;
-}
-
-.footer.closed {
-    width: 93vw;
     transition: all .4s;
 }
 
@@ -201,8 +196,8 @@ header {
     padding-right: 22px;
     position: fixed;
     top: 0px;
-    left: 300px;
-    width: calc(100vw - 300px);
+    left: 220px;
+    width: calc(100vw - 220px);
     z-index: 1;
     transition: .2s;
 }
@@ -214,103 +209,6 @@ header {
     width: calc(100vw - 70px);
     z-index: 1;
     transition: .4s;
-}
-
-
-@media (max-width: 1480px) {
-    nav {
-        background-color: var(--menu-background-color);
-        font-size: 30px;
-        font-weight: 600;
-        min-height: 100vh;
-        left: 0;
-        top: 0;
-        width: 20vw;
-        display: block;
-    }
-
-    header {
-        background-color: var(--header-background-color);
-        font-size: 16px;
-        font-weight: 400;
-        min-height: 55px;
-        padding-right: 22px;
-        position: fixed;
-        top: 0px;
-        left: 20vw;
-        width: 80vw;
-        z-index: 1;
-        transition: .2s;
-    }
-
-    .nav-header.closed header {
-        position: fixed;
-        top: 0px;
-        left: 5vw;
-        width: 95vw;
-        z-index: 1;
-        transition: .4s;
-    }
-
-    .nav-header {
-        width: 80vw;
-        float: right;
-    }
-
-    .nav-menu {
-        width: 20vw;
-        float: left;
-        display: block;
-    }
-
-    .nav-menu-mobile {
-        display: none;
-    }
-
-    nav.closed {
-        width: 5vw;
-    }
-
-    .nav-menu.closed {
-        display: contents;
-    }
-
-    .nav-header.closed {
-        width: 95vw;
-        float: right;
-    }
-
-    .footer.closed {
-        width: 93vw;
-    }
-
-    nav.menu.closed ul.show-submenu {
-        max-height: 1000px;
-        position: absolute !important;
-        top: 0px;
-        left: 5vw !important;
-        width: max-content !important;
-    }
-
-    footer {
-        background: var(--footer-background-color);
-        border-top: 1px solid var(--footer-border-top-color);
-        bottom: 0;
-        left: 0;
-        padding: 10px 20px;
-        position: fixed;
-        right: 0;
-        z-index: -1;
-        width: 80vw !important;
-        left: 20vw !important;
-        transition: .2s;
-    }
-
-    footer.closed {
-        width: 95vw !important;
-        left: 5vw !important;
-        transition: .4s;
-    }
 }
 
 @media (max-width: 1280px) {
@@ -433,7 +331,7 @@ ul>li>a {
     color: var(--menu-font-color);
     background-color: var(--menu-background-color);
     font-weight: 400;
-    font-size: medium;
+    font-size: 13px;
 }
 
 ul>li>a:hover {
@@ -462,7 +360,7 @@ header>.header-container {
     margin: 0 auto;
     min-height: 55px;
     padding: 0 15px;
-    padding-right: 40px;
+    padding-right: 20px;
 }
 
 header>.header-container-end {
@@ -630,10 +528,6 @@ header>.header-container>.session-container>div>.apps>.appsOpened:last-child {
     position: relative;
 }
 
-@media (max-width: 992px) {}
-
-@media (max-width: 1200px) {}
-
 /************************************* Footer *************************************/
 
 footer {
@@ -645,8 +539,8 @@ footer {
     position: fixed;
     right: 0;
     z-index: -1;
-    width: calc(100vw - 300px);
-    left: 300px;
+    width: calc(100vw - 220px);
+    left: 220px;
     transition: .2s;
 }
 
@@ -863,7 +757,6 @@ nav.menu li a:hover {
 
 #menuProfileMobile li a {
     display: block;
-    width: 100%;
     position: relative;
     padding: 20px 27px;
     margin-left: -19px;
@@ -874,7 +767,6 @@ nav.menu li a:hover {
 
 #menuProfileMobile li a:hover {
     display: block;
-    width: 100%;
     position: relative;
     padding: 20px 27px;
     margin-left: -19px;
