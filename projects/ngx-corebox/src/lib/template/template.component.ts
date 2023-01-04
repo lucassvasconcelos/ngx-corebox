@@ -85,4 +85,13 @@ export class TemplateComponent implements OnInit {
   ehVisaoMobile = (): boolean => {
     return window.innerWidth <= 1280;
   }
+
+  fecharSubmenu = (): void => {
+    if (window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      if (divSubmenu) {
+        divSubmenu.style.display = 'none';
+      }
+    }
+  }
 }

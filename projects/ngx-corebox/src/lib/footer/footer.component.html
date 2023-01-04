@@ -1,3 +1,7 @@
-<footer id="footer" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
+<footer 
+    id="footer" 
+    [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}"
+    (click)="fecharSubmenu()"
+>
     <span><strong>Copyright</strong> {{ companyName }} © {{ currentYear }}</span>
 </footer>

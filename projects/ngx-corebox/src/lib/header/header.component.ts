@@ -89,4 +89,13 @@ export class HeaderComponent {
     location.href = url;
   }
 
+  fecharSubmenu = (): void => {
+    if (window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      if (divSubmenu) {
+        divSubmenu.style.display = 'none';
+      }
+    }
+  }
+
 }
