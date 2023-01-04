@@ -47,7 +47,11 @@
 <div id="submenu" class="show-submenu" style="display: none;">
     <ul>
         <li *ngFor="let subMenuItem of menuSelecionado?.children">
-            <a [routerLink]="subMenuItem.url" [queryParams]="subMenuItem.queryParams" routerLinkActive="active"
+            <a 
+                [routerLink]="subMenuItem.url" 
+                [queryParams]="subMenuItem.queryParams" 
+                [ngClass]="{'menuOpened': menuSelecionado?.opened, 'selecionado': menuSelecionado === menuSelecionado, 'subemenuSelecionado': subMenuItem === submenuSelecionado}"
+                routerLinkActive="active"
                 (click)="selecionarSubMenuMenu(subMenuItem)">
                 <ng-container
                     *ngIf="!useMenuClosedClass()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ng-container><span>{{subMenuItem.title}}</span>

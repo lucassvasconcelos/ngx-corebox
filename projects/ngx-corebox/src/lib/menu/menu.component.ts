@@ -49,14 +49,13 @@ export class MenuComponent implements OnInit {
   }
 
   selecionarMenu(menu: MenuItem, i: number): void {
-    let divSubmenu = document.getElementById('submenu');
-    if (divSubmenu) {
-      divSubmenu.style.display = 'none';
-    }
-
     this.menuClicado = true;
 
     if (this.menuSelecionado) {
+      if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
+        this.submenuSelecionado = undefined
+      }
+
       if (this.menuSelecionado === menu) {
         this.menuSelecionado.opened = !this.menuSelecionado.opened;
       } else {
@@ -104,6 +103,13 @@ export class MenuComponent implements OnInit {
     }
     if (this.menuIsOpen && this.menuSelecionado) {
       this.menuSelecionado.opened = false;
+    }
+
+    if (this.menuSelecionado?.children && window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      if (divSubmenu) {
+        divSubmenu.style.display = 'none';
+      }
     }
 
     if (window.innerWidth <= 1280) {

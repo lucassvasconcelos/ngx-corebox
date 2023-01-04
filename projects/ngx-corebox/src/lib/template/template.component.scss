@@ -937,6 +937,11 @@ nav.menu li a:hover {
     padding: 20px 27px;
     background-color: var(--menu-background-color);
     display: block;
+    color: var(--menu-font-color);
+}
+
+#submenu a.subemenuSelecionado {
+    line-height: initial;
 }
 
 #submenu a:hover {
