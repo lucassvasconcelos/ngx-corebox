@@ -42,6 +42,7 @@ export class AppComponent {
         backgroundColor: '#ffffff',
         backgroundHoverColor: '#11111114',
         borderLeftColor: '#ed4b4b',
+        subMenuBackgroundColor: '#dedede',
         subMenuSelectedBackgroundColor: '#e0e0e0',
         menuSelectedFontColor: '#ed4b4b'
       } as Menu,
@@ -182,26 +183,6 @@ export class AppComponent {
       title: 'Item 6',
       url: '/url 5',
       icon: 'tty'
-    },
-    {
-      title: 'Item 7',
-      url: '/url5',
-      icon: 'table'
-    },
-    {
-      title: 'Item 8',
-      url: '/url5',
-      icon: 'satellite-dish'
-    },
-    {
-      title: 'Item 9',
-      url: '/url5',
-      icon: 'headset'
-    },
-    {
-      title: 'Item 10',
-      url: '/url5',
-      icon: 'question-circle'
     }
   ];
 }

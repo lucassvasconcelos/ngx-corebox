@@ -13,6 +13,7 @@
     --menu-background-color: #ffffff;
     --menu-background-hover-color: 11111114;
     --menu-border-left-color: #ed4b4b;
+    --menu-submenu-background-color: '#dedede';
     --menu-submenu-selected-background-color: #e0e0e0;
     --menu-selected-font-color: #ed4b4b;
 
@@ -718,7 +719,8 @@ footer>span {
 nav.menu {
     display: inline-block;
     position: fixed;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
 }
 
@@ -923,8 +925,31 @@ nav.menu li a:hover {
 
 #submenu {
     background-color: var(--menu-background-color);
-    width: max-content;
+    box-shadow: 0 0 5px var(--header-border-shadow-color);
+    width: 20vw;
     display: none;
     position: relative;
     left: 5vw;
+}
+
+#submenu a {
+    left: 0px;
+    padding: 20px 27px;
+    background-color: var(--menu-background-color);
+    display: block;
+}
+
+#submenu a:hover {
+    left: 0px;
+    padding: 20px 27px;
+    background-color: var(--menu-background-hover-color);
+    display: block;
+}
+
+#submenu ul {
+    padding: 0px;
+}
+
+#submenu ul li {
+    padding: 0px;
 }

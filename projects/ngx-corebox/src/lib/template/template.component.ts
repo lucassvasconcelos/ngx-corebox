@@ -42,6 +42,7 @@ export class TemplateComponent implements OnInit {
       document.documentElement.style.setProperty('--menu-background-color', theme.menu.backgroundColor);
       document.documentElement.style.setProperty('--menu-background-hover-color', theme.menu.backgroundHoverColor);
       document.documentElement.style.setProperty('--menu-border-left-color', theme.menu.borderLeftColor);
+      document.documentElement.style.setProperty('--menu-submenu-background-color', theme.menu.subMenuBackgroundColor);
       document.documentElement.style.setProperty('--menu-submenu-selected-background-color', theme.menu.subMenuSelectedBackgroundColor);
       document.documentElement.style.setProperty('--menu-selected-font-color', theme.menu.menuSelectedFontColor);
 
