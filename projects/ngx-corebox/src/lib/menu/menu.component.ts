@@ -49,6 +49,11 @@ export class MenuComponent implements OnInit {
   }
 
   selecionarMenu(menu: MenuItem, i: number): void {
+    let divSubmenu = document.getElementById('submenu');
+    if (divSubmenu) {
+      divSubmenu.style.display = 'none';
+    }
+
     this.menuClicado = true;
 
     if (this.menuSelecionado) {
@@ -70,15 +75,14 @@ export class MenuComponent implements OnInit {
       }
     }
 
-    if (this.menuSelecionado.children && window.innerWidth >= 1280) {
+    let navMenu = document.getElementById('nav-menu');
+    if (navMenu?.className === 'nav-menu closed' && this.menuSelecionado.children && window.innerWidth >= 1280) {
       let divSubmenu = document.getElementById('submenu');
       let itemDemenu = document.getElementById(`menu_${i}`);
       if (divSubmenu && itemDemenu) {
         const posicoesDoItemDeMenu = itemDemenu.getBoundingClientRect();
         divSubmenu.style.display = 'block';
-        divSubmenu.style.position = 'relative';
         divSubmenu.style.top = `${posicoesDoItemDeMenu.top}px`;
-        divSubmenu.style.marginLeft = '5vw';
       }
     }
   }

@@ -924,4 +924,7 @@ nav.menu li a:hover {
 #submenu {
     background-color: var(--menu-background-color);
     width: max-content;
+    display: none;
+    position: relative;
+    left: 5vw;
 }
