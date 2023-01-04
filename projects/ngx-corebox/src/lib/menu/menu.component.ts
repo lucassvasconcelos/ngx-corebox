@@ -48,7 +48,7 @@ export class MenuComponent implements OnInit {
     return `url(${this.menuOptions.backgroundImage})`;
   }
 
-  selecionarMenu(menu: MenuItem): void {
+  selecionarMenu(menu: MenuItem, i: number): void {
     this.menuClicado = true;
 
     if (this.menuSelecionado) {
@@ -67,6 +67,18 @@ export class MenuComponent implements OnInit {
     if (window.innerWidth <= 1280) {
       if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
         this.alterarMenuEvent.emit(false);
+      }
+    }
+
+    if (this.menuSelecionado.children && window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      let itemDemenu = document.getElementById(`menu_${i}`);
+      if (divSubmenu && itemDemenu) {
+        const posicoesDoItemDeMenu = itemDemenu.getBoundingClientRect();
+        divSubmenu.style.display = 'block';
+        divSubmenu.style.position = 'relative';
+        divSubmenu.style.top = `${posicoesDoItemDeMenu.top}px`;
+        divSubmenu.style.marginLeft = '5vw';
       }
     }
   }

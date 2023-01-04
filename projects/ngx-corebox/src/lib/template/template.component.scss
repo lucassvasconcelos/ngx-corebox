@@ -920,3 +920,8 @@ nav.menu li a:hover {
 .menuApps .container {
     margin: 0 auto;
 }
+
+#submenu {
+    background-color: var(--menu-background-color);
+    width: max-content;
+}
