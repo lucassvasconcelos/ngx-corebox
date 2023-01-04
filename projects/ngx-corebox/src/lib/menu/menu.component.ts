@@ -117,4 +117,8 @@ export class MenuComponent implements OnInit {
     }
   }
 
+  exibeSubmenuDesktopComNavAberta = (): boolean => {
+    return document.querySelectorAll('nav.menu.closed').length === 0;
+  }
+
 }

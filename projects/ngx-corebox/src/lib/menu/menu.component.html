@@ -29,7 +29,7 @@
                     </ng-container>
                 </a>
 
-                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.opened}">
+                <ul class="hide-submenu" [ngClass]="{'show-submenu': menuItem.opened && exibeSubmenuDesktopComNavAberta()}">
                     <li *ngFor="let subMenuItem of menuItem.children">
                         <a [routerLink]="subMenuItem.url" [queryParams]="subMenuItem.queryParams"
                             routerLinkActive="active" (click)="selecionarSubMenuMenu(subMenuItem)"
