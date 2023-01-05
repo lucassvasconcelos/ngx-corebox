@@ -21,7 +21,7 @@
                     <span class="dot"></span>
                 </button>
             </div>
-            <div class="menuApps" *ngIf="appsIsOpen && !ehVisaoMobile()">
+            <div class="menuApps" [ngClass]="{'semProfile': !profileOptions}" *ngIf="appsIsOpen && !ehVisaoMobile()">
                 <div class="container">
                     <div *ngFor="let app of appItems" class="app">
                         <div class="item" (click)="navegar(app.url)">
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </div>
-            <div class="session" (click)="toogleMenuProfile(true)">
-                <corebox-avatar style="position: relative; top: 10px" [sessionName]="profileOptions.userName"
+            <div *ngIf="profileOptions" class="session" (click)="toogleMenuProfile(true)">
+                <corebox-avatar style="position: relative;" [ngStyle]="{'top': appItems && appItems.length > 0 ? '10px' : '0px'}" [sessionName]="profileOptions.userName"
                     [pathToAvatarImage]="profileOptions.avatarUrl"
                     [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
                 <div id="menuProfile" *ngIf="!ehVisaoMobile()" class="dropdown-content"
@@ -51,13 +51,13 @@
                         </li>
                         <li *ngIf="informouProfile()">
                             <a (click)="abrirMeuPerfil()" style="color: var(--menu-font-color)">
-                                <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>
+                                <fa-icon [icon]="profileOptions.profileIcon ?? 'font-awesome'"></fa-icon>
                                 <span>{{profileOptions.profileLabel}}</span>
                             </a>
                         </li>
                         <li>
                             <a (click)="desconectar()" style="color: var(--menu-font-color)">
-                                <fa-icon [icon]="profileOptions.logoutIcon"></fa-icon>
+                                <fa-icon [icon]="profileOptions.logoutIcon ?? 'font-awesome'"></fa-icon>
                                 <span>{{profileOptions.logoutLabel}}</span>
                             </a>
                         </li>
@@ -72,14 +72,14 @@
     <ul class="teste">
         <li *ngIf="informouProfile()">
             <a (click)="abrirMeuPerfil()">
-                <fa-icon [icon]="profileOptions.profileIcon"></fa-icon>&nbsp;
-                <span>{{profileOptions.profileLabel}}</span>
+                <fa-icon [icon]="profileOptions?.profileIcon ?? 'font-awesome'"></fa-icon>&nbsp;
+                <span>{{profileOptions?.profileLabel}}</span>
             </a>
         </li>
         <li>
             <a (click)="desconectar()">
-                <fa-icon [icon]="profileOptions.logoutIcon"></fa-icon>&nbsp;
-                <span>{{profileOptions.logoutLabel}}</span>
+                <fa-icon [icon]="profileOptions?.logoutIcon ?? 'font-awesome'"></fa-icon>&nbsp;
+                <span>{{profileOptions?.logoutLabel}}</span>
             </a>
         </li>
     </ul>
