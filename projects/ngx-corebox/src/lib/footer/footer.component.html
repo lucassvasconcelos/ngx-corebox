@@ -3,5 +3,5 @@
     [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}"
     (click)="fecharSubmenu()"
 >
-    <span><strong>Copyright</strong> {{ companyName }} © {{ currentYear }}</span>
+    <span *ngIf="companyName && currentYear"><strong>Copyright</strong> {{ companyName }} © {{ currentYear }}</span>
 </footer>
