@@ -26,7 +26,8 @@ body {
     background-color: var(--background-color);
 }
 
-body, html {
+body,
+html {
     font-family: 'Roboto';
     margin: 0;
     padding: 0;
@@ -854,4 +855,14 @@ nav.menu li a:hover {
 
 ul.menuProfile a:hover {
     background-color: initial;
+}
+
+corebox-avatar.menuProfile {
+    position: relative;
+    top: 10px;
+    background: var(--header-background-color);
+    color: var(--header-icon--background-color);
+    border-radius: 50%;
+    padding: 10px;
+    font-weight: 600;
 }
