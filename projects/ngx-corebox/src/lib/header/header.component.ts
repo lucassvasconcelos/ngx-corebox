@@ -90,7 +90,7 @@ export class HeaderComponent {
   }
 
   fecharSubmenu = (): void => {
-    if (window.innerWidth >= 1280) {
+    if (!this.ehVisaoMobile()) {
       let divSubmenu = document.getElementById('submenu');
       if (divSubmenu) {
         divSubmenu.style.display = 'none';
