@@ -48,10 +48,14 @@ export class MenuComponent implements OnInit {
     return `url(${this.menuOptions.backgroundImage})`;
   }
 
-  selecionarMenu(menu: MenuItem): void {
+  selecionarMenu(menu: MenuItem, i: number): void {
     this.menuClicado = true;
 
     if (this.menuSelecionado) {
+      if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
+        this.submenuSelecionado = undefined
+      }
+
       if (this.menuSelecionado === menu) {
         this.menuSelecionado.opened = !this.menuSelecionado.opened;
       } else {
@@ -67,6 +71,17 @@ export class MenuComponent implements OnInit {
     if (window.innerWidth <= 1280) {
       if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
         this.alterarMenuEvent.emit(false);
+      }
+    }
+
+    let navMenu = document.getElementById('nav-menu');
+    if (navMenu?.className === 'nav-menu closed' && this.menuSelecionado.children && window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      let itemDemenu = document.getElementById(`menu_${i}`);
+      if (divSubmenu && itemDemenu) {
+        const posicoesDoItemDeMenu = itemDemenu.getBoundingClientRect();
+        divSubmenu.style.display = 'block';
+        divSubmenu.style.top = `${posicoesDoItemDeMenu.top}px`;
       }
     }
   }
@@ -90,9 +105,20 @@ export class MenuComponent implements OnInit {
       this.menuSelecionado.opened = false;
     }
 
+    if (this.menuSelecionado?.children && window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      if (divSubmenu) {
+        divSubmenu.style.display = 'none';
+      }
+    }
+
     if (window.innerWidth <= 1280) {
       this.alterarMenuEvent.emit(false);
     }
+  }
+
+  exibeSubmenuDesktopComNavAberta = (): boolean => {
+    return document.querySelectorAll('nav.menu.closed').length === 0;
   }
 
 }

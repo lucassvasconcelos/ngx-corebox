@@ -13,6 +13,7 @@
     --menu-background-color: #ffffff;
     --menu-background-hover-color: 11111114;
     --menu-border-left-color: #ed4b4b;
+    --menu-submenu-background-color: '#dedede';
     --menu-submenu-selected-background-color: #e0e0e0;
     --menu-selected-font-color: #ed4b4b;
 
@@ -25,7 +26,8 @@ body {
     background-color: var(--background-color);
 }
 
-body, html {
+body,
+html {
     font-family: 'Roboto';
     margin: 0;
     padding: 0;
@@ -167,7 +169,7 @@ nav.opened {
 }
 
 .logotipo img {
-    height: 44px;
+    height: 38px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -612,7 +614,8 @@ footer>span {
 nav.menu {
     display: inline-block;
     position: fixed;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
 }
 
@@ -763,7 +766,7 @@ nav.menu li a:hover {
     background-color: var(--menu-background-color);
 }
 
-#menuProfileMobile li a:hover {
+#menuProfileMobile>ul>li>a:hover {
     display: block;
     position: relative;
     padding: 20px 27px;
@@ -807,8 +810,59 @@ nav.menu li a:hover {
 .menuApps .app:hover {
     background-color: var(--menu-background-hover-color);
     color: var(--menu-font-hover-color);
+    transition: all .4s;
 }
 
 .menuApps .container {
     margin: 0 auto;
+}
+
+#submenu {
+    background-color: var(--menu-background-color);
+    box-shadow: 0 0 5px var(--header-border-shadow-color);
+    width: 20vw;
+    display: none;
+    position: relative;
+    left: 5vw;
+}
+
+#submenu a {
+    left: 0px;
+    padding: 20px 27px;
+    background-color: var(--menu-background-color);
+    display: block;
+    color: var(--menu-font-color);
+}
+
+#submenu a.subemenuSelecionado {
+    line-height: initial;
+}
+
+#submenu a:hover {
+    left: 0px;
+    padding: 20px 27px;
+    background-color: var(--menu-background-hover-color);
+    display: block;
+}
+
+#submenu ul {
+    padding: 0px;
+}
+
+#submenu ul li {
+    padding: 0px;
+}
+
+ul.menuProfile a:hover {
+    background-color: initial;
+}
+
+corebox-avatar.menuProfile {
+    position: relative;
+    top: 10px;
+    background: var(--header-background-color);
+    color: var(--header-icon--background-color);
+    border-radius: 50%;
+    padding: 10px;
+    font-weight: 600;
 }

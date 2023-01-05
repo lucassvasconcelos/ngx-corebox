@@ -11,6 +11,7 @@ export class Menu {
     fontColor: string = '';
     fontHoverColor: string = '';
     borderLeftColor: string = '';
+    subMenuBackgroundColor: string = '';
     subMenuSelectedBackgroundColor: string = '';
     menuSelectedFontColor: string = '';
 }
@@ -39,6 +40,7 @@ export class Theme {
         backgroundColor: '#ffffff',
         backgroundHoverColor: '#11111114',
         borderLeftColor: '#ed4b4b',
+        subMenuBackgroundColor: '#dedede',
         subMenuSelectedBackgroundColor: '#e0e0e0',
         menuSelectedFontColor: '#ed4b4b'
     } as Menu;
