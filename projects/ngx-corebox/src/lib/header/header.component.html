@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div *ngIf="profileOptions" class="session" (click)="toogleMenuProfile(true)">
-                <corebox-avatar style="position: relative; top: 10px" [sessionName]="profileOptions.userName"
+                <corebox-avatar style="position: relative;" [ngStyle]="{'top': appItems && appItems.length > 0 ? '10px' : '0px'}" [sessionName]="profileOptions.userName"
                     [pathToAvatarImage]="profileOptions.avatarUrl"
                     [ngClass]="{'corebox-avatar-text': profileOptions.avatarUrl === '' || profileOptions.avatarUrl === undefined}"></corebox-avatar>
                 <div id="menuProfile" *ngIf="!ehVisaoMobile()" class="dropdown-content"
