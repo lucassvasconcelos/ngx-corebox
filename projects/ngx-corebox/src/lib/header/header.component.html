@@ -21,7 +21,7 @@
                     <span class="dot"></span>
                 </button>
             </div>
-            <div class="menuApps" *ngIf="appsIsOpen && !ehVisaoMobile()">
+            <div class="menuApps" [ngClass]="{'semProfile': !profileOptions}" *ngIf="appsIsOpen && !ehVisaoMobile()">
                 <div class="container">
                     <div *ngFor="let app of appItems" class="app">
                         <div class="item" (click)="navegar(app.url)">
