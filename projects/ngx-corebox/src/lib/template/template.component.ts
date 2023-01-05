@@ -21,12 +21,13 @@ export class TemplateComponent implements OnInit {
   @Input() darkMode: boolean = false;
 
   @Input() menuOptions: MenuOptions = new MenuOptions();
-  @Input() profileOptions: ProfileOptions = new ProfileOptions();
+  @Input() profileOptions?: ProfileOptions;
 
   menuIsOpen: boolean = true;
   appsIsOpen: boolean = false;
 
   ngOnInit(): void {
+
     let theme = this.themes.filter(theme => theme.selected)[0];
 
     if (theme) {

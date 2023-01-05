@@ -7,7 +7,7 @@ import { ProfileOptions } from '../types/profile-options';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Input() profileOptions: ProfileOptions = new ProfileOptions();
+  @Input() profileOptions?: ProfileOptions;
   @Input() appItems: AppItem[] = [];
 
   appsIsOpen: boolean = false;
@@ -65,15 +65,15 @@ export class HeaderComponent {
   }
 
   informouProfile = (): boolean => {
-    return this.profileOptions.profileLabel?.length > 0;
+      return (this.profileOptions?.profileLabel?.length ?? 0) > 0;
   }
 
   abrirMeuPerfil = (): void => {
-    location.href = this.profileOptions.profileUrl;
+    location.href = this.profileOptions?.profileUrl ?? '';
   }
 
   desconectar = (): void => {
-    location.href = this.profileOptions.logoutUrl;
+    location.href = this.profileOptions?.logoutUrl ?? '';
   }
 
   openApps() {
