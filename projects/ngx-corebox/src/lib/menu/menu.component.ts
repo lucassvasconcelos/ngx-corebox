@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/menu-options';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-menu',
@@ -124,12 +125,6 @@ export class MenuComponent implements OnInit {
     return document.querySelectorAll('nav.menu.closed').length === 0;
   }
 
-  navigate = (url: string): void => {
-    if (url.includes('http')) {
-      location.href = url;
-    } else {
-      this.router.navigate([url]);
-    }
-  }
+  navigate = (url: string): void => navigate(url, this.router);
 
 }

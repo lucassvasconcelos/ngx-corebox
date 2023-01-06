@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppItem } from '../types/app-item';
 import { ProfileOptions } from '../types/profile-options';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-header',
@@ -88,13 +89,7 @@ export class HeaderComponent {
     return window.innerWidth <= 1280;
   }
 
-  navigate = (url: string): void => {
-    if (url.includes('http')) {
-      location.href = url;
-    } else {
-      this.router.navigate([url]);
-    }
-  }
+  navigate = (url: string): void => navigate(url, this.router);
 
   fecharSubmenu = (): void => {
     if (!this.ehVisaoMobile()) {
