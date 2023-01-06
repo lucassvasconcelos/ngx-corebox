@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/menu-options';
 
@@ -18,6 +19,8 @@ export class MenuComponent implements OnInit {
   submenuSelecionado?: MenuItem;
   submenuAberto = false;
   menuClicado = false;
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     let itens = this.menuItems.filter(menu => menu.opened);
@@ -119,6 +122,14 @@ export class MenuComponent implements OnInit {
 
   exibeSubmenuDesktopComNavAberta = (): boolean => {
     return document.querySelectorAll('nav.menu.closed').length === 0;
+  }
+
+  navigate = (url: string): void => {
+    if (url.includes('http')) {
+      location.href = url;
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
 }

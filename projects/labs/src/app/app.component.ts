@@ -89,17 +89,17 @@ export class AppComponent {
     },
     {
       title: 'App2',
-      url: '/url2',
+      url: '/um',
       icon: 'wallet'
     },
     {
       title: 'App3',
-      url: '/url3',
+      url: '/dois',
       icon: 'pen-to-square'
     },
     {
       title: 'App4',
-      url: '/url3',
+      url: 'https://google.com',
       icon: 'database'
     },
     {
@@ -277,53 +277,19 @@ export class AppComponent {
   menuItems: MenuItem[] = [
     {
       title: 'Item 1',
-      url: '/url1',
-      icon: 'th',
-      children: [
-        {
-          title: 'Item 1.1',
-          url: '/SubUrl1',
-          icon: 'font-awesome'
-        },
-        {
-          title: 'Item 1.2',
-          url: '/SubUrl2',
-          icon: 'font-awesome'
-        },
-        {
-          title: 'Item 1.3',
-          url: '/SubUrl3',
-          icon: 'font-awesome'
-        }
-      ]
-    } as MenuItem,
+      url: '/um',
+      icon: 'th'
+    },
     {
       title: 'Item 2',
-      url: '/url2',
+      url: '/dois',
       icon: 'car-crash'
     } as MenuItem,
     {
       title: 'Item 3',
-      url: '/url2',
-      icon: 'dollar-sign',
-      children: [
-        {
-          title: 'Item 3.1',
-          url: '/SubUrl1',
-          icon: 'font-awesome'
-        },
-        {
-          title: 'Item 3.1',
-          url: '/SubUrl2',
-          icon: 'font-awesome'
-        }
-      ]
+      url: 'https://google.com',
+      icon: 'dollar-sign'
     } as MenuItem,
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
     {
       title: 'Item 5',
       url: '/url4',

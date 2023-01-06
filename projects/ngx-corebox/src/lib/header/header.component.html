@@ -24,7 +24,7 @@
             <div class="menuApps" [ngClass]="{'semProfile': !profileOptions}" *ngIf="appsIsOpen && !ehVisaoMobile()">
                 <div class="container">
                     <div *ngFor="let app of appItems" class="app">
-                        <div class="item" (click)="navegar(app.url)">
+                        <div class="item" (click)="navigate(app.url)">
                             <fa-icon [icon]="['fas', app.icon]"></fa-icon><br />
                             <span>{{app.title}}</span>
                         </div>
