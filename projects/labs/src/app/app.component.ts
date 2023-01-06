@@ -121,7 +121,157 @@ export class AppComponent {
       title: 'App8',
       url: '/url3',
       icon: 'headset'
-    }
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
+    {
+      title: 'App7',
+      url: '/url3',
+      icon: 'dollar'
+    },
+    {
+      title: 'App8',
+      url: '/url3',
+      icon: 'headset'
+    },
   ];
 
   menuItems: MenuItem[] = [
@@ -183,6 +333,66 @@ export class AppComponent {
       title: 'Item 6',
       url: '/url 5',
       icon: 'tty'
+    },
+    {
+      title: 'Item 4',
+      url: '/url3',
+      icon: 'car-battery'
+    },
+    {
+      title: 'Item 5',
+      url: '/url4',
+      icon: 'search'
+    },
+    {
+      title: 'Item 4',
+      url: '/url3',
+      icon: 'car-battery'
+    },
+    {
+      title: 'Item 5',
+      url: '/url4',
+      icon: 'search'
+    },
+    {
+      title: 'Item 4',
+      url: '/url3',
+      icon: 'car-battery'
+    },
+    {
+      title: 'Item 5',
+      url: '/url4',
+      icon: 'search'
+    },
+    {
+      title: 'Item 4',
+      url: '/url3',
+      icon: 'car-battery'
+    },
+    {
+      title: 'Item 5',
+      url: '/url4',
+      icon: 'search'
+    },
+    {
+      title: 'Item 4',
+      url: '/url3',
+      icon: 'car-battery'
+    },
+    {
+      title: 'Item 5',
+      url: '/url4',
+      icon: 'search'
+    },
+    {
+      title: 'Item 4',
+      url: '/url3',
+      icon: 'car-battery'
+    },
+    {
+      title: 'Item 5',
+      url: '/url4',
+      icon: 'search'
     }
   ];
 }
