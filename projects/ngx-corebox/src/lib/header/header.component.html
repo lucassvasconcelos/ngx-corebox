@@ -21,14 +21,10 @@
                     <span class="dot"></span>
                 </button>
             </div>
-            <div class="menuApps" [ngClass]="{'semProfile': !profileOptions}" *ngIf="appsIsOpen && !ehVisaoMobile()">
-                <div class="container">
-                    <div *ngFor="let app of appItems" class="app">
-                        <div class="item" (click)="navegar(app.url)">
-                            <fa-icon [icon]="['fas', app.icon]"></fa-icon><br />
-                            <span>{{app.title}}</span>
-                        </div>
-                    </div>
+            <div class="corebox-apps" [ngClass]="{'': !profileOptions}" *ngIf="appsIsOpen && !ehVisaoMobile()">
+                <div *ngFor="let app of appItems" class="app" (click)="navegar(app.url)">
+                    <fa-icon [icon]="['fas', app.icon]" class="fa-xl"></fa-icon>
+                    <span>{{app.title}}</span>
                 </div>
             </div>
             <div *ngIf="profileOptions" class="session" (click)="toogleMenuProfile(true)">
@@ -84,6 +80,3 @@
         </li>
     </ul>
 </div>
-
-<corebox-apps *ngIf="appsIsOpen && ehVisaoMobile()" [appsIsOpen]="appsIsOpen" [appItems]="appItems">
-</corebox-apps>

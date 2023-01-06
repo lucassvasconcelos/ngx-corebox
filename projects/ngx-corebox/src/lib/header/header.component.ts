@@ -4,7 +4,8 @@ import { ProfileOptions } from '../types/profile-options';
 
 @Component({
   selector: 'corebox-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   @Input() profileOptions?: ProfileOptions;
