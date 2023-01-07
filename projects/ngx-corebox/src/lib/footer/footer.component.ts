@@ -15,16 +15,12 @@ export class FooterComponent {
     return this.menuIsOpen && window.innerWidth > 1280;
   }
 
-  useMenuOpenedClass(): boolean {
-    return this.menuIsOpen && window.innerWidth <= 1280;
-  }
-
-  fecharSubmenu = (): void => {
+  closeSubMenu = (): void => {
     if (window.innerWidth >= 1280) {
       let divSubmenu = document.getElementById('submenu');
-      if (divSubmenu) {
+      
+      if (divSubmenu)
         divSubmenu.style.display = 'none';
-      }
     }
   }
 }
