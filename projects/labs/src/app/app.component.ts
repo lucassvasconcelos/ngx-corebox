@@ -32,7 +32,7 @@ export class AppComponent {
       backgroundColor: '#f9f9f9',
       header: {
         backgroundColor: '#111111',
-        iconBackgroundColor: 'white',
+        iconBackgroundColor: '#ed4b4b',
         iconFontColor: '#111111',
         borderShadowColor: '#00000040'
       },

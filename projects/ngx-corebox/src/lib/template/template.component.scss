@@ -400,27 +400,8 @@ header>.header-container>.session-container>.session {
     padding-left: 8px;
 }
 
-header>.header-container>.session-container>.session>corebox-avatar {
-    border-radius: 50%;
-    padding: 5px;
-    font-weight: 600;
-}
-
 header>.header-container>.session-container>.session>.dropdown {
     color: var(--font-color);
-}
-
-header>.header-container>.session-container>.session>.dropdown-content {
-    position: absolute;
-    background: var(--menu-background-color);
-    margin: 55px 0 0;
-    top: 0px;
-    right: 0px;
-    width: 179px;
-    height: inherit;
-    padding: 10px;
-    padding-bottom: 0px;
-    box-shadow: 0px 0px 5px var(--header-border-shadow-color);
 }
 
 .d-none {
@@ -429,38 +410,6 @@ header>.header-container>.session-container>.session>.dropdown-content {
 
 .d-block {
     display: block;
-}
-
-header>.header-container>.session-container>.session>.dropdown-content>ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header>.header-container>.session-container>.session>.dropdown-content>ul>li {
-    padding: 10px 20px;
-}
-
-header>.header-container>.session-container>.session>.dropdown-content>ul>li>a {
-    color: var(--font-color);
-}
-
-header>.header-container>.session-container>.session>.dropdown-content>ul>li>a>fa-icon {
-    margin-right: 10px;
-}
-
-header>.header-container>.session-container>.session>.dropdown-content>ul>li:last-child {
-    padding-bottom: 20px;
-}
-
-.corebox-avatar-text {
-    color: var(--header-icon--font-color);
-    background-color: var(--header-icon--background-color);
-}
-
-header>.header-container>.session-container>.session>corebox-avatar>img {
-    height: 30px;
-    border-radius: 50%;
 }
 
 header>.header-container>.session-container>div>.apps {
@@ -699,36 +648,6 @@ nav.menu li a:hover {
     color: var(--menu-font-hover-color) !important;
 }
 
-#menuProfileMobile {
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 35px;
-    background-color: var(--menu-background-color);
-}
-
-#menuProfileMobile li {
-    padding-bottom: 0px;
-}
-
-#menuProfileMobile li a {
-    display: block;
-    position: relative;
-    padding: 20px 27px;
-    margin-left: -19px;
-    cursor: pointer;
-    color: var(--menu-font-color);
-    background-color: var(--menu-background-color);
-}
-
-#menuProfileMobile>ul>li>a:hover {
-    display: block;
-    position: relative;
-    padding: 20px 27px;
-    margin-left: -19px;
-    cursor: pointer;
-}
-
 #submenu {
     background-color: var(--menu-background-color);
     box-shadow: 0 0 5px var(--header-border-shadow-color);
@@ -765,24 +684,6 @@ nav.menu li a:hover {
     padding: 0px;
 }
 
-ul.menuProfile a:hover {
-    background-color: initial;
-}
-
-corebox-avatar.menuProfile {
-    position: relative;
-    top: 10px;
-    background: var(--header-background-color);
-    color: var(--header-icon--background-color);
-    border-radius: 50%;
-    padding: 10px;
-    font-weight: 600;
-}
-
-.menuApps.semProfile {
-    right: 10px;
-}
-
 nav.menu::-webkit-scrollbar-track
 {
 	background-color: transparent;
@@ -795,22 +696,6 @@ nav.menu::-webkit-scrollbar
 }
 
 nav.menu::-webkit-scrollbar-thumb
-{
-	background-color: var(--menu-border-left-color);
-}
-
-.menuApps::-webkit-scrollbar-track
-{
-	background-color: transparent;
-}
-
-.menuApps::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: transparent;
-}
-
-.menuApps::-webkit-scrollbar-thumb
 {
 	background-color: var(--menu-border-left-color);
 }

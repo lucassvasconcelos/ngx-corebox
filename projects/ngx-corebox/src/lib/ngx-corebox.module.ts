@@ -7,10 +7,11 @@ import { TemplateComponent } from './template/template.component';
 import { RouterModule } from '@angular/router';
 import { AppsComponent } from './apps/apps.component';
 import { AvatarComponent } from './avatar/avatar.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { ProfileComponent } from './profile/profile.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
     TemplateComponent,
     AppsComponent,
     AvatarComponent,
+    ProfileComponent,
     NotificationsComponent
   ],
   imports: [
@@ -33,6 +35,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
     MenuComponent,
     AppsComponent,
     AvatarComponent,
+    ProfileComponent,
     TemplateComponent
   ]
 })

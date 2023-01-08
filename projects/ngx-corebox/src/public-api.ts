@@ -5,6 +5,7 @@ export * from './lib/menu/menu.component';
 export * from './lib/template/template.component';
 export * from './lib/apps/apps.component';
 export * from './lib/avatar/avatar.component';
+export * from './lib/profile/profile.component';
 export { AppItem } from './lib/types/app-item'
 export { MenuItem } from './lib/types/menu-item'
 export { Theme } from './lib/types/theme';

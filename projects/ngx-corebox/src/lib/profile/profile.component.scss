@@ -1,0 +1,113 @@
+.corebox-profile {
+    background: var(--menu-background-color);
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px var(--header-border-shadow-color);
+    padding: 20px 30px;
+    position: absolute;
+    right: 0px;
+    top: 55px;
+    width: 200px;
+
+    > .profile-content {
+        align-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        letter-spacing: .3px;
+
+        > ul {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            > li {
+                display: contents;
+
+                > corebox-avatar {
+                    margin: 0 0 16px 0;
+                }
+
+                > .profile-info {
+                    color: var(--font-color);
+                    text-decoration: none;
+                }
+
+                > .my-profile {
+                    border: 1px solid;
+                    border-radius: 20px;
+                    font-size: 14px;
+                    margin: 10px 0 0 0;
+                    padding: 8px 40px;
+                    
+                    > fa-icon {
+                        margin-right: 5px;
+                    }
+                }
+
+                > hr {
+                    margin: 20px 0;
+                    width: 100%;
+                }
+
+                > .logout {
+                    border: 1px solid;
+                    border-radius: 3px;
+                    padding: 5px 15px;
+            
+                    > fa-icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1280px) {
+        padding: 0;
+        right: -20px;
+        top: 47px;
+        width: 100vw;
+
+        > .profile-content {
+
+            > ul {
+                align-items: flex-start;
+                width: 100%;
+                height: calc(100vh - 55px);
+
+                > li {
+                    width: 100%;
+                    
+                    > a {
+                        box-sizing: border-box;
+                        padding: 20px;
+                        width: 100%;
+                    }
+                }
+
+                > .li-profile-info {
+                    display: none;
+                }
+
+                > .li-my-profile {
+                    > .my-profile {
+                        border: none;
+                        border-radius: 0;
+                        box-sizing: border-box;
+                        font-size: 16px;
+                        margin: 0;
+                        padding: 20px;
+                    }
+                }
+
+                > .li-divisor {
+                    display: none;
+                }
+            }
+        }
+    }
+}
