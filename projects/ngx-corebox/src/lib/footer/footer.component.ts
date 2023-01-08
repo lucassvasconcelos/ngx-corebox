@@ -7,12 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterComponent {
   @Input() companyName?: string;
-  @Input() menuIsOpen: boolean = false;
+  @Input() menuClosed: boolean = false;
 
   currentYear: number = (new Date()).getFullYear();
 
-  useMenuClosedClass(): boolean {
-    return this.menuIsOpen && window.innerWidth > 1280;
+  useClosedMenuClass(): boolean {
+    return this.menuClosed && window.innerWidth > 1280;
   }
 
   closeSubMenu = (): void => {

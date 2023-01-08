@@ -27,12 +27,12 @@ export class AppComponent {
     {
       selected: true,
       name: 'Light',
-      logotipo: '../assets/logo-desktop.png',
-      logotipoMobile: '../assets/logo-mobile.png',
+      logo: '../assets/logo-desktop.png',
+      logoMobile: '../assets/logo-mobile.png',
       backgroundColor: '#f9f9f9',
       header: {
-        backgroundColor: '#111111',
-        iconBackgroundColor: '#ed4b4b',
+        backgroundColor1: 'black',
+        iconBackgroundColor: '#f9f9f9',
         iconFontColor: '#111111',
         borderShadowColor: '#00000040'
       },
@@ -55,11 +55,12 @@ export class AppComponent {
     {
       selected: true,
       name: 'Dark',
-      logotipo: '../assets/logo-desktop-black.png',
-      logotipoMobile: '../assets/logo-mobile-black.png',
+      logo: '../assets/logo-desktop-black.png',
+      logoMobile: '../assets/logo-mobile-black.png',
       backgroundColor: '#1b1e1f',
       header: {
-        backgroundColor: '#0d0e0e',
+        backgroundColor1: '#0d0e0e',
+        backgroundColor2: '#ffffff',
         iconBackgroundColor: '#dddad6',
         iconFontColor: '#0d0e0e',
         borderShadowColor: '#00000040'
@@ -83,351 +84,79 @@ export class AppComponent {
 
   appItems: AppItem[] = [
     {
-      title: 'Financeiro',
+      title: 'App 1',
       url: '/url1',
       icon: 'th-large'
     },
     {
-      title: 'Faturamento',
+      title: 'App 2',
       url: '/url2',
       icon: 'wallet'
     },
     {
-      title: 'Recepção',
+      title: 'App 3',
       url: '/url3',
       icon: 'pen-to-square'
     },
     {
-      title: 'Hotelaria',
-      url: '/url3',
-      icon: 'database'
-    },
-    {
-      title: 'Cirurgia',
+      title: 'App 4',
       url: '/url1',
-      icon: 'sack-dollar'
+      icon: 'th-large'
     },
     {
-      title: 'Centro Cirurgico',
-      url: '/url2',
-      icon: 'users'
-    },
-    {
-      title: 'Emergência',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'UTI',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Laboratório',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Cobrança',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Convênios',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Faturamento',
+      title: 'App 5',
       url: '/url2',
       icon: 'wallet'
     },
     {
-      title: 'Recepção',
+      title: 'App 6',
       url: '/url3',
       icon: 'pen-to-square'
     },
     {
-      title: 'Hotelaria',
-      url: '/url3',
-      icon: 'database'
-    },
-    {
-      title: 'Cirurgia',
+      title: 'App 7',
       url: '/url1',
-      icon: 'sack-dollar'
+      icon: 'th-large'
     },
     {
-      title: 'Centro Cirurgico',
-      url: '/url2',
-      icon: 'users'
-    },
-    {
-      title: 'Emergência',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'UTI',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Laboratório',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Cobrança',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Convênios',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Faturamento',
+      title: 'App 8',
       url: '/url2',
       icon: 'wallet'
     },
     {
-      title: 'Recepção',
+      title: 'App 9',
       url: '/url3',
       icon: 'pen-to-square'
-    },
-    {
-      title: 'Hotelaria',
-      url: '/url3',
-      icon: 'database'
-    },
-    {
-      title: 'Cirurgia',
-      url: '/url1',
-      icon: 'sack-dollar'
-    },
-    {
-      title: 'Centro Cirurgico',
-      url: '/url2',
-      icon: 'users'
-    },
-    {
-      title: 'Emergência',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'UTI',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Laboratório',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Cobrança',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Convênios',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Faturamento',
-      url: '/url2',
-      icon: 'wallet'
-    },
-    {
-      title: 'Recepção',
-      url: '/url3',
-      icon: 'pen-to-square'
-    },
-    {
-      title: 'Hotelaria',
-      url: '/url3',
-      icon: 'database'
-    },
-    {
-      title: 'Cirurgia',
-      url: '/url1',
-      icon: 'sack-dollar'
-    },
-    {
-      title: 'Centro Cirurgico',
-      url: '/url2',
-      icon: 'users'
-    },
-    {
-      title: 'Emergência',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'UTI',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Laboratório',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Cobrança',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'Suporte',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'Convênios',
-      url: '/url3',
-      icon: 'headset'
     }
   ];
 
   menuItems: MenuItem[] = [
     {
-      title: 'Item 1',
+      title: 'Menu 1',
       url: '/url1',
       icon: 'th',
       children: [
         {
-          title: 'Item 1.1',
+          title: 'SubMenu 1.1',
           url: '/SubUrl1',
           icon: 'font-awesome'
         },
         {
-          title: 'Item 1.2',
+          title: 'SubMenu 1.2',
           url: '/SubUrl2',
           icon: 'font-awesome'
         },
         {
-          title: 'Item 1.3',
+          title: 'SubMenu 1.3',
           url: '/SubUrl3',
           icon: 'font-awesome'
         }
       ]
     } as MenuItem,
     {
-      title: 'Item 2',
+      title: 'Menu 2',
       url: '/url2',
       icon: 'car-crash'
-    } as MenuItem,
-    {
-      title: 'Item 3',
-      url: '/url2',
-      icon: 'dollar-sign',
-      children: [
-        {
-          title: 'Item 3.1',
-          url: '/SubUrl1',
-          icon: 'font-awesome'
-        },
-        {
-          title: 'Item 3.1',
-          url: '/SubUrl2',
-          icon: 'font-awesome'
-        }
-      ]
-    } as MenuItem,
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 6',
-      url: '/url 5',
-      icon: 'tty'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    }
+    } as MenuItem
   ];
 }

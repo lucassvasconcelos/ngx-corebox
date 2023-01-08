@@ -1,44 +1,17 @@
-<div class="content-all">
-
-    <div class="content-left">
-        <div id="nav-menu" class="nav-menu" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
-            <corebox-menu 
-                [menuIsOpen]="menuIsOpen" 
-                [menuItems]="menuItems"
-                [menuOptions]="obterOpcoesDeMenu()"
-                (alterarMenuEvent)="alterarEstadoDoMenu($event)"
-            >
-            </corebox-menu>
+<div class="corebox">
+    <div class="left">
+        <div id="nav-menu" class="menu" [ngClass]="{'closed': useClosedMenuClass(), 'opened': useMenuOpenedClass()}">
+            <corebox-menu [menuClosed]="menuClosed" [menuItems]="menuItems" [menuOptions]="getMenuOptions()" (alterarMenuEvent)="changeMenuState($event)"></corebox-menu>
         </div>
     </div>
 
-    <div class="content-right">
-
-        <div id="navHeaderRight" class="nav-header" [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}">
-            <corebox-header
-                (openMenuEvent)="menuOpened($event)"
-                (appsOpenedEvent)="appsOpened($event)"
-                [profileOptions]="profileOptions"
-                [appItems]="appItems"
-            ></corebox-header>
+    <div class="right">
+        <div id="header" class="header">
+            <corebox-header [menuClosed]="menuClosed" [profileOptions]="profileOptions" [appItems]="appItems" (menuStateEvent)="setMenuState($event)" (appsOpenedEvent)="appsOpened($event)"></corebox-header>
         </div>
-
-        <div 
-            class="content" 
-            [ngClass]="{'closed': useMenuClosedClass(), 'opened': useMenuOpenedClass()}"
-            (click)="fecharSubmenu()"
-        >
+        <section class="content" [ngClass]="{'closed': useClosedMenuClass()}" (click)="closeSubMenu()">
             <router-outlet></router-outlet>
-        </div>
-
-        <div class="footer">
-            <corebox-footer 
-                [menuIsOpen]="menuIsOpen" 
-                [companyName]="profileOptions?.companyName"
-            >
-            </corebox-footer>
-        </div>
-
+        </section>
+        <corebox-footer [menuClosed]="menuClosed" [companyName]="profileOptions?.companyName"></corebox-footer>
     </div>
-
 </div>

@@ -1,3 +1,3 @@
-<footer [ngClass]="{'closed': useMenuClosedClass()}" (click)="closeSubMenu()">
+<footer [ngClass]="{'closed': useClosedMenuClass()}" (click)="closeSubMenu()">
     <span *ngIf="companyName && currentYear"><strong>Copyright</strong> {{ companyName }} © {{ currentYear }}</span>
 </footer>

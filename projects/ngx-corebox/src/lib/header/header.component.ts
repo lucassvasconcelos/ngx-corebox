@@ -10,93 +10,88 @@ import { ProfileOptions } from '../types/profile-options';
 export class HeaderComponent {
   @Input() profileOptions?: ProfileOptions;
   @Input() appItems: AppItem[] = [];
+  @Input() menuClosed: boolean = false;
 
   appsIsOpen: boolean = false;
-  sessionIsOpen: boolean = false;
-  pressionouBotaoMenuProfile = false;
-  pressionouBotaoMenuApps = false;
+  profileIsOpen: boolean = false;
+  profileMenuButtonPressed = false;
+  appsMenuButtonPressed = false;
 
-  @Output() openMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() menuStateEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() appsOpenedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   ngOnInit(): void {
-    this.toogleMenu();
+    const localStorageItem = localStorage.getItem('menuClosed');
+
+    if (window.innerWidth <= 1280) {
+      this.menuStateEvent.emit(false);
+      localStorage.setItem('menuClosed', String(false));
+    } else {
+      if (localStorageItem === null) {
+        this.menuStateEvent.emit(false);
+        localStorage.setItem('menuClosed', String(false));
+      } else {
+        const menuClosed = localStorageItem === 'true' ? true : false;
+        this.menuStateEvent.emit(menuClosed);
+      }
+    }
 
     document.body.onclick = (): void => {
-      if (!this.pressionouBotaoMenuProfile) {
-        this.toogleMenuProfile(false);
-      } else {
-        this.pressionouBotaoMenuProfile = false;
-      }
-
-      if (!this.pressionouBotaoMenuApps) {
-        this.toogleMenuApps(false);
-      } else {
-        this.pressionouBotaoMenuApps = false;
-      }
+      !this.profileMenuButtonPressed ? this.toogleProfileMenu(false) : this.profileMenuButtonPressed = false;
+      !this.appsMenuButtonPressed ? this.toogleAppsMenu(false) : this.appsMenuButtonPressed = false;
     }
   }
 
-  toogleMenuProfile = (pressionouBotao: boolean): void => {
-    this.pressionouBotaoMenuProfile = pressionouBotao;
+  toogleProfileMenu = (pressionouBotao: boolean): void => {
+    this.profileMenuButtonPressed = pressionouBotao;
+
     if (pressionouBotao) {
-      this.sessionIsOpen = !this.sessionIsOpen;
+      this.profileIsOpen = !this.profileIsOpen;
+      
       if (window.innerWidth <= 1280)
-        this.openMenuEvent.emit(false);
+        this.menuStateEvent.emit(false);
+
     } else {
-      this.sessionIsOpen = false;
+      this.profileIsOpen = false;
     }
   }
 
-  toogleMenuApps = (pressionouBotao: boolean): void => {
-    this.pressionouBotaoMenuApps = pressionouBotao;
+  toogleAppsMenu = (pressionouBotao: boolean): void => {
+    this.appsMenuButtonPressed = pressionouBotao;
+
     if (pressionouBotao) {
       this.appsIsOpen = !this.appsIsOpen;
+    
       if (window.innerWidth <= 1280)
         this.appsOpenedEvent.emit(false);
+
     } else {
       this.appsIsOpen = false;
     }
   }
 
   toogleMenu() {
-    const menuIsOpen = document.querySelectorAll('.closed').length === 0
-      && document.querySelectorAll('.opened').length === 0;
-    this.openMenuEvent.emit(menuIsOpen);
+    const localStorageItem = localStorage.getItem('menuClosed');
+    const menuClosed = localStorageItem === 'true' ? true : false;
+    localStorage.setItem('menuClosed', String(!menuClosed));
+    this.menuStateEvent.emit(!menuClosed);
   }
 
-  informouProfile = (): boolean => {
-      return (this.profileOptions?.profileLabel?.length ?? 0) > 0;
-  }
-
-  abrirMeuPerfil = (): void => {
-    location.href = this.profileOptions?.profileUrl ?? '';
-  }
-
-  desconectar = (): void => {
-    location.href = this.profileOptions?.logoutUrl ?? '';
-  }
-
-  openApps() {
-    this.appsIsOpen = !this.appsIsOpen;
-    this.appsOpenedEvent.emit(this.appsIsOpen);
-  }
-
-  ehVisaoMobile = (): boolean => {
+  isMobile = (): boolean => {
     return window.innerWidth <= 1280;
   }
 
-  navegar = (url: string): void => {
-    location.href = url;
-  }
-
-  fecharSubmenu = (): void => {
-    if (!this.ehVisaoMobile()) {
+  closeSubMenu = (): void => {
+    if (!this.isMobile()) {
       let divSubmenu = document.getElementById('submenu');
       if (divSubmenu) {
         divSubmenu.style.display = 'none';
       }
     }
+  }
+
+  useClosedMenuClass(): boolean {
+    return this.menuClosed && window.innerWidth > 1280;
   }
 
 }

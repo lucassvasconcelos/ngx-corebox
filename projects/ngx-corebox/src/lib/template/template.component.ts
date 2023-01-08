@@ -12,32 +12,26 @@ import { Theme } from '../types/theme';
   encapsulation: ViewEncapsulation.None
 })
 export class TemplateComponent implements OnInit {
-
   @Input() themes: Theme[] = [];
-
   @Input() pathToAvatarImage: string = '';
   @Input() menuItems: MenuItem[] = [];
   @Input() appItems: AppItem[] = [];
-  @Input() darkMode: boolean = false;
-
   @Input() menuOptions: MenuOptions = new MenuOptions();
   @Input() profileOptions?: ProfileOptions;
 
-  menuIsOpen: boolean = true;
+  menuClosed: boolean = true;
   appsIsOpen: boolean = false;
 
   ngOnInit(): void {
-
     let theme = this.themes.filter(theme => theme.selected)[0];
 
     if (theme) {
       document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
-
-      document.documentElement.style.setProperty('--header-background-color', theme.header.backgroundColor);
+      document.documentElement.style.setProperty('--header-background-color1', theme.header.backgroundColor1);
+      document.documentElement.style.setProperty('--header-background-color2', (theme.header.backgroundColor2 === '' || theme.header.backgroundColor2 === null || theme.header.backgroundColor2 === undefined ? theme.header.backgroundColor1 : theme.header.backgroundColor2));
       document.documentElement.style.setProperty('--header-icon--background-color', theme.header.iconBackgroundColor);
       document.documentElement.style.setProperty('--header-icon--font-color', theme.header.iconFontColor);
       document.documentElement.style.setProperty('--header-border-shadow-color', theme.header.borderShadowColor);
-
       document.documentElement.style.setProperty('--menu-font-color', theme.menu.fontColor);
       document.documentElement.style.setProperty('--menu-font-hover-color', theme.menu.fontHoverColor);
       document.documentElement.style.setProperty('--menu-background-color', theme.menu.backgroundColor);
@@ -46,19 +40,18 @@ export class TemplateComponent implements OnInit {
       document.documentElement.style.setProperty('--menu-submenu-background-color', theme.menu.subMenuBackgroundColor);
       document.documentElement.style.setProperty('--menu-submenu-selected-background-color', theme.menu.subMenuSelectedBackgroundColor);
       document.documentElement.style.setProperty('--menu-selected-font-color', theme.menu.menuSelectedFontColor);
-
       document.documentElement.style.setProperty('--footer-background-color', theme.footer.backgroundColor);
       document.documentElement.style.setProperty('--footer-font-color', theme.footer.fontColor);
       document.documentElement.style.setProperty('--footer-border-top-color', theme.footer.borderTopColor);
     }
   }
 
-  obterOpcoesDeMenu = (): MenuOptions => {
+  getMenuOptions = (): MenuOptions => {
     let theme = this.themes.filter(theme => theme.selected)[0];
     if (theme)
       return {
-        logotipo: theme.logotipo,
-        logotipoMobile: theme.logotipoMobile
+        logotipo: theme.logo,
+        logotipoMobile: theme.logoMobile
       } as MenuOptions;
     return new MenuOptions();
   }
@@ -67,27 +60,23 @@ export class TemplateComponent implements OnInit {
     this.appsIsOpen = $event;
   }
 
-  menuOpened($event: boolean): void {
-    this.menuIsOpen = $event;
+  setMenuState($event: boolean): void {
+    this.menuClosed = $event;
   }
 
-  useMenuClosedClass(): boolean {
-    return this.menuIsOpen && window.innerWidth > 1280;
+  useClosedMenuClass(): boolean {
+    return this.menuClosed && window.innerWidth > 1280;
   }
 
   useMenuOpenedClass(): boolean {
-    return this.menuIsOpen && window.innerWidth <= 1280;
+    return this.menuClosed && window.innerWidth <= 1280;
   }
 
-  alterarEstadoDoMenu(opened: boolean): void {
-    this.menuIsOpen = opened;
+  changeMenuState(opened: boolean): void {
+    this.menuClosed = opened;
   }
 
-  ehVisaoMobile = (): boolean => {
-    return window.innerWidth <= 1280;
-  }
-
-  fecharSubmenu = (): void => {
+  closeSubMenu = (): void => {
     if (window.innerWidth >= 1280) {
       let divSubmenu = document.getElementById('submenu');
       if (divSubmenu) {

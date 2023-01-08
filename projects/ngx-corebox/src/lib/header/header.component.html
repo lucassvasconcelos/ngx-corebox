@@ -1,35 +1,16 @@
-<header (click)="fecharSubmenu()">
-    <div class="header-container">
-        <div>
-            <button class="menu" (click)="toogleMenu()">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </div>
-        <div class="session-container" style="position: relative">
-            <div>
-                <button class="apps" *ngIf="appItems && appItems.length > 0" (click)="toogleMenuApps(true)">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </button>
+<header (click)="closeSubMenu()" [ngClass]="{'closed': useClosedMenuClass()}">
+    <div class="header-content">
+        <corebox-menu-button (click)="toogleMenu()"></corebox-menu-button>
+        
+        <div class="apps-and-profile">
+            <div *ngIf="appItems && appItems.length > 0" (click)="toogleAppsMenu(true)">
+                <corebox-apps-button></corebox-apps-button>
+                <corebox-apps [appItems]="appItems" [showApps]="appsIsOpen"></corebox-apps>
             </div>
-            <div class="corebox-apps" [ngClass]="{'': !profileOptions}" *ngIf="appsIsOpen && !ehVisaoMobile()">
-                <div *ngFor="let app of appItems" class="app" (click)="navegar(app.url)">
-                    <fa-icon [icon]="['fas', app.icon]" class="fa-xl"></fa-icon>
-                    <span>{{app.title}}</span>
-                </div>
-            </div>
-            <div *ngIf="profileOptions" class="session" (click)="toogleMenuProfile(true)">
+
+            <div class="profile" *ngIf="profileOptions" (click)="toogleProfileMenu(true)">
                 <corebox-avatar [sessionName]="profileOptions.userName" [pathToAvatarImage]="profileOptions.avatarUrl"></corebox-avatar>
-                <corebox-profile [profileOptions]="profileOptions" [showProfile]="sessionIsOpen"></corebox-profile>
+                <corebox-profile [profileOptions]="profileOptions" [showProfile]="profileIsOpen"></corebox-profile>
             </div>
         </div>
     </div>

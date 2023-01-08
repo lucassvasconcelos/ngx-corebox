@@ -1,5 +1,6 @@
 export class Header {
-    backgroundColor: string = '';
+    backgroundColor1: string = '';
+    backgroundColor2: string = '';
     iconBackgroundColor: string = '';
     iconFontColor: string = '';
     borderShadowColor: string = '';
@@ -25,11 +26,12 @@ export class Footer {
 export class Theme {
     selected: boolean = true;
     name: string = 'Light';
-    logotipo: string = '../assets/logo-desktop.png';
-    logotipoMobile: string = '../assets/logo-mobile.png';
+    logo: string = '../assets/logo-desktop.png';
+    logoMobile: string = '../assets/logo-mobile.png';
     backgroundColor: string = '#f9f9f9';
     header: Header = {
-        backgroundColor: '#111111',
+        backgroundColor1: '#111111',
+        backgroundColor2: '#FFFFFF',
         iconBackgroundColor: 'white',
         iconFontColor: '#111111',
         borderShadowColor: '#00000040'
