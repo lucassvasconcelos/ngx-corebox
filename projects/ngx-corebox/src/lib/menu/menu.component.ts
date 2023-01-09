@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/menu-options';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-menu',
@@ -18,6 +20,8 @@ export class MenuComponent implements OnInit {
   submenuSelecionado?: MenuItem;
   submenuAberto = false;
   menuClicado = false;
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     let itens = this.menuItems.filter(menu => menu.opened);
@@ -120,5 +124,7 @@ export class MenuComponent implements OnInit {
   exibeSubmenuDesktopComNavAberta = (): boolean => {
     return document.querySelectorAll('nav.menu.closed').length === 0;
   }
+
+  navigate = (url: string): void => navigate(url, this.router);
 
 }

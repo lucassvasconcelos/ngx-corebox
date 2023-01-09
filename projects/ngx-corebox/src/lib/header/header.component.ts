@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppItem } from '../types/app-item';
 import { ProfileOptions } from '../types/profile-options';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-header',
@@ -17,6 +19,8 @@ export class HeaderComponent {
 
   @Output() openMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() appsOpenedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     this.toogleMenu();
@@ -65,7 +69,7 @@ export class HeaderComponent {
   }
 
   informouProfile = (): boolean => {
-      return (this.profileOptions?.profileLabel?.length ?? 0) > 0;
+    return (this.profileOptions?.profileLabel?.length ?? 0) > 0;
   }
 
   abrirMeuPerfil = (): void => {
@@ -85,9 +89,7 @@ export class HeaderComponent {
     return window.innerWidth <= 1280;
   }
 
-  navegar = (url: string): void => {
-    location.href = url;
-  }
+  navigate = (url: string): void => navigate(url, this.router);
 
   fecharSubmenu = (): void => {
     if (!this.ehVisaoMobile()) {
