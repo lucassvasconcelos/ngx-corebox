@@ -9,24 +9,24 @@ nav {
     top: 0;
     width: var(--menu-width);
 
-    &.closed {
+    &.corebox-closed {
         width: var(--menu-closed-width);
         transition: all .4s;
     }
 
-    &.opened {
+    &.corebox-opened {
         display: block;
         width: 100vw;
     }
 
     > .corebox-nav-content {
-        &.opened {
+        &.corebox-opened {
 
-            > .logo {
+            > .corebox-logo {
                 display: none;
             }
 
-            > .menu {
+            > .corebox-menu {
                 font-size: 16px;
                 height: calc(100vh - var(--header-height));
                 top: var(--header-height);
@@ -44,13 +44,13 @@ nav {
             }
         }
 
-        > .logo {
+        > .corebox-logo {
             height: var(--menu-logo-height);
             max-width: -webkit-fill-available;
             max-width: -moz-available;
             text-align: center;
 
-            &.closed {
+            &.corebox-closed {
                 height: var(--header-height);
             }
 
@@ -59,24 +59,24 @@ nav {
                 top: 50%;
                 transform: translateY(-50%);
 
-                &.desktop {
+                &.corebox-desktop {
                     height: 70px;
                 }
 
-                &.mobile {
+                &.corebox-mobile {
                     height: 50px;
                 }
             }
         }
 
-        > .menu {
+        > .corebox-menu {
             height: calc(100vh - var(--menu-logo-height));
             overflow-x: hidden;
             overflow-y: auto;
             position: fixed;
             width: var(--menu-width);
 
-            &.closed {
+            &.corebox-closed {
                 height: calc(100vh - var(--header-height));
                 width: var(--menu-closed-width);
                 transition: all .4s;
@@ -118,13 +118,13 @@ nav {
                         -moz-transition: all 0.4s;
                         -o-transition: all 0.4s;
 
-                        &.selected {
+                        &.corebox-selected {
                             background-color: var(--menu-background-hover-color);
                             border-left: 4px solid var(--menu-border-left-color);
                             color: var(--menu-selected-font-color);
                         }
 
-                        &.closed {
+                        &.corebox-closed {
                             padding: 15px 0;
                             text-align: center;
                         }
@@ -140,7 +140,7 @@ nav {
                                 margin: 0 5px 0 0;
                             }
 
-                            > .arrow {
+                            > .corebox-arrow {
                                 float: right;
                             }
                         }
@@ -159,7 +159,7 @@ nav {
                         -moz-transition: all 0.4s;
                         -o-transition: all 0.4s;
 
-                        &.show-submenu {
+                        &.corebox-show-submenu {
                             max-height: 100vh;
                         }
 
@@ -179,7 +179,7 @@ nav {
                                 -moz-transition: all 0.4s;
                                 -o-transition: all 0.4s;
 
-                                &.selectedSubMenu {
+                                &.corebox-selectedSubMenu {
                                     background-color: var(--menu-submenu-selected-background-color);
                                     color: var(--menu-font-hover-color);
                                 }
@@ -234,7 +234,7 @@ nav {
                 -moz-transition: all 0.4s;
                 -o-transition: all 0.4s;
 
-                &.selectedSubMenu {
+                &.corebox-selectedSubMenu {
                     background-color: var(--menu-submenu-selected-background-color);
                     color: var(--menu-font-hover-color);
                 }

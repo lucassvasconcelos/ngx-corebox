@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AvatarComponent implements OnInit {
   @Input() sessionName?: string;
   @Input() pathToAvatarImage?: string;
-  @Input() size: string = 'sm';
+  @Input() size: string = 'corebox-sm';
 
   public letters?: string;
 

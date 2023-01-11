@@ -43,11 +43,11 @@ html {
     padding: 0;
 }
 
-.d-none {
+.corebox-d-none {
     display: none;
 }
 
-.d-block {
+.corebox-d-block {
     display: block;
 }
 
@@ -55,39 +55,34 @@ html {
     width: 100vw;
     margin: auto;
 
-    > .left {
+    > .corebox-left {
         float: left;
 
-        > .menu {
+        > .corebox-menu {
             display: block;
             float: left;
             width: var(--menu-width);
 
-            &.closed {
+            &.corebox-closed {
                 display: contents;
                 transition: all .4s;
             }
 
-            &.opened {
+            &.corebox-opened {
                 display: block;
                 width: 100vw;
             }
         }
     }
 
-    > .right {
+    > .corebox-right {
 
-        > .header {
+        > .corebox-header {
             float: right;
             width: calc(100vw - var(--menu-width));
-
-            &.closed {
-                transition: all .4s;
-                width: calc(100vw - var(--menu-closed-width));
-            }
         }
 
-        > .content {
+        > .corebox-content {
             background-color: var(--background-color);
             width: calc(100vw - var(--menu-width));
             height: calc(100vh - (50px + 40px));
@@ -97,7 +92,7 @@ html {
             left: var(--menu-width);
             top: var(--header-height);
 
-            &.closed {
+            &.corebox-closed {
                 left: var(--menu-closed-width);
                 width: calc(100vw - var(--menu-closed-width));
             }
@@ -119,9 +114,9 @@ html {
     }
 
     @media (max-width: 1280px) {
-        > .right {
+        > .corebox-right {
 
-            > .content {
+            > .corebox-content {
                 width: 100vw;
                 left: 0;
             }

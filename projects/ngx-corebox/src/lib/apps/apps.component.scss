@@ -28,7 +28,7 @@
         flex-direction: row;
         flex-wrap: wrap;
 
-        > .app {
+        > .corebox-app {
             align-items: center;
             border-radius: 3px;
             color: var(--menu-font-color);
@@ -64,7 +64,7 @@
 
         > .corebox-apps-content {
             
-            > .app {
+            > .corebox-app {
                 padding: 40px 0;
             }
         }

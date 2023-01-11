@@ -85,7 +85,7 @@ export class MenuComponent implements OnInit {
     }
 
     let navMenu = document.getElementById('nav-menu');
-    if (navMenu?.className === 'menu closed' && this.selectedMenu.children && window.innerWidth >= 1280) {
+    if (navMenu?.className === 'corebox-menu corebox-closed' && this.selectedMenu.children && window.innerWidth >= 1280) {
       let divSubmenu = document.getElementById('submenu');
       let itemDemenu = document.getElementById(`menu_${i}`);
       if (divSubmenu && itemDemenu) {
@@ -132,7 +132,7 @@ export class MenuComponent implements OnInit {
   }
 
   showDesktopSubMenuWithOpenedNav = (): boolean => {
-    return document.querySelectorAll('nav.menu.closed').length === 0;
+    return document.querySelectorAll('nav.corebox-menu.corebox-closed').length === 0;
   }
 
   closeSubMenu = (): void => {
