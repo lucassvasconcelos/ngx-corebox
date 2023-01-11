@@ -6,20 +6,19 @@ import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-menu',
-  templateUrl: './menu.component.html'
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
-  @Input() menuIsOpen: boolean = false;
+  @Input() menuClosed: boolean = false;
   @Input() menuItems: MenuItem[] = [];
   @Input() menuOptions: MenuOptions = new MenuOptions();
 
   @Output() alterarMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>;
 
-  menuSelecionado?: MenuItem;
-  submenuSelecionado?: MenuItem;
-  submenuAberto = false;
-  menuClicado = false;
+  selectedMenu?: MenuItem;
+  selectedSubMenu?: MenuItem;
+  menuClicked = false;
 
   constructor(public router: Router) { }
 
@@ -29,57 +28,64 @@ export class MenuComponent implements OnInit {
     if (itens.length > 0) {
       itens.forEach(item => item.opened = false);
       itens[0].opened = true;
-      this.menuSelecionado = itens[0];
+      this.selectedMenu = itens[0];
     }
 
     document.body.onclick = () => {
-      if (this.menuIsOpen && this.menuSelecionado && !this.menuClicado && this.menuSelecionado.opened) {
-        this.menuSelecionado.opened = false;
+      if (this.menuClosed && this.selectedMenu && !this.menuClicked && this.selectedMenu.opened) {
+        this.selectedMenu.opened = false;
       }
-      this.menuClicado = false;
+      this.menuClicked = false;
     }
   }
 
   useMenuClosedClass(): boolean {
-    return this.menuIsOpen && window.innerWidth > 1280;
+    return this.menuClosed && window.innerWidth > 1280;
   }
 
   useMenuOpenedClass(): boolean {
-    return this.menuIsOpen && window.innerWidth <= 1280;
+    return this.menuClosed && window.innerWidth <= 1280;
   }
 
   getBackgroundImage(): string {
     return `url(${this.menuOptions.backgroundImage})`;
   }
 
-  selecionarMenu(menu: MenuItem, i: number): void {
-    this.menuClicado = true;
+  selectMenu(menu: MenuItem, i: number): void {
+    this.menuClicked = true;
 
-    if (this.menuSelecionado) {
-      if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
-        this.submenuSelecionado = undefined
+    let divSubmenu = document.getElementById('submenu');
+
+    if (divSubmenu?.getAttribute("style")?.indexOf("display: block") !== -1) {
+      this.closeSubMenu();
+      return
+    }
+
+    if (this.selectedMenu) {
+      if (!this.selectedMenu.children || this.selectedMenu.children.length === 0) {
+        this.selectedSubMenu = undefined
       }
 
-      if (this.menuSelecionado === menu) {
-        this.menuSelecionado.opened = !this.menuSelecionado.opened;
+      if (this.selectedMenu === menu) {
+        this.selectedMenu.opened = !this.selectedMenu.opened;
       } else {
-        this.menuSelecionado.opened = false;
-        this.menuSelecionado = menu;
-        this.menuSelecionado.opened = true;
+        this.selectedMenu.opened = false;
+        this.selectedMenu = menu;
+        this.selectedMenu.opened = true;
       }
     } else {
-      this.menuSelecionado = menu;
-      this.menuSelecionado.opened = true;
+      this.selectedMenu = menu;
+      this.selectedMenu.opened = true;
     }
 
     if (window.innerWidth <= 1280) {
-      if (!this.menuSelecionado.children || this.menuSelecionado.children.length === 0) {
+      if (!this.selectedMenu.children || this.selectedMenu.children.length === 0) {
         this.alterarMenuEvent.emit(false);
       }
     }
 
     let navMenu = document.getElementById('nav-menu');
-    if (navMenu?.className === 'nav-menu closed' && this.menuSelecionado.children && window.innerWidth >= 1280) {
+    if (navMenu?.className === 'menu closed' && this.selectedMenu.children && window.innerWidth >= 1280) {
       let divSubmenu = document.getElementById('submenu');
       let itemDemenu = document.getElementById(`menu_${i}`);
       if (divSubmenu && itemDemenu) {
@@ -88,28 +94,30 @@ export class MenuComponent implements OnInit {
         divSubmenu.style.top = `${posicoesDoItemDeMenu.top}px`;
       }
     }
+
+    this.navigate(menu.url!);
   }
 
-  selecionarSubMenuMenu(submenu: MenuItem): void {
-    this.menuClicado = true;
+  selectSubMenu(submenu: MenuItem): void {
+    this.menuClicked = true;
 
-    if (this.submenuSelecionado) {
-      if (this.submenuSelecionado === submenu) {
-        this.submenuSelecionado.opened = !this.submenuSelecionado.opened;
+    if (this.selectedSubMenu) {
+      if (this.selectedSubMenu === submenu) {
+        this.selectedSubMenu.opened = !this.selectedSubMenu.opened;
       } else {
-        this.submenuSelecionado.opened = false;
-        this.submenuSelecionado = submenu;
-        this.submenuSelecionado.opened = true;
+        this.selectedSubMenu.opened = false;
+        this.selectedSubMenu = submenu;
+        this.selectedSubMenu.opened = true;
       }
     } else {
-      this.submenuSelecionado = submenu;
-      this.submenuSelecionado.opened = true;
+      this.selectedSubMenu = submenu;
+      this.selectedSubMenu.opened = true;
     }
-    if (this.menuIsOpen && this.menuSelecionado) {
-      this.menuSelecionado.opened = false;
+    if (this.menuClosed && this.selectedMenu) {
+      this.selectedMenu.opened = false;
     }
 
-    if (this.menuSelecionado?.children && window.innerWidth >= 1280) {
+    if (this.selectedMenu?.children && window.innerWidth >= 1280) {
       let divSubmenu = document.getElementById('submenu');
       if (divSubmenu) {
         divSubmenu.style.display = 'none';
@@ -119,10 +127,21 @@ export class MenuComponent implements OnInit {
     if (window.innerWidth <= 1280) {
       this.alterarMenuEvent.emit(false);
     }
+
+    this.navigate(submenu.url!);
   }
 
-  exibeSubmenuDesktopComNavAberta = (): boolean => {
+  showDesktopSubMenuWithOpenedNav = (): boolean => {
     return document.querySelectorAll('nav.menu.closed').length === 0;
+  }
+
+  closeSubMenu = (): void => {
+    if (window.innerWidth >= 1280) {
+      let divSubmenu = document.getElementById('submenu');
+      if (divSubmenu) {
+        divSubmenu.style.display = 'none';
+      }
+    }
   }
 
   navigate = (url: string): void => navigate(url, this.router);

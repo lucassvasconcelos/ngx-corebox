@@ -27,12 +27,12 @@ export class AppComponent {
     {
       selected: true,
       name: 'Light',
-      logotipo: '../assets/logo-desktop.png',
-      logotipoMobile: '../assets/logo-mobile.png',
+      logo: '../assets/logo-desktop.png',
+      logoMobile: '../assets/logo-mobile.png',
       backgroundColor: '#f9f9f9',
       header: {
-        backgroundColor: '#111111',
-        iconBackgroundColor: 'white',
+        backgroundColor1: 'black',
+        iconBackgroundColor: '#f9f9f9',
         iconFontColor: '#111111',
         borderShadowColor: '#00000040'
       },
@@ -55,11 +55,12 @@ export class AppComponent {
     {
       selected: true,
       name: 'Dark',
-      logotipo: '../assets/logo-desktop-black.png',
-      logotipoMobile: '../assets/logo-mobile-black.png',
+      logo: '../assets/logo-desktop-black.png',
+      logoMobile: '../assets/logo-mobile-black.png',
       backgroundColor: '#1b1e1f',
       header: {
-        backgroundColor: '#0d0e0e',
+        backgroundColor1: '#0d0e0e',
+        backgroundColor2: '#ffffff',
         iconBackgroundColor: '#dddad6',
         iconFontColor: '#0d0e0e',
         borderShadowColor: '#00000040'
@@ -83,282 +84,79 @@ export class AppComponent {
 
   appItems: AppItem[] = [
     {
-      title: 'App1',
+      title: 'App 1',
       url: '/url1',
       icon: 'th-large'
     },
     {
-      title: 'App2',
-      url: '/um',
+      title: 'App 2',
+      url: '/url2',
       icon: 'wallet'
     },
     {
-      title: 'App3',
-      url: '/dois',
+      title: 'App 3',
+      url: '/url3',
       icon: 'pen-to-square'
     },
     {
-      title: 'App4',
-      url: 'https://google.com',
-      icon: 'database'
-    },
-    {
-      title: 'App5',
+      title: 'App 4',
       url: '/url1',
-      icon: 'sack-dollar'
+      icon: 'th-large'
     },
     {
-      title: 'App6',
+      title: 'App 5',
       url: '/url2',
-      icon: 'users'
+      icon: 'wallet'
     },
     {
-      title: 'App7',
+      title: 'App 6',
       url: '/url3',
-      icon: 'dollar'
+      icon: 'pen-to-square'
     },
     {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
+      title: 'App 7',
+      url: '/url1',
+      icon: 'th-large'
     },
     {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
+      title: 'App 8',
+      url: '/url2',
+      icon: 'wallet'
     },
     {
-      title: 'App8',
+      title: 'App 9',
       url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
-    {
-      title: 'App7',
-      url: '/url3',
-      icon: 'dollar'
-    },
-    {
-      title: 'App8',
-      url: '/url3',
-      icon: 'headset'
-    },
+      icon: 'pen-to-square'
+    }
   ];
 
   menuItems: MenuItem[] = [
     {
-      title: 'Item 1',
-      url: '/um',
-      icon: 'th'
-    },
+      title: 'Menu 1',
+      url: '/url1',
+      icon: 'th',
+      children: [
+        {
+          title: 'SubMenu 1.1',
+          url: '/SubUrl1',
+          icon: 'font-awesome'
+        },
+        {
+          title: 'SubMenu 1.2',
+          url: '/SubUrl2',
+          icon: 'font-awesome'
+        },
+        {
+          title: 'SubMenu 1.3',
+          url: '/SubUrl3',
+          icon: 'font-awesome'
+        }
+      ]
+    } as MenuItem,
     {
-      title: 'Item 2',
-      url: '/dois',
+      title: 'Menu 2',
+      url: '/url2',
       icon: 'car-crash'
-    } as MenuItem,
-    {
-      title: 'Item 3',
-      url: 'https://google.com',
-      icon: 'dollar-sign'
-    } as MenuItem,
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 6',
-      url: '/url 5',
-      icon: 'tty'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    },
-    {
-      title: 'Item 4',
-      url: '/url3',
-      icon: 'car-battery'
-    },
-    {
-      title: 'Item 5',
-      url: '/url4',
-      icon: 'search'
-    }
+    } as MenuItem
   ];
 }

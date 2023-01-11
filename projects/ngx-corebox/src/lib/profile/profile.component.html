@@ -1,0 +1,28 @@
+<section class="corebox-profile" [ngClass]="{'d-block': showProfile, 'd-none': !showProfile}">
+    <div class="profile-content">
+        <ul>
+            <li class="li-profile-info">
+                <corebox-avatar [sessionName]="profileOptions?.userName" [pathToAvatarImage]="profileOptions?.avatarUrl" [size]="'lg'"></corebox-avatar>
+                <div class="profile-info">
+                    <div><strong>{{profileOptions?.userName}}</strong></div>
+                    <div>{{profileOptions?.companyName}}</div>
+                </div>
+            </li>
+            <li class="li-my-profile">
+                <a class="my-profile" (click)="openMyProfile()" *ngIf="profileUpdateExists()">
+                    <fa-icon [icon]="profileOptions?.profileIcon ?? 'font-awesome'"></fa-icon>
+                    <span>{{profileOptions?.profileLabel}}</span>
+                </a>
+            </li>
+            <li class="li-divisor">
+                <hr>
+            </li>
+            <li class="li-logout">
+                <a class="logout" (click)="logout()">
+                    <fa-icon [icon]="profileOptions?.logoutIcon ?? 'font-awesome'"></fa-icon>
+                    <span>{{profileOptions?.logoutLabel}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,22 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppItem } from '../types/app-item';
 
 @Component({
   selector: 'corebox-avatar',
-  templateUrl: './avatar.component.html'
+  templateUrl: './avatar.component.html',
+  styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent implements OnInit {
   @Input() sessionName?: string;
   @Input() pathToAvatarImage?: string;
+  @Input() size: string = 'sm';
 
-  public iniciais?: string;
+  public letters?: string;
 
   ngOnInit(): void {
     if (this.pathToAvatarImage === undefined || this.pathToAvatarImage === '')
-      this.iniciais = this.getFirstLettersOfEachName();
+      this.letters = this.getFirstLetterOfEachName();
   }
 
-  getFirstLettersOfEachName(): string | undefined {
+  getFirstLetterOfEachName(): string | undefined {
     if (this.sessionName) {
       const nameUppercase = this.sessionName.toUpperCase();
       const nameArray = nameUppercase.split(' ');
@@ -26,6 +27,7 @@ export class AvatarComponent implements OnInit {
       else
         return `${this.validateLetter(nameArray[0][0])}${this.validateLetter(nameArray[(nameArray.length - 1)][0])}`;
     }
+    
     return undefined;
   }
 
