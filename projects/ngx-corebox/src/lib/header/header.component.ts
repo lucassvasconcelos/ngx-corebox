@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppItem } from '../types/app-item';
 import { ProfileOptions } from '../types/profile-options';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-header',
@@ -19,6 +21,8 @@ export class HeaderComponent {
 
   @Output() menuStateEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() appsOpenedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     const localStorageItem = localStorage.getItem('menuClosed');

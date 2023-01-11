@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/menu-options';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-menu',
@@ -17,6 +19,8 @@ export class MenuComponent implements OnInit {
   selectedMenu?: MenuItem;
   selectedSubMenu?: MenuItem;
   menuClicked = false;
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     let itens = this.menuItems.filter(menu => menu.opened);
