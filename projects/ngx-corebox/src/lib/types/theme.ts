@@ -29,6 +29,7 @@ export class Theme {
     logo: string = '../assets/logo-desktop.png';
     logoMobile: string = '../assets/logo-mobile.png';
     backgroundColor: string = '#f9f9f9';
+    scrollColor: string = '#ed4b4b';
     header: Header = {
         backgroundColor1: '#111111',
         backgroundColor2: '#FFFFFF',

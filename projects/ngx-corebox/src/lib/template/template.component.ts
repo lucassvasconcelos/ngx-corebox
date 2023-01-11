@@ -29,6 +29,7 @@ export class TemplateComponent implements OnInit {
       document.documentElement.style.setProperty('--background-color', theme.backgroundColor);
       document.documentElement.style.setProperty('--header-background-color1', theme.header.backgroundColor1);
       document.documentElement.style.setProperty('--header-background-color2', (theme.header.backgroundColor2 === '' || theme.header.backgroundColor2 === null || theme.header.backgroundColor2 === undefined ? theme.header.backgroundColor1 : theme.header.backgroundColor2));
+      document.documentElement.style.setProperty('--scroll-color', theme.scrollColor);
       document.documentElement.style.setProperty('--header-icon--background-color', theme.header.iconBackgroundColor);
       document.documentElement.style.setProperty('--header-icon--font-color', theme.header.iconFontColor);
       document.documentElement.style.setProperty('--header-border-shadow-color', theme.header.borderShadowColor);

@@ -11,7 +11,7 @@ footer {
     left: var(--menu-width);
     transition: .2s;
 
-    &.closed {
+    &.corebox-closed {
         width: calc(100vw - var(--menu-closed-width));
         left: var(--menu-closed-width);
         transition: .4s;
