@@ -147,11 +147,17 @@ nav {
                     }
 
                     > ul {
+                        background-color: var(--menu-submenu-background-color);
+                        border-left: 4px solid var(--menu-border-left-color);
                         margin: 0;
                         list-style: none;
                         padding: 0;
                         max-height: 0;
                         overflow: hidden;
+                        transition: all .4s;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        -o-transition: all 0.4s;
 
                         &.show-submenu {
                             max-height: 100vh;
@@ -174,8 +180,8 @@ nav {
                                 -o-transition: all 0.4s;
 
                                 &.selectedSubMenu {
-                                    background-color: var(--menu-submenu-selected-background-color) !important;
-                                    color: var(--menu-font-hover-color) !important;
+                                    background-color: var(--menu-submenu-selected-background-color);
+                                    color: var(--menu-font-hover-color);
                                 }
         
                                 &:hover {
@@ -208,6 +214,7 @@ nav {
     width: 220px;
 
     > ul {
+        border-left: 4px solid var(--menu-border-left-color);
         margin: 0;
         list-style: none;
         padding: 0;
