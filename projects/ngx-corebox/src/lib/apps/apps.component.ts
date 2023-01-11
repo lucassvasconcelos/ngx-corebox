@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppItem } from '../types/app-item';
+import { navigate } from '../utils/navigate';
 
 @Component({
   selector: 'corebox-apps',
@@ -10,7 +12,7 @@ export class AppsComponent {
   @Input() appItems: AppItem[] = [];
   @Input() showApps: boolean = false;
 
-  navegar = (url: string): void => {
-    location.href = url;
-  }
+  constructor(public router: Router) { }
+
+  navigate = (url: string): void => navigate(url, this.router);
 }

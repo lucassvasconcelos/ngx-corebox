@@ -94,6 +94,8 @@ export class MenuComponent implements OnInit {
         divSubmenu.style.top = `${posicoesDoItemDeMenu.top}px`;
       }
     }
+
+    this.navigate(menu.url!);
   }
 
   selectSubMenu(submenu: MenuItem): void {
@@ -125,6 +127,8 @@ export class MenuComponent implements OnInit {
     if (window.innerWidth <= 1280) {
       this.alterarMenuEvent.emit(false);
     }
+
+    this.navigate(submenu.url!);
   }
 
   showDesktopSubMenuWithOpenedNav = (): boolean => {
@@ -139,5 +143,7 @@ export class MenuComponent implements OnInit {
       }
     }
   }
+
+  navigate = (url: string): void => navigate(url, this.router);
 
 }
