@@ -9,6 +9,7 @@
     --header-icon--background-color: #ffffff;
     --header-icon--font-color: #ffffff;
     --header-border-shadow-color: '#00000040';
+    --scroll-color: #ed4b4b;
 
     --menu-font-color: #000000;
     --menu-font-hover-color: #ed4b4b;
@@ -112,7 +113,7 @@ html {
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: var(--menu-border-left-color);
+                background-color: var(--scroll-color);
             }
         }
     }

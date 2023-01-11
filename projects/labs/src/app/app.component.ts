@@ -30,6 +30,7 @@ export class AppComponent {
       logo: '../assets/logo-desktop.png',
       logoMobile: '../assets/logo-mobile.png',
       backgroundColor: '#f9f9f9',
+      scrollColor: '#ed4b4b',
       header: {
         backgroundColor1: 'black',
         iconBackgroundColor: '#f9f9f9',
