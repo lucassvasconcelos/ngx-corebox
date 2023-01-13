@@ -129,7 +129,6 @@ Add the code bellow in your `app.component.html` and voilà:
     [menuItems]="menuItems"
     [appItems]="appItems"
 >
-    <router-outlet></router-outlet>
 </corebox-template>
 ```
 <p style="display:flex;justify-content:space-between;">
