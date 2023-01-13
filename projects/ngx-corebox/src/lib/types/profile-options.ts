@@ -9,5 +9,5 @@ export class ProfileOptions {
     profileIcon?: IconName;
     logoutLabel?: string;
     logoutIcon?: IconName;
-    lougoutEvent: () => void = () => console.log('Logout Event Trigged!');
+    lougoutEvent: () => void = () => alert('Logout Event Trigged!');
 }
