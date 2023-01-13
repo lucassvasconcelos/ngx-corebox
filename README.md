@@ -83,7 +83,7 @@ profileOptions = {
     profileLabel: '<Set profile label>',
     logoutIcon: '<Set icon based on font awesome icons>',
     logoutLabel: '<Set logout label>',
-    logoutUrl: '<Set logout url>'
+    logoutEvent: '<Set your arrow function for logout. Ex: logoutEvent: () => { myLogoutFunction(); } >'
 } as ProfileOptions;
 
 themes = [
