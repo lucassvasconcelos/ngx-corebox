@@ -19,6 +19,6 @@ export class ProfileComponent {
   }
 
   logout(): void {
-    this.profileOptions?.lougoutEvent();
+    this.profileOptions?.logoutEvent();
   }
 }
