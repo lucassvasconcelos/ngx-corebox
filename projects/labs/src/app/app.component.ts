@@ -19,7 +19,7 @@ export class AppComponent {
     profileLabel: 'Meu Perfil',
     logoutIcon: 'sign-out',
     logoutLabel: 'Sair',
-    logoutUrl: '/logout'
+    lougoutEvent: () => alert('Logout Event Trigged!')
   } as ProfileOptions;
   
 
