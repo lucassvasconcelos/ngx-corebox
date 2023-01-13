@@ -1,6 +1,6 @@
 {
   "name": "@kenkko.group/ngx-corebox",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A library with the base template your application needs. Built natively in angular and javascript only.",
   "repository": {
     "type": "git",
