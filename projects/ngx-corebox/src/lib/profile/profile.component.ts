@@ -19,6 +19,6 @@ export class ProfileComponent {
   }
 
   logout(): void {
-    location.href = this.profileOptions?.logoutUrl ?? '';
+    this.profileOptions?.lougoutEvent();
   }
 }
