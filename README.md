@@ -76,7 +76,7 @@ menuItems: MenuItem[] = [
 ];
 
 profileOptions = {
-    companyName: '<Set company name>',
+    companyName: '<Set profile company name>',
     userName: '<Set username>',
     profileUrl: '<Set profile update url>',
     profileIcon: '<Set icon based on font awesome icons>',
@@ -112,6 +112,7 @@ themes = [
       } as Menu,
       footer: {
         backgroundColor: '<Set your color theme>',
+        companyName: '<Set company name>',
         fontColor: '<Set your color theme>',
         borderTopColor: '<Set your color theme>'
       } as Footer

@@ -48,6 +48,7 @@ export class AppComponent {
         menuSelectedFontColor: '#ed4b4b'
       } as Menu,
       footer: {
+        companyName: 'Kenkko',
         backgroundColor: 'white',
         fontColor: '#111111',
         borderTopColor: '#e7eaec'
@@ -77,6 +78,7 @@ export class AppComponent {
       } as Menu,
       footer: {
         backgroundColor: '#181a1b',
+        companyName: 'Kenkko',
         fontColor: '#dddad6',
         borderTopColor: '#363b3d'
       } as Footer

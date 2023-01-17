@@ -57,6 +57,11 @@ export class TemplateComponent implements OnInit {
     return new MenuOptions();
   }
 
+  getCompanyName = (): string => {
+    let theme = this.themes.filter(theme => theme.selected)[0];
+    return theme?.footer?.companyName !== '' ? theme.footer.companyName : 'Company name';
+  }
+
   appsOpened($event: boolean): void {
     this.appsIsOpen = $event;
   }
