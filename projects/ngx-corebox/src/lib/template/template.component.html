@@ -12,6 +12,6 @@
         <section class="corebox-content" [ngClass]="{'corebox-closed': useClosedMenuClass()}" (click)="closeSubMenu()">
             <router-outlet></router-outlet>
         </section>
-        <corebox-footer [menuClosed]="menuClosed" [companyName]="profileOptions?.companyName"></corebox-footer>
+        <corebox-footer [menuClosed]="menuClosed" [companyName]="getCompanyName()"></corebox-footer>
     </div>
 </div>

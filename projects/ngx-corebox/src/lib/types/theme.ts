@@ -18,6 +18,7 @@ export class Menu {
 }
 
 export class Footer {
+    companyName: string = '';
     backgroundColor: string = '';
     fontColor: string = '';
     borderTopColor: string = '';
