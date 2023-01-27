@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -9,7 +10,10 @@ import { AppsComponent } from './apps/apps.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { ProfileComponent } from './profile/profile.component';
 
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { AppsButtonComponent } from './header/apps-button/apps-button.component';
 import { MenuButtonComponent } from './header/menu-button/menu-button.component';
@@ -24,13 +28,10 @@ import { MenuButtonComponent } from './header/menu-button/menu-button.component'
     TemplateComponent,
     AppsComponent,
     AvatarComponent,
-    ProfileComponent
+    ProfileComponent,
+    BreadcrumbComponent,
   ],
-  imports: [
-    CommonModule,
-    FontAwesomeModule,
-    RouterModule
-  ],
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [
     FooterComponent,
     HeaderComponent,
@@ -38,8 +39,9 @@ import { MenuButtonComponent } from './header/menu-button/menu-button.component'
     AppsComponent,
     AvatarComponent,
     ProfileComponent,
-    TemplateComponent
-  ]
+    TemplateComponent,
+    BreadcrumbComponent,
+  ],
 })
 export class NgxCoreboxModule {
   constructor(library: FaIconLibrary) {

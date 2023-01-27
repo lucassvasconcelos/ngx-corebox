@@ -4,17 +4,12 @@ import { NgxCoreboxModule } from 'ngx-corebox';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { ExampleComponent } from './components/example/example.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    NgxCoreboxModule
-  ],
+  declarations: [AppComponent, ExampleComponent],
+  imports: [AppRoutingModule, BrowserModule, NgxCoreboxModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
