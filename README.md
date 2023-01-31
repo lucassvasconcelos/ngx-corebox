@@ -12,7 +12,9 @@
     -   Footer;
     -   Profile settings;
     -   Apps menu;
-    -   Delimited content.
+    -   Delimited content;
+    -   Breadcrumb;
+    -   Modal.
 
 ## Roadmap
 
