@@ -2,7 +2,6 @@ header {
 	background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
 	font-weight: 400;
 	min-height: 55px;
-	padding-right: 22px;
 	position: fixed;
 	top: 0px;
 	left: var(--menu-width);
@@ -44,7 +43,6 @@ header {
 		background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
 		font-weight: 400;
 		min-height: 55px;
-		padding-right: 22px;
 		position: fixed;
 		top: 0px;
 		left: 0px;

@@ -13,10 +13,10 @@ export class AppComponent {
 
 	profileOptions = {
 		companyName: 'Kenkko Group',
-		userName: 'Severo Wayne',
+		userName: 'Sevéro Wayne',
 		profileUrl: '/profile',
 		profileIcon: 'user',
-		profileLabel: 'Meu Perfil',
+		profileLabel: 'My profile',
 		logoutIcon: 'sign-out',
 		logoutLabel: 'Sair',
 		logoutEvent: () => alert('Logout Event Trigged!')

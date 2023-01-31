@@ -6,7 +6,7 @@
 	position: absolute;
 	right: 0px;
 	top: 50px;
-	width: 200px;
+	width: 250px;
 
 	> .corebox-profile-content {
 		align-items: center;
@@ -29,6 +29,11 @@
 
 				> corebox-avatar {
 					margin: 0 0 16px 0;
+				}
+
+				> a {
+					color: var(--font-color);
+					text-decoration: none;
 				}
 
 				> .corebox-profile-info {

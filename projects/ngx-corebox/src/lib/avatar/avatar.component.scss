@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Noto Sans Mono');
+
 .corebox-avatar {
 	background-color: var(--header-icon--background-color);
 	border-radius: 50%;
+	font-family: 'Noto Sans Mono', monospace;
 
 	&.corebox-sm {
-		padding: 8px;
+		padding: 7px 9px;
 
 		span {
 			color: var(--header-icon--font-color);
@@ -17,7 +20,7 @@
 	}
 
 	&.corebox-lg {
-		padding: 20px;
+		padding: 15px 20px;
 
 		span {
 			color: var(--header-icon--font-color);

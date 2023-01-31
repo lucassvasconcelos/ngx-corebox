@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open Sans');
-@import url('https://fonts.googleapis.com/css?family=Open Sans');
 
 :root {
 	--background-color: #f9f9f9;
@@ -37,7 +36,7 @@ body {
 
 body,
 html {
-	font-family: 'Open Sans';
+	font-family: 'Open Sans', sans-serif;
 	font-size: var(--font-size);
 	margin: 0;
 	padding: 0;
