@@ -1,8 +1,18 @@
-<div class="modal-header">
-	<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-	<button type="button" class="btn-close" aria-label="Close"></button>
+<div class="corebox-modal-header" [style.background-color]="titleBackgroundColor">
+	<h1>
+		<fa-icon [icon]="titleIcon ?? 'font-awesome'" class="fa-sm" [style.color]="titleFontColor"></fa-icon>
+		<span [style.color]="titleFontColor">{{ title }}</span>
+	</h1>
+	<button class="btn btn-sm" (click)="close()">
+		<fa-icon [icon]="closeIcon ?? 'xmark'" class="fa-lg"></fa-icon>
+	</button>
 </div>
-<div class="modal-body"></div>
-<div class="modal-footer">
-	<button type="button" class="btn btn-outline-dark">Save</button>
+
+<div class="corebox-modal-content">
+	<p>{{ content }}</p>
+</div>
+
+<div class="corebox-modal-actions">
+	<button class="btn btn-outline-secondary" (click)="submit()" ngbAutofocus>{{ submitButtonText }}</button>
+	<button class="btn" [ngClass]="cancelButtonClass" (click)="close()">{{ cancelButtonText }}</button>
 </div>

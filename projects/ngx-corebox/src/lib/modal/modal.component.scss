@@ -1,0 +1,53 @@
+.corebox-modal-header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+
+	> h1 {
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 700;
+		margin: 0;
+
+		> span {
+			margin-left: 6px;
+		}
+	}
+
+	> button {
+		color: #ffffff;
+	}
+}
+
+.corebox-modal-content {
+	margin: 35px 20px 0 20px;
+
+	> p {
+		color: #000000c0;
+		font-size: 14px;
+		font-weight: 600;
+		margin: 0;
+	}
+}
+
+.corebox-modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	margin: 60px 20px 20px 20px;
+
+	> button {
+		color: #ffffff;
+		font-size: 14px;
+		font-weight: 600;
+
+		&:first-child {
+			color: #00000098;
+			margin-right: 10px;
+
+			&:hover {
+				color: #ffffff;
+			}
+		}
+	}
+}

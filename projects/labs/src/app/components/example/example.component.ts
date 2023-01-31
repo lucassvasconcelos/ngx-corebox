@@ -24,4 +24,12 @@ export class ExampleComponent {
 	showCoreBoxModal(modal: any): void {
 		this.modal.open(modal, { centered: true, size: 'lg' });
 	}
+
+	modalSubmit() {
+		this.toastr.info('Modal submit triggered!');
+	}
+
+	modalClose() {
+		this.toastr.info('Modal close triggered!');
+	}
 }

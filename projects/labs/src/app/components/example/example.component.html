@@ -11,5 +11,15 @@
 </div>
 
 <ng-template #modal let-modal>
-	<corebox-modal></corebox-modal>
+	<corebox-modal
+		[title]="'Title'"
+		[titleBackgroundColor]="'blue'"
+		[titleFontColor]="'green'"
+		[content]="'Content string'"
+		[cancelButtonClass]="'btn-primary'"
+		[cancelButtonText]="'Cancel'"
+		[submitButtonText]="'Submit'"
+		(submitEvent)="modalSubmit()"
+		(closeEvent)="modalClose()"
+	></corebox-modal>
 </ng-template>
