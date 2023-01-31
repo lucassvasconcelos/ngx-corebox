@@ -1,9 +1,8 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppItem } from '../types/app-item';
 import { MenuItem } from '../types/menu-item';
-import { MenuOptions } from '../types/menu-options';
 import { ProfileOptions } from '../types/profile-options';
-import { Theme } from '../types/theme';
+import { MenuOptions, Theme } from '../types/theme';
 
 @Component({
 	selector: 'corebox-template',
@@ -16,7 +15,7 @@ export class TemplateComponent implements OnInit {
 	@Input() pathToAvatarImage: string = '';
 	@Input() menuItems: MenuItem[] = [];
 	@Input() appItems: AppItem[] = [];
-	@Input() menuOptions: MenuOptions = new MenuOptions();
+	@Input() menuOptions: MenuOptions;
 	@Input() profileOptions?: ProfileOptions;
 
 	menuClosed: boolean = true;
@@ -54,12 +53,7 @@ export class TemplateComponent implements OnInit {
 
 	getMenuOptions = (): MenuOptions => {
 		let theme = this.themes.filter((theme) => theme.selected)[0];
-		if (theme)
-			return {
-				logotipo: theme.logo,
-				logotipoMobile: theme.logoMobile
-			} as MenuOptions;
-		return new MenuOptions();
+		return theme.menuOptions;
 	};
 
 	getCompanyName = (): string => {

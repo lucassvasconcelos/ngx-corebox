@@ -47,7 +47,11 @@
 						"tsConfig": "projects/labs/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": ["projects/labs/src/favicon.ico", "projects/labs/src/assets"],
-						"styles": ["projects/labs/src/styles.scss"],
+						"styles": [
+							"projects/labs/src/styles.scss",
+							"node_modules/ngx-spinner/animations/ball-clip-rotate.css",
+							"node_modules/ngx-toastr/toastr.css"
+						],
 						"scripts": []
 					},
 					"configurations": {

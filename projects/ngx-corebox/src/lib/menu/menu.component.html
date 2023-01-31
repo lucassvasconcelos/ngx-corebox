@@ -1,19 +1,14 @@
 <nav id="menu" [ngClass]="{ 'corebox-closed': useMenuClosedClass(), 'corebox-opened': useMenuOpenedClass() }">
 	<div class="corebox-nav-content" [ngClass]="{ 'corebox-opened': useMenuOpenedClass() }">
-		<div
-			class="corebox-logo"
-			[ngClass]="{ 'corebox-closed': useMenuClosedClass() }"
-			[ngSwitch]="useMenuClosedClass()"
-			*ngIf="menuOptions.logotipo"
-		>
-			<img *ngSwitchCase="false" class="corebox-desktop" [src]="menuOptions.logotipo" alt="Company logo" />
-			<img *ngSwitchCase="true" class="corebox-mobile" [src]="menuOptions.logotipoMobile" alt="Small Company logo" />
+		<div class="corebox-logo" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }" [ngSwitch]="useMenuClosedClass()" *ngIf="menuOptions.logo">
+			<img *ngSwitchCase="false" class="corebox-desktop" [src]="menuOptions.logo" alt="Company logo" />
+			<img *ngSwitchCase="true" class="corebox-mobile" [src]="menuOptions.logoMobile" alt="Small Company logo" />
 		</div>
 		<div class="corebox-menu" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }">
 			<ul>
 				<li id="menu_{{ i }}" *ngFor="let menuItem of menuItems; let i = index">
 					<a
-						*ngIf="!menuItem.children"
+						*ngIf="!menuItem.children && menuItem.show"
 						(click)="this.selectMenu(menuItem, i)"
 						routerLinkActive="active"
 						[ngClass]="{ 'corebox-selected': menuItem === selectedMenu, 'corebox-closed': useMenuClosedClass() }"
@@ -27,7 +22,7 @@
 					</a>
 
 					<a
-						*ngIf="menuItem.children"
+						*ngIf="menuItem.children && menuItem.show"
 						routerLinkActive="active"
 						(click)="this.selectMenu(menuItem, i)"
 						[ngClass]="{ 'corebox-selected': menuItem === selectedMenu, 'corebox-closed': useMenuClosedClass() }"
@@ -47,6 +42,7 @@
 					<ul [ngClass]="{ 'corebox-show-submenu': menuItem.opened && showDesktopSubMenuWithOpenedNav() && !useMenuClosedClass() }">
 						<li *ngFor="let subMenuItem of menuItem.children">
 							<a
+								*ngIf="subMenuItem.show"
 								routerLinkActive="active"
 								(click)="selectSubMenu(subMenuItem)"
 								[ngClass]="{

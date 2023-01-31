@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { ProfileOptions } from 'dist/ngx-corebox/lib/types/profile-options';
-import { Footer, Menu, Theme } from 'dist/ngx-corebox/lib/types/theme';
-import { AppItem, MenuItem } from 'ngx-corebox';
+import { AppItem, Footer, Header, Menu, MenuItem, MenuOptions, Theme } from 'ngx-corebox';
+import { ProfileOptions } from 'projects/ngx-corebox/src/public-api';
 
 @Component({
 	selector: 'app-root',
@@ -11,154 +10,43 @@ import { AppItem, MenuItem } from 'ngx-corebox';
 export class AppComponent {
 	title = 'labs';
 
-	profileOptions = {
-		companyName: 'Kenkko Group',
-		userName: 'Sevéro Wayne',
-		profileUrl: '/profile',
-		profileIcon: 'user',
-		profileLabel: 'My profile',
-		logoutIcon: 'sign-out',
-		logoutLabel: 'Sair',
-		logoutEvent: () => alert('Logout Event Trigged!')
-	} as ProfileOptions;
+	profileOptions = new ProfileOptions(
+		() => alert('Logout Event Trigged!'),
+		'Logout',
+		'Sevéro Wayne',
+		'sign-out',
+		'Kenkko Group',
+		'',
+		'/profile',
+		'My profile',
+		'user'
+	);
 
-	themes = [
-		{
-			selected: true,
-			name: 'Light',
-			logo: '../assets/logo-desktop.png',
-			logoMobile: '../assets/logo-mobile.png',
-			backgroundColor: '#f9f9f9',
-			scrollColor: '#ed4b4b',
-			header: {
-				backgroundColor1: 'black',
-				iconBackgroundColor: '#f9f9f9',
-				iconFontColor: '#111111',
-				borderShadowColor: '#00000040'
-			},
-			menu: {
-				fontColor: '#111111',
-				fontHoverColor: '#ed4b4b',
-				backgroundColor: '#ffffff',
-				backgroundHoverColor: '#11111114',
-				borderLeftColor: '#ed4b4b',
-				subMenuBackgroundColor: '#dedede',
-				subMenuSelectedBackgroundColor: '#e0e0e0',
-				menuSelectedFontColor: '#ed4b4b'
-			} as Menu,
-			footer: {
-				companyName: 'Kenkko',
-				backgroundColor: 'white',
-				fontColor: '#111111',
-				borderTopColor: '#e7eaec'
-			} as Footer
-		} as Theme,
-		{
-			selected: true,
-			name: 'Dark',
-			logo: '../assets/logo-desktop-black.png',
-			logoMobile: '../assets/logo-mobile-black.png',
-			backgroundColor: '#1b1e1f',
-			header: {
-				backgroundColor1: '#0d0e0e',
-				backgroundColor2: '#ffffff',
-				iconBackgroundColor: '#dddad6',
-				iconFontColor: '#0d0e0e',
-				borderShadowColor: '#00000040'
-			},
-			menu: {
-				fontColor: '#dddad6',
-				fontHoverColor: '#ee5353',
-				backgroundColor: '#181a1b',
-				backgroundHoverColor: '#0d0e0ebd',
-				borderLeftColor: '#930f0f',
-				subMenuSelectedBackgroundColor: '#0d0e0ee0',
-				menuSelectedFontColor: '#ee5353'
-			} as Menu,
-			footer: {
-				backgroundColor: '#181a1b',
-				companyName: 'Kenkko',
-				fontColor: '#dddad6',
-				borderTopColor: '#363b3d'
-			} as Footer
-		} as Theme
+	themes: Theme[] = [
+		new Theme(
+			true,
+			'Default',
+			'#f9f9f9',
+			'#ed4b4b',
+			new Header(),
+			new Menu(),
+			new Footer('Kenkko'),
+			new MenuOptions('', '../assets/logo-desktop.png', '../assets/logo-mobile.png')
+		)
 	];
 
-	appItems: AppItem[] = [
-		{
-			title: 'App 1',
-			url: '/url1',
-			icon: 'th-large'
-		},
-		{
-			title: 'App 2',
-			url: '/url2',
-			icon: 'wallet'
-		},
-		{
-			title: 'App 3',
-			url: '/url3',
-			icon: 'pen-to-square'
-		},
-		{
-			title: 'App 4',
-			url: '/url1',
-			icon: 'th-large'
-		},
-		{
-			title: 'App 5',
-			url: '/url2',
-			icon: 'wallet'
-		},
-		{
-			title: 'App 6',
-			url: '/url3',
-			icon: 'pen-to-square'
-		},
-		{
-			title: 'App 7',
-			url: '/url1',
-			icon: 'th-large'
-		},
-		{
-			title: 'App 8',
-			url: '/url2',
-			icon: 'wallet'
-		},
-		{
-			title: 'App 9',
-			url: '/url3',
-			icon: 'pen-to-square'
-		}
-	];
+	appItems: AppItem[] = [new AppItem('App 1', '/url1')];
 
 	menuItems: MenuItem[] = [
-		{
-			title: 'Menu 1',
-			url: '/url1',
-			icon: 'th',
-			children: [
-				{
-					title: 'SubMenu 1.1',
-					url: '/SubUrl1',
-					icon: 'font-awesome'
-				},
-				{
-					title: 'SubMenu 1.2',
-					url: '/SubUrl2',
-					icon: 'font-awesome'
-				},
-				{
-					title: 'SubMenu 1.3',
-					url: '/SubUrl3',
-					icon: 'font-awesome'
-				}
-			]
-		} as MenuItem,
-		{
-			title: 'Menu 2',
-			url: '/url2',
-			icon: 'car-crash'
-		} as MenuItem
+		new MenuItem('/url1', 'Menu 1', [
+			new MenuItem('/submenu1', 'SubMenu 1.1'),
+			new MenuItem('/submenu1', 'SubMenu 1.2'),
+			new MenuItem('/submenu1', 'Hidden SubMenu 1.3', null, false),
+			new MenuItem('/submenu1', 'SubMenu 1.4')
+		]),
+		new MenuItem(() => {
+			alert('Menu event');
+		}, 'Menu 2'),
+		new MenuItem('', 'Hidden Menu 3', null, false)
 	];
 }

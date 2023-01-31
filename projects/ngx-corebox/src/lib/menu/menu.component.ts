@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
-import { MenuOptions } from '../types/menu-options';
+import { MenuOptions } from '../types/theme';
 import { navigate } from '../utils/navigate';
 
 @Component({
@@ -12,7 +12,7 @@ import { navigate } from '../utils/navigate';
 export class MenuComponent implements OnInit {
 	@Input() menuClosed: boolean = false;
 	@Input() menuItems: MenuItem[] = [];
-	@Input() menuOptions: MenuOptions = new MenuOptions();
+	@Input() menuOptions: MenuOptions;
 
 	@Output() alterarMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -95,7 +95,7 @@ export class MenuComponent implements OnInit {
 			}
 		}
 
-		this.navigate(menu.url!);
+		this.navigate(menu.url);
 	}
 
 	selectSubMenu(submenu: MenuItem): void {
@@ -144,5 +144,11 @@ export class MenuComponent implements OnInit {
 		}
 	};
 
-	navigate = (url: string): void => navigate(url, this.router);
+	navigate = (url: string | (() => void)): void => {
+		if (typeof url === 'string') {
+			navigate(url, this.router);
+		} else {
+			url();
+		}
+	};
 }

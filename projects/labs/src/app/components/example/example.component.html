@@ -1,1 +1,15 @@
-<corebox-breadcrumb [text]="'Your are at <b>Example</b>'"></corebox-breadcrumb>
+<corebox-breadcrumb [text]="'Your are at <b>Example</b> and this is the breadcrumb component'"></corebox-breadcrumb>
+
+<div class="items">
+	<div class="d-flex buttons">
+		<button class="btn btn-outline-primary" (click)="showToastr()">Use toastr</button>
+		<button class="btn btn-outline-primary" (click)="showSpinner()">Use spinner</button>
+		<button class="btn btn-outline-primary" (click)="showCoreBoxModal(modal)">Use corebox-modal</button>
+	</div>
+
+	<div class="mt-4">Ngx-Mask: {{ '11999999999' | mask : '(00) 00000-0000' }}</div>
+</div>
+
+<ng-template #modal let-modal>
+	<corebox-modal></corebox-modal>
+</ng-template>

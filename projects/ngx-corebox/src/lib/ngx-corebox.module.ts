@@ -14,6 +14,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { AppsButtonComponent } from './header/apps-button/apps-button.component';
 import { MenuButtonComponent } from './header/menu-button/menu-button.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { MenuButtonComponent } from './header/menu-button/menu-button.component'
 		AppsComponent,
 		AvatarComponent,
 		ProfileComponent,
-		BreadcrumbComponent
+		BreadcrumbComponent,
+		ModalComponent
 	],
 	imports: [CommonModule, FontAwesomeModule, RouterModule],
 	exports: [
@@ -37,7 +39,8 @@ import { MenuButtonComponent } from './header/menu-button/menu-button.component'
 		AvatarComponent,
 		ProfileComponent,
 		TemplateComponent,
-		BreadcrumbComponent
+		BreadcrumbComponent,
+		ModalComponent
 	]
 })
 export class NgxCoreboxModule {

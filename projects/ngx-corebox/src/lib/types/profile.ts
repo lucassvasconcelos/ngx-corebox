@@ -1,4 +1,3 @@
 export class ProfileOptions {
-	url?: string;
-	logout?: string;
+	constructor(public url: string, public logout: string) {}
 }

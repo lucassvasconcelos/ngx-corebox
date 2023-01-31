@@ -14,5 +14,11 @@ export class AppsComponent {
 
 	constructor(public router: Router) {}
 
-	navigate = (url: string): void => navigate(url, this.router);
+	navigate = (url: string | (() => void)): void => {
+		if (typeof url === 'string') {
+			navigate(url, this.router);
+		} else {
+			url();
+		}
+	};
 }
