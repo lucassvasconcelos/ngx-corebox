@@ -14,6 +14,9 @@ export { MenuItem } from './lib/types/menu-item';
 export { Header, Menu, MenuOptions, Footer, Theme } from './lib/types/theme';
 export { ProfileOptions } from './lib/types/profile-options';
 
+export * from '@fortawesome/angular-fontawesome';
+export * from '@fortawesome/fontawesome-svg-core';
+export * from '@fortawesome/free-solid-svg-icons';
 export * from '@ng-bootstrap/ng-bootstrap';
 export * from 'keycloak-angular';
 export * from 'ngx-mask';
