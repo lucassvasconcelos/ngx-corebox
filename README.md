@@ -6,20 +6,19 @@
 
 ## Features
 
-- Responsive base template with 
-    - Menu;
-    - Header;
-    - Footer;
-    - Profile settings;
-    - Apps menu;
-    - Delimited content.
+-   Responsive base template with
+    -   Menu;
+    -   Header;
+    -   Footer;
+    -   Profile settings;
+    -   Apps menu;
+    -   Delimited content.
 
 ## Roadmap
 
-- Template selection
-- Notifications
-- Switch font-size
-
+-   Template selection
+-   Notifications
+-   Switch font-size
 
 ## Install
 
@@ -28,6 +27,7 @@ npm i @kenkko.group/ngx-corebox
 ```
 
 Import `NgxCoreboxModule` in in the root module(`AppModule`):
+
 ```js
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -35,13 +35,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxCoreboxModule } from 'ngx-corebox';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    NgxCoreboxModule
-  ]
+	imports: [BrowserModule, NgxCoreboxModule]
 })
-export class AppModule { }
-
+export class AppModule {}
 ```
 
 ## Usage
@@ -120,18 +116,12 @@ themes = [
   ];
 ```
 
-
 Add the code bellow in your `app.component.html` and voilà:
 
 ```html
-<corebox-template
-    [themes]="themes"
-    [profileOptions]="profileOptions"
-    [menuItems]="menuItems"
-    [appItems]="appItems"
->
-</corebox-template>
+<corebox-template [themes]="themes" [profileOptions]="profileOptions" [menuItems]="menuItems" [appItems]="appItems"> </corebox-template>
 ```
+
 <p style="display:flex;justify-content:space-between;">
     <img style="width:800px" src="./projects/labs/src/assets/desktop.png">
     <img style="width:200px" src="./projects/labs/src/assets/mobile.png">
@@ -139,25 +129,28 @@ Add the code bellow in your `app.component.html` and voilà:
 
 ## How to run
 
-- Clone the repository
+-   Clone the repository
 
-- Go to project root folder
+-   Go to project root folder
 
-- Install dependencies
-    ```bash 
+-   Install dependencies
+
+    ```bash
     npm i
     ```
 
-- Open 2 terminals and run
-    ```bash 
+-   Open 2 terminals and run
+
+    ```bash
     npm run watch ngx-corebox
 
     npm start labs
     ```
 
-- Open your browser at http://localhost:4200
+-   Open your browser at http://localhost:4200
 
 **Thanks for contributions <3**
+
 ## License
 
 ngx-corebox is [MIT licensed](./LICENSE).

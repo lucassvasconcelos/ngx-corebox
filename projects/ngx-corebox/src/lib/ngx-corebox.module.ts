@@ -10,41 +10,38 @@ import { AppsComponent } from './apps/apps.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { ProfileComponent } from './profile/profile.component';
 
-import {
-  FontAwesomeModule,
-  FaIconLibrary,
-} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { AppsButtonComponent } from './header/apps-button/apps-button.component';
 import { MenuButtonComponent } from './header/menu-button/menu-button.component';
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    AppsButtonComponent,
-    MenuButtonComponent,
-    HeaderComponent,
-    MenuComponent,
-    TemplateComponent,
-    AppsComponent,
-    AvatarComponent,
-    ProfileComponent,
-    BreadcrumbComponent,
-  ],
-  imports: [CommonModule, FontAwesomeModule, RouterModule],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-    MenuComponent,
-    AppsComponent,
-    AvatarComponent,
-    ProfileComponent,
-    TemplateComponent,
-    BreadcrumbComponent,
-  ],
+	declarations: [
+		FooterComponent,
+		AppsButtonComponent,
+		MenuButtonComponent,
+		HeaderComponent,
+		MenuComponent,
+		TemplateComponent,
+		AppsComponent,
+		AvatarComponent,
+		ProfileComponent,
+		BreadcrumbComponent
+	],
+	imports: [CommonModule, FontAwesomeModule, RouterModule],
+	exports: [
+		FooterComponent,
+		HeaderComponent,
+		MenuComponent,
+		AppsComponent,
+		AvatarComponent,
+		ProfileComponent,
+		TemplateComponent,
+		BreadcrumbComponent
+	]
 })
 export class NgxCoreboxModule {
-  constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas);
-  }
+	constructor(library: FaIconLibrary) {
+		library.addIconPacks(fas);
+	}
 }

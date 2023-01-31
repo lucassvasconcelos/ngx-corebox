@@ -1,55 +1,55 @@
 header {
-    background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
-    font-weight: 400;
-    min-height: 55px;
-    padding-right: 22px;
-    position: fixed;
-    top: 0px;
-    left: var(--menu-width);
-    width: calc(100vw - var(--menu-width));
-    z-index: 1;
-    transition: .4s;
+	background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
+	font-weight: 400;
+	min-height: 55px;
+	padding-right: 22px;
+	position: fixed;
+	top: 0px;
+	left: var(--menu-width);
+	width: calc(100vw - var(--menu-width));
+	z-index: 1;
+	transition: 0.4s;
 
-    &.corebox-closed {
-        left: var(--menu-closed-width);
-        width: calc(100vw - var(--menu-closed-width));
-    }
+	&.corebox-closed {
+		left: var(--menu-closed-width);
+		width: calc(100vw - var(--menu-closed-width));
+	}
 
-    > .corebox-header-content {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        min-height: 55px;
-        padding: 0 15px;
-        padding-right: 20px;
+	> .corebox-header-content {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		min-height: 55px;
+		padding: 0 15px;
+		padding-right: 20px;
 
-        > .corebox-apps-and-profile {
-            align-items: center;
-            display: flex;
-            flex-direction: row;
-            position: relative;
-            
-            > .corebox-profile {
-                margin: 0 0 0 20px;
+		> .corebox-apps-and-profile {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			position: relative;
 
-                > corebox-avatar {
-                    cursor: pointer;
-                }
-            }
-        }
-    }
+			> .corebox-profile {
+				margin: 0 0 0 20px;
 
-    @media (max-width: 1280px) {
-        background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
-        font-weight: 400;
-        min-height: 55px;
-        padding-right: 22px;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100vw;
-        z-index: 1;
-        transition: .2s;
-    }
+				> corebox-avatar {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1280px) {
+		background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
+		font-weight: 400;
+		min-height: 55px;
+		padding-right: 22px;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100vw;
+		z-index: 1;
+		transition: 0.2s;
+	}
 }

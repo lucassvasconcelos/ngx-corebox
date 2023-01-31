@@ -1,4 +1,4 @@
 export class ProfileOptions {
-    url?: string;
-    logout?: string;
+	url?: string;
+	logout?: string;
 }
