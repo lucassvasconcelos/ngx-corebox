@@ -1,34 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Noto Sans Mono');
+
 .corebox-avatar {
-    background-color: var(--header-icon--background-color);
-    border-radius: 50%;
-    
+	background-color: var(--header-icon--background-color);
+	border-radius: 50%;
+	font-family: 'Noto Sans Mono', monospace;
 
-    &.corebox-sm {
-        padding: 8px;
+	&.corebox-sm {
+		padding: 7px 9px;
 
-        span {
-            color: var(--header-icon--font-color);
-            font-weight: 600;
-        }
-    
-        img {
-            border-radius: 50%;
-            height: 32px;
-        }
-    }
+		span {
+			color: var(--header-icon--font-color);
+			font-weight: 600;
+		}
 
-    &.corebox-lg {
-        padding: 20px;
+		img {
+			border-radius: 50%;
+			height: 32px;
+		}
+	}
 
-        span {
-            color: var(--header-icon--font-color);
-            font-weight: 600;
-            font-size: 30px;
-        }
-    
-        img {
-            border-radius: 50%;
-            height: 32px;
-        }
-    }
+	&.corebox-lg {
+		padding: 15px 20px;
+
+		span {
+			color: var(--header-icon--font-color);
+			font-weight: 600;
+			font-size: 30px;
+		}
+
+		img {
+			border-radius: 50%;
+			height: 32px;
+		}
+	}
 }

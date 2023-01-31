@@ -1,11 +1,13 @@
-import { IconName } from "@fortawesome/free-solid-svg-icons";
+import { IconName } from '@fortawesome/free-solid-svg-icons';
 
 export class MenuItem {
-    url?: string;
-    queryParams?: any;
-    icon?: IconName = 'font-awesome';
-    title?: string;
-    children?: MenuItem[];
-    allowedRoles?: string[];
-    opened?: boolean = false;
+	constructor(
+		public url: string | (() => void),
+		public title: string,
+		public children: MenuItem[] = null,
+		public show: boolean = true,
+		public queryParams: any = null,
+		public icon: IconName = 'font-awesome',
+		public opened: boolean = false
+	) {}
 }

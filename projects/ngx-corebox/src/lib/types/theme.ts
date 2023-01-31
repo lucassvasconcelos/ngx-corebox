@@ -1,56 +1,48 @@
 export class Header {
-    backgroundColor1: string = '';
-    backgroundColor2: string = '';
-    iconBackgroundColor: string = '';
-    iconFontColor: string = '';
-    borderShadowColor: string = '';
+	constructor(
+		public backgroundColor1: string = 'black',
+		public backgroundColor2: string = 'black',
+		public iconBackgroundColor: string = '#f9f9f9',
+		public iconFontColor: string = '#111111',
+		public borderShadowColor: string = '#00000040'
+	) {}
 }
 
 export class Menu {
-    backgroundColor: string = '';
-    backgroundHoverColor: string = '';
-    fontColor: string = '';
-    fontHoverColor: string = '';
-    borderLeftColor: string = '';
-    subMenuBackgroundColor: string = '';
-    subMenuSelectedBackgroundColor: string = '';
-    menuSelectedFontColor: string = '';
+	constructor(
+		public backgroundColor: string = '#ffffff',
+		public backgroundHoverColor: string = '#11111114',
+		public fontColor: string = '#111111',
+		public fontHoverColor: string = '#ed4b4b',
+		public borderLeftColor: string = '#ed4b4b',
+		public subMenuBackgroundColor: string = '#dedede',
+		public subMenuSelectedBackgroundColor: string = '#e0e0e0',
+		public menuSelectedFontColor: string = '#ed4b4b'
+	) {}
+}
+
+export class MenuOptions {
+	constructor(public backgroundImage: string = '', public logo: string = '', public logoMobile: string = '') {}
 }
 
 export class Footer {
-    companyName: string = '';
-    backgroundColor: string = '';
-    fontColor: string = '';
-    borderTopColor: string = '';
+	constructor(
+		public companyName: string,
+		public backgroundColor: string = 'white',
+		public fontColor: string = '#111111',
+		public borderTopColor: string = '#e7eaec'
+	) {}
 }
 
 export class Theme {
-    selected: boolean = true;
-    name: string = 'Light';
-    logo: string = '../assets/logo-desktop.png';
-    logoMobile: string = '../assets/logo-mobile.png';
-    backgroundColor: string = '#f9f9f9';
-    scrollColor: string = '#ed4b4b';
-    header: Header = {
-        backgroundColor1: '#111111',
-        backgroundColor2: '#FFFFFF',
-        iconBackgroundColor: 'white',
-        iconFontColor: '#111111',
-        borderShadowColor: '#00000040'
-    } as Header;
-    menu: Menu = {
-        fontColor: '#111111',
-        fontHoverColor: '#ed4b4b',
-        backgroundColor: '#ffffff',
-        backgroundHoverColor: '#11111114',
-        borderLeftColor: '#ed4b4b',
-        subMenuBackgroundColor: '#dedede',
-        subMenuSelectedBackgroundColor: '#e0e0e0',
-        menuSelectedFontColor: '#ed4b4b'
-    } as Menu;
-    footer: Footer = {
-        backgroundColor: 'white',
-        fontColor: '#111111',
-        borderTopColor: '#e7eaec'
-    } as Footer;
+	constructor(
+		public selected: boolean,
+		public name: string,
+		public backgroundColor: string,
+		public scrollColor: string,
+		public header: Header,
+		public menu: Menu,
+		public footer: Footer,
+		public menuOptions: MenuOptions = new MenuOptions()
+	) {}
 }

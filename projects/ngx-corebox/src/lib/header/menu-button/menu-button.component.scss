@@ -1,24 +1,24 @@
 .corebox-menu-button {
-    > button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 10px 0 11px 9px;
+	> button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 10px 0 11px 9px;
 
-        > span {
-            background-color: var(--header-icon--background-color);
-            display: block;
-            height: 3px;
-            margin-bottom: 4px;
-            width: 22px;
+		> span {
+			background-color: var(--header-icon--background-color);
+			display: block;
+			height: 3px;
+			margin-bottom: 4px;
+			width: 22px;
 
-            &:last-child {
-                background-color: var(--header-icon--background-color);
-                display: block;
-                height: 3px;
-                margin-bottom: 0;
-                width: 22px;
-            }
-        }
-    }
+			&:last-child {
+				background-color: var(--header-icon--background-color);
+				display: block;
+				height: 3px;
+				margin-bottom: 0;
+				width: 22px;
+			}
+		}
+	}
 }

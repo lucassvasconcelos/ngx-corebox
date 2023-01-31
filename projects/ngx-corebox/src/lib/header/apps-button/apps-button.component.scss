@@ -1,34 +1,33 @@
 .corebox-apps-button {
-    
-    > button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 5px;
-        width: 30px;
+	> button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 5px;
+		width: 30px;
 
-        > span {
-            background-color: var(--header-icon--background-color);
-            display: block;
-            height: 4px;
-            margin-right: 4px;
-            margin-bottom: 4px;
-            width: 4px;
+		> span {
+			background-color: var(--header-icon--background-color);
+			display: block;
+			height: 4px;
+			margin-right: 4px;
+			margin-bottom: 4px;
+			width: 4px;
 
-            &:nth-child(3),
-            &:nth-child(6),
-            &:nth-child(9) {
-                margin-right: 0;
-            }
+			&:nth-child(3),
+			&:nth-child(6),
+			&:nth-child(9) {
+				margin-right: 0;
+			}
 
-            &:nth-child(7),
-            &:nth-child(8),
-            &:nth-child(9) {
-                margin-bottom: 0;
-            }
-        }
-    }
+			&:nth-child(7),
+			&:nth-child(8),
+			&:nth-child(9) {
+				margin-bottom: 0;
+			}
+		}
+	}
 }

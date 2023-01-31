@@ -1,37 +1,34 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'corebox-avatar',
-  templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.scss']
+	selector: 'corebox-avatar',
+	templateUrl: './avatar.component.html',
+	styleUrls: ['./avatar.component.scss']
 })
 export class AvatarComponent implements OnInit {
-  @Input() sessionName?: string;
-  @Input() pathToAvatarImage?: string;
-  @Input() size: string = 'corebox-sm';
+	@Input() sessionName?: string;
+	@Input() pathToAvatarImage?: string;
+	@Input() size: string = 'corebox-sm';
 
-  public letters?: string;
+	public letters?: string;
 
-  ngOnInit(): void {
-    if (this.pathToAvatarImage === undefined || this.pathToAvatarImage === '')
-      this.letters = this.getFirstLetterOfEachName();
-  }
+	ngOnInit(): void {
+		if (this.pathToAvatarImage === undefined || this.pathToAvatarImage === '') this.letters = this.getFirstLetterOfEachName();
+	}
 
-  getFirstLetterOfEachName(): string | undefined {
-    if (this.sessionName) {
-      const nameUppercase = this.sessionName.toUpperCase();
-      const nameArray = nameUppercase.split(' ');
+	getFirstLetterOfEachName(): string | undefined {
+		if (this.sessionName) {
+			const nameUppercase = this.sessionName.toUpperCase();
+			const nameArray = nameUppercase.split(' ');
 
-      if (nameArray.length == 1)
-        return `${this.validateLetter(nameArray[0][0])}`;
-      else
-        return `${this.validateLetter(nameArray[0][0])}${this.validateLetter(nameArray[(nameArray.length - 1)][0])}`;
-    }
-    
-    return undefined;
-  }
+			if (nameArray.length == 1) return `${this.validateLetter(nameArray[0][0])}`;
+			else return `${this.validateLetter(nameArray[0][0])}${this.validateLetter(nameArray[nameArray.length - 1][0])}`;
+		}
 
-  validateLetter(letter: string): string {
-    return letter === undefined ? '-' : letter;
-  }
+		return undefined;
+	}
+
+	validateLetter(letter: string): string {
+		return letter === undefined ? '-' : letter;
+	}
 }

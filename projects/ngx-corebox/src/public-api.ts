@@ -7,10 +7,15 @@ export * from './lib/apps/apps.component';
 export * from './lib/avatar/avatar.component';
 export * from './lib/profile/profile.component';
 export * from './lib/breadcrumb/breadcrumb.component';
+export * from './lib/modal/modal.component';
+
 export { AppItem } from './lib/types/app-item';
 export { MenuItem } from './lib/types/menu-item';
-export { Theme } from './lib/types/theme';
-export { Header } from './lib/types/theme';
-export { Menu } from './lib/types/theme';
-export { Footer } from './lib/types/theme';
+export { Header, Menu, MenuOptions, Footer, Theme } from './lib/types/theme';
 export { ProfileOptions } from './lib/types/profile-options';
+
+export * from '@ng-bootstrap/ng-bootstrap';
+export * from 'keycloak-angular';
+export * from 'ngx-mask';
+export * from 'ngx-spinner';
+export * from 'ngx-toastr';

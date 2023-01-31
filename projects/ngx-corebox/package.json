@@ -1,64 +1,72 @@
 {
-  "name": "@kenkko.group/ngx-corebox",
-  "version": "0.0.0",
-  "description": "A library with the base template your application needs. Built natively in angular and javascript only.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kenkko-group/ngx-corebox.git"
-  },
-  "keywords": [
-    "angular",
-    "spinner",
-    "angular4",
-    "angular5",
-    "angular6",
-    "angular7",
-    "angular8",
-    "angular9",
-    "angular10",
-    "angular11",
-    "angular12",
-    "angular13",
-    "angular14",
-    "angular15",
-    "base template",
-    "admin template",
-    "ngx",
-    "ng4",
-    "ng5",
-    "ng6",
-    "ng7",
-    "ng8",
-    "ng9",
-    "ng10",
-    "ng11",
-    "ng12",
-    "ng13",
-    "ng14",
-    "ng15"
-  ],
-  "author": {
-    "name": "Kenkko Group",
-    "email": "contato@kenkko.group"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kenkko-group/ngx-corebox/issues"
-  },
-  "homepage": "https://github.com/kenkko-group/ngx-corebox#readme",
-  "ng-add": {
-    "save": "dependencies"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "@angular/common": "^15.0.4",
-    "@angular/core": "^15.0.4",
-    "@fortawesome/angular-fontawesome": "^0.12.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1"
-  },
-  "dependencies": {
-    "tslib": "^2.4.1"
-  }
+	"name": "@kenkko.group/ngx-corebox",
+	"version": "0.0.0",
+	"description": "A library with the base template your application needs. Built natively in angular and javascript only.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kenkko-group/ngx-corebox.git"
+	},
+	"keywords": [
+		"angular",
+		"spinner",
+		"angular4",
+		"angular5",
+		"angular6",
+		"angular7",
+		"angular8",
+		"angular9",
+		"angular10",
+		"angular11",
+		"angular12",
+		"angular13",
+		"angular14",
+		"angular15",
+		"base template",
+		"admin template",
+		"ngx",
+		"ng4",
+		"ng5",
+		"ng6",
+		"ng7",
+		"ng8",
+		"ng9",
+		"ng10",
+		"ng11",
+		"ng12",
+		"ng13",
+		"ng14",
+		"ng15"
+	],
+	"author": {
+		"name": "Kenkko Group",
+		"email": "contato@kenkko.group"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/kenkko-group/ngx-corebox/issues"
+	},
+	"homepage": "https://github.com/kenkko-group/ngx-corebox#readme",
+	"ng-add": {
+		"save": "dependencies"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"@angular/common": "^15.0.4",
+		"@angular/core": "^15.0.4",
+		"@fortawesome/angular-fontawesome": "^0.12.0",
+		"@fortawesome/fontawesome-svg-core": "^6.2.1",
+		"@fortawesome/free-solid-svg-icons": "^6.2.1",
+		"@ng-bootstrap/ng-bootstrap": "^14.0.1",
+		"@popperjs/core": "^2.11.6",
+		"bootstrap": "^5.2.3",
+		"keycloak-angular": "^13.0.0",
+		"ngx-mask": "^15.0.2",
+		"ngx-spinner": "^15.0.1",
+		"ngx-toastr": "^16.0.2"
+	},
+	"dependencies": {
+		"tslib": "^2.4.1"
+	}
 }

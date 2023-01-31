@@ -1,13 +1,15 @@
-import { IconName } from "@fortawesome/free-solid-svg-icons";
+import { IconName } from '@fortawesome/free-solid-svg-icons';
 
 export class ProfileOptions {
-    companyName?: string;
-    userName?: string;
-    avatarUrl?: string;
-    profileUrl?: string;
-    profileLabel?: string;
-    profileIcon?: IconName;
-    logoutLabel?: string;
-    logoutIcon?: IconName;
-    logoutEvent: () => void = () => alert('Logout Event Trigged!');
+	constructor(
+		public logoutEvent: () => void = () => alert('Logout Event Trigged!'),
+		public logoutLabel: string,
+		public userName: string,
+		public logoutIcon: IconName = 'font-awesome',
+		public companyName: string = '',
+		public avatarUrl: string = '',
+		public profileUrl: string = '',
+		public profileLabel: string = '',
+		public profileIcon: IconName = 'font-awesome'
+	) {}
 }

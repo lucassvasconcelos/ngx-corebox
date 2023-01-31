@@ -1,8 +1,5 @@
 import { IconName } from '@fortawesome/fontawesome-common-types';
 
 export class AppItem {
-    url: string = '';
-    icon: IconName = 'font-awesome';
-    title?: string;
-    allowedRoles?: string[];
+	constructor(public title: string, public url: string | (() => void), public icon: IconName = 'font-awesome', public show: boolean = true) {}
 }
