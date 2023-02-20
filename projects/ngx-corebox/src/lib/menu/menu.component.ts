@@ -40,11 +40,11 @@ export class MenuComponent implements OnInit {
 	}
 
 	useMenuClosedClass(): boolean {
-		return this.menuClosed && window.innerWidth > 1280;
+		return this.menuClosed && window.innerWidth > 800;
 	}
 
 	useMenuOpenedClass(): boolean {
-		return this.menuClosed && window.innerWidth <= 1280;
+		return this.menuClosed && window.innerWidth <= 800;
 	}
 
 	getBackgroundImage(): string {
@@ -78,14 +78,14 @@ export class MenuComponent implements OnInit {
 			this.selectedMenu.opened = true;
 		}
 
-		if (window.innerWidth <= 1280) {
+		if (window.innerWidth <= 800) {
 			if (!this.selectedMenu.children || this.selectedMenu.children.length === 0) {
 				this.alterarMenuEvent.emit(false);
 			}
 		}
 
 		let navMenu = document.getElementById('nav-menu');
-		if (navMenu?.className === 'corebox-menu corebox-closed' && this.selectedMenu.children && window.innerWidth >= 1280) {
+		if (navMenu?.className === 'corebox-menu corebox-closed' && this.selectedMenu.children && window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
 			let itemDemenu = document.getElementById(`menu_${i}`);
 			if (divSubmenu && itemDemenu) {
@@ -117,14 +117,14 @@ export class MenuComponent implements OnInit {
 			this.selectedMenu.opened = false;
 		}
 
-		if (this.selectedMenu?.children && window.innerWidth >= 1280) {
+		if (this.selectedMenu?.children && window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
 			if (divSubmenu) {
 				divSubmenu.style.display = 'none';
 			}
 		}
 
-		if (window.innerWidth <= 1280) {
+		if (window.innerWidth <= 800) {
 			this.alterarMenuEvent.emit(false);
 		}
 
@@ -136,7 +136,7 @@ export class MenuComponent implements OnInit {
 	};
 
 	closeSubMenu = (): void => {
-		if (window.innerWidth >= 1280) {
+		if (window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
 			if (divSubmenu) {
 				divSubmenu.style.display = 'none';

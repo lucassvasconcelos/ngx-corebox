@@ -44,7 +44,7 @@ header {
 		}
 	}
 
-	@media (max-width: 1280px) {
+	@media (max-width: 800px) {
 		background-image: linear-gradient(to right, var(--header-background-color1), var(--header-background-color2));
 		font-weight: 400;
 		min-height: 55px;

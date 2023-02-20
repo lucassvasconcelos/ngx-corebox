@@ -13,11 +13,11 @@ export class FooterComponent {
 	currentYear: number = new Date().getFullYear();
 
 	useClosedMenuClass(): boolean {
-		return this.menuClosed && window.innerWidth > 1280;
+		return this.menuClosed && window.innerWidth > 800;
 	}
 
 	closeSubMenu = (): void => {
-		if (window.innerWidth >= 1280) {
+		if (window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
 
 			if (divSubmenu) divSubmenu.style.display = 'none';

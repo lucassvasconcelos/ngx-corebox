@@ -70,11 +70,11 @@ export class TemplateComponent implements OnInit {
 	}
 
 	useClosedMenuClass(): boolean {
-		return this.menuClosed && window.innerWidth > 1280;
+		return this.menuClosed && window.innerWidth > 800;
 	}
 
 	useMenuOpenedClass(): boolean {
-		return this.menuClosed && window.innerWidth <= 1280;
+		return this.menuClosed && window.innerWidth <= 800;
 	}
 
 	changeMenuState(opened: boolean): void {
@@ -82,7 +82,7 @@ export class TemplateComponent implements OnInit {
 	}
 
 	closeSubMenu = (): void => {
-		if (window.innerWidth >= 1280) {
+		if (window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
 			if (divSubmenu) {
 				divSubmenu.style.display = 'none';

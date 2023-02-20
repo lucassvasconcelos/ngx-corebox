@@ -28,7 +28,7 @@ export class HeaderComponent {
 	ngOnInit(): void {
 		const localStorageItem = localStorage.getItem('menuClosed');
 
-		if (window.innerWidth <= 1280) {
+		if (window.innerWidth <= 800) {
 			this.menuStateEvent.emit(false);
 			localStorage.setItem('menuClosed', String(false));
 		} else {
@@ -53,7 +53,7 @@ export class HeaderComponent {
 		if (pressionouBotao) {
 			this.profileIsOpen = !this.profileIsOpen;
 
-			if (window.innerWidth <= 1280) this.menuStateEvent.emit(false);
+			if (window.innerWidth <= 800) this.menuStateEvent.emit(false);
 		} else {
 			this.profileIsOpen = false;
 		}
@@ -65,7 +65,7 @@ export class HeaderComponent {
 		if (pressionouBotao) {
 			this.appsIsOpen = !this.appsIsOpen;
 
-			if (window.innerWidth <= 1280) this.appsOpenedEvent.emit(false);
+			if (window.innerWidth <= 800) this.appsOpenedEvent.emit(false);
 		} else {
 			this.appsIsOpen = false;
 		}
@@ -79,7 +79,7 @@ export class HeaderComponent {
 	}
 
 	isMobile = (): boolean => {
-		return window.innerWidth <= 1280;
+		return window.innerWidth <= 800;
 	};
 
 	closeSubMenu = (): void => {
@@ -92,6 +92,6 @@ export class HeaderComponent {
 	};
 
 	useClosedMenuClass(): boolean {
-		return this.menuClosed && window.innerWidth > 1280;
+		return this.menuClosed && window.innerWidth > 800;
 	}
 }
