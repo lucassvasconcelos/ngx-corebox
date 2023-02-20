@@ -13,6 +13,7 @@ export class HeaderComponent {
 	@Input() profileOptions?: ProfileOptions;
 	@Input() appItems: AppItem[] = [];
 	@Input() menuClosed: boolean = false;
+	@Input() showMenu: boolean = true;
 
 	appsIsOpen: boolean = false;
 	profileIsOpen: boolean = false;

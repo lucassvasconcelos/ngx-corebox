@@ -17,6 +17,11 @@ footer {
 		transition: 0.4s;
 	}
 
+	&.full {
+		left: 0;
+		width: 100vw;
+	}
+
 	> span {
 		color: var(--footer-font-color);
 	}

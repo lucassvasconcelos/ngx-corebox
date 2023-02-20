@@ -31,7 +31,7 @@ export class AppComponent {
 			new Header(),
 			new Menu(),
 			new Footer('Kenkko'),
-			new MenuOptions('', '../assets/logo-desktop.png', '../assets/logo-mobile.png')
+			new MenuOptions(true, '', '../assets/logo-desktop.png', '../assets/logo-mobile.png')
 		)
 	];
 

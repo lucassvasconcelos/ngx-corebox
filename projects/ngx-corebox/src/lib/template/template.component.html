@@ -1,5 +1,5 @@
 <div class="corebox">
-	<div class="corebox-left">
+	<div *ngIf="getMenuOptions().showMenu" class="corebox-left">
 		<div id="nav-menu" class="corebox-menu" [ngClass]="{ 'corebox-closed': useClosedMenuClass(), 'corebox-opened': useMenuOpenedClass() }">
 			<corebox-menu
 				[menuClosed]="menuClosed"
@@ -13,6 +13,7 @@
 	<div class="corebox-right">
 		<div id="header" class="corebox-header">
 			<corebox-header
+				[showMenu]="getMenuOptions().showMenu"
 				[menuClosed]="menuClosed"
 				[profileOptions]="profileOptions"
 				[appItems]="appItems"
@@ -20,9 +21,13 @@
 				(appsOpenedEvent)="appsOpened($event)"
 			></corebox-header>
 		</div>
-		<section class="corebox-content" [ngClass]="{ 'corebox-closed': useClosedMenuClass() }" (click)="closeSubMenu()">
+		<section
+			class="corebox-content"
+			[ngClass]="{ 'corebox-closed': useClosedMenuClass(), full: !getMenuOptions().showMenu }"
+			(click)="closeSubMenu()"
+		>
 			<router-outlet></router-outlet>
 		</section>
-		<corebox-footer [menuClosed]="menuClosed" [companyName]="getCompanyName()"></corebox-footer>
+		<corebox-footer [showMenu]="getMenuOptions().showMenu" [menuClosed]="menuClosed" [companyName]="getCompanyName()"></corebox-footer>
 	</div>
 </div>

@@ -1,6 +1,7 @@
-<header (click)="closeSubMenu()" [ngClass]="{ 'corebox-closed': useClosedMenuClass() }">
+<header (click)="closeSubMenu()" [ngClass]="{ 'corebox-closed': useClosedMenuClass(), full: !showMenu }">
 	<div class="corebox-header-content">
-		<corebox-menu-button (click)="toogleMenu()"></corebox-menu-button>
+		<corebox-menu-button *ngIf="showMenu" (click)="toogleMenu()"></corebox-menu-button>
+		<div *ngIf="!showMenu"></div>
 
 		<div class="corebox-apps-and-profile">
 			<div *ngIf="appItems && appItems.length > 0" (click)="toogleAppsMenu(true)">

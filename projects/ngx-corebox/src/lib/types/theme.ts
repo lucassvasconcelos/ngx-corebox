@@ -22,7 +22,7 @@ export class Menu {
 }
 
 export class MenuOptions {
-	constructor(public backgroundImage: string = '', public logo: string = '', public logoMobile: string = '') {}
+	constructor(public showMenu: boolean = true, public backgroundImage: string = '', public logo: string = '', public logoMobile: string = '') {}
 }
 
 export class Footer {

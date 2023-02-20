@@ -95,6 +95,11 @@ html {
 				width: calc(100vw - var(--menu-closed-width));
 			}
 
+			&.full {
+				left: 0;
+				width: 100vw;
+			}
+
 			&::-webkit-scrollbar-track {
 				background-color: transparent;
 			}
