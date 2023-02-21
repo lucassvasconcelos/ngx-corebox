@@ -103,7 +103,7 @@ export class MenuComponent implements OnInit {
 			}
 		}
 
-		this.navigate(menu.url);
+		this.navigate(menu.url, menu.queryParams);
 	}
 
 	selectSubMenu(submenu: MenuItem): void {
@@ -136,7 +136,7 @@ export class MenuComponent implements OnInit {
 			this.alterarMenuEvent.emit(false);
 		}
 
-		this.navigate(submenu.url!);
+		this.navigate(submenu.url!, submenu.queryParams);
 	}
 
 	showDesktopSubMenuWithOpenedNav = (): boolean => {
@@ -152,9 +152,9 @@ export class MenuComponent implements OnInit {
 		}
 	};
 
-	navigate = (url: string | (() => void)): void => {
+	navigate = (url: string | (() => void), queryParams: any): void => {
 		if (typeof url === 'string') {
-			navigate(url, this.router);
+			navigate(url, queryParams, this.router);
 		} else {
 			url();
 		}

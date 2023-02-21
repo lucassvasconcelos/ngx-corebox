@@ -8,6 +8,7 @@ export * from './lib/avatar/avatar.component';
 export * from './lib/profile/profile.component';
 export * from './lib/breadcrumb/breadcrumb.component';
 export * from './lib/modal/modal.component';
+export * from './lib/error-page/error-page.component';
 
 export { AppItem } from './lib/types/app-item';
 export { MenuItem } from './lib/types/menu-item';

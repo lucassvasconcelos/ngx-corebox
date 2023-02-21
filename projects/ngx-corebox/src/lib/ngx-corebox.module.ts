@@ -9,12 +9,13 @@ import { RouterModule } from '@angular/router';
 import { AppsComponent } from './apps/apps.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { ProfileComponent } from './profile/profile.component';
-
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import { AppsButtonComponent } from './header/apps-button/apps-button.component';
 import { MenuButtonComponent } from './header/menu-button/menu-button.component';
 import { ModalComponent } from './modal/modal.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
 	declarations: [
@@ -28,7 +29,8 @@ import { ModalComponent } from './modal/modal.component';
 		AvatarComponent,
 		ProfileComponent,
 		BreadcrumbComponent,
-		ModalComponent
+		ModalComponent,
+		ErrorPageComponent
 	],
 	imports: [CommonModule, FontAwesomeModule, RouterModule],
 	exports: [
@@ -40,7 +42,8 @@ import { ModalComponent } from './modal/modal.component';
 		ProfileComponent,
 		TemplateComponent,
 		BreadcrumbComponent,
-		ModalComponent
+		ModalComponent,
+		ErrorPageComponent
 	]
 })
 export class NgxCoreboxModule {

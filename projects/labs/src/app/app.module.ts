@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ExampleComponent } from './components/example/example.component';
 import { Example2Component } from './components/example2/example2.component';
+import { Example3Component } from './components/example3/example3.component';
 
 @NgModule({
-	declarations: [AppComponent, ExampleComponent, Example2Component],
+	declarations: [AppComponent, ExampleComponent, Example2Component, Example3Component],
 	imports: [
 		AppRoutingModule,
 		BrowserAnimationsModule,

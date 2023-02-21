@@ -48,6 +48,25 @@ export class AppComponent {
 		new MenuItem(() => {
 			alert('Menu event');
 		}, 'Menu 3'),
-		new MenuItem('', 'Hidden Menu 3', null, false)
+		new MenuItem('', 'Hidden Menu 3', null, false),
+		new MenuItem('', 'Error pages', [
+			new MenuItem('/example3', '403', undefined, true, {
+				statusCode: 403,
+				description: 'Forbidden',
+				errorMessage: 'The client does not have access rights to the content',
+				title: 'Oops... ERROR'
+			}),
+			new MenuItem('/example3', '404', undefined, true, {
+				statusCode: 404,
+				description: 'Page not found!',
+				title: 'ERROR'
+			}),
+			new MenuItem('/example3', '500', undefined, true, {
+				statusCode: 500,
+				description: 'Internal Server Error',
+				errorMessage: 'The server has encountered a situation it does not know how to handle',
+				title: 'Oops... ERROR'
+			})
+		])
 	];
 }
