@@ -6,9 +6,10 @@ import { NgbModule, NgxCoreboxModule, NgxMaskDirective, NgxMaskPipe, NgxSpinnerM
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ExampleComponent } from './components/example/example.component';
+import { Example2Component } from './components/example2/example2.component';
 
 @NgModule({
-	declarations: [AppComponent, ExampleComponent],
+	declarations: [AppComponent, ExampleComponent, Example2Component],
 	imports: [
 		AppRoutingModule,
 		BrowserAnimationsModule,

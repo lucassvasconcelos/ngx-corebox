@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/theme';
 import { navigate } from '../utils/navigate';
@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
 	selectedSubMenu?: MenuItem;
 	menuClicked = false;
 
-	constructor(public router: Router) {}
+	constructor(public router: Router, private routerac: ActivatedRoute) {}
 
 	ngOnInit(): void {
 		let itens = this.menuItems.filter((menu) => menu.opened);
@@ -37,6 +37,14 @@ export class MenuComponent implements OnInit {
 			}
 			this.menuClicked = false;
 		};
+
+		this.selectCurrentMenu();
+	}
+
+	selectCurrentMenu() {
+		const path = location.pathname?.split('/');
+
+		if (path.length > 0) this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${path[1]}`)?.pop();
 	}
 
 	useMenuClosedClass(): boolean {

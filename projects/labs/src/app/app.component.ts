@@ -44,9 +44,10 @@ export class AppComponent {
 			new MenuItem('/submenu1', 'Hidden SubMenu 1.3', null, false),
 			new MenuItem('/submenu1', 'SubMenu 1.4')
 		]),
+		new MenuItem('/example2', 'Menu 2'),
 		new MenuItem(() => {
 			alert('Menu event');
-		}, 'Menu 2'),
+		}, 'Menu 3'),
 		new MenuItem('', 'Hidden Menu 3', null, false)
 	];
 }
