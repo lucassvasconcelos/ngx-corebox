@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MenuItem } from '../types/menu-item';
 import { MenuOptions } from '../types/theme';
 import { navigate } from '../utils/navigate';
@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
 	selectedSubMenu?: MenuItem;
 	menuClicked = false;
 
-	constructor(public router: Router, private routerac: ActivatedRoute) {}
+	constructor(public router: Router) {}
 
 	ngOnInit(): void {
 		let itens = this.menuItems.filter((menu) => menu.opened);
@@ -42,9 +42,40 @@ export class MenuComponent implements OnInit {
 	}
 
 	selectCurrentMenu() {
-		const path = location.pathname?.split('/');
+		const baseConfigs =
+			this.router.config && this.router.config.length > 0
+				? this.router.config.filter((c) => {
+						return c.path && c.path.indexOf('/') < 0 ? c : null;
+				  })
+				: [];
 
-		if (path.length > 0) this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${path[1]}`)?.pop();
+		const baseResources = baseConfigs.map((c) => c.path);
+
+		debugger;
+		if (location.pathname && location.hash) {
+			const path = location.href.replace(`${location.origin}/#/`, '');
+			const resourceMatches = baseResources.filter((r) => path.startsWith(r));
+
+			if (resourceMatches.length > 1) {
+				let uniqueValue: string;
+
+				for (let i = 0; i < resourceMatches.length; i++) {
+					const currentElement = resourceMatches[i];
+					const matchingElements = resourceMatches.filter((element) => element !== currentElement && element.startsWith(currentElement));
+					if (matchingElements.length === 0) {
+						uniqueValue = currentElement;
+						break;
+					}
+				}
+
+				this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${uniqueValue}`)?.pop();
+			} else if (resourceMatches.length === 1) {
+				this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${resourceMatches.pop()}`)?.pop();
+			}
+		} else {
+			const path = location.pathname?.split('/');
+			this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${path[1]}`)?.pop();
+		}
 	}
 
 	useMenuClosedClass(): boolean {

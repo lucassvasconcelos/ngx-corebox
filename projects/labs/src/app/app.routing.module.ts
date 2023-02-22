@@ -8,11 +8,12 @@ const routes: Routes = [
 	{ path: '', redirectTo: 'example', pathMatch: 'full' },
 	{ path: 'example', component: ExampleComponent },
 	{ path: 'example2', component: Example2Component },
+	{ path: 'example2/:id', component: Example2Component },
 	{ path: 'example3', component: Example3Component }
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'ignore' })],
+	imports: [RouterModule.forRoot(routes, { useHash: true })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}
