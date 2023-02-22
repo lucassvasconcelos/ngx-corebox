@@ -70,7 +70,7 @@ export class MenuComponent implements OnInit {
 
 				this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${uniqueValue}`)?.pop();
 			} else if (resourceMatches.length === 1) {
-				this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${resourceMatches.pop()}`)?.pop();
+				this.selectedMenu = this.menuItems?.filter((m) => m.url === `/${resourceMatches[0]}`)?.pop();
 			}
 		} else {
 			const path = location.pathname?.split('/');
