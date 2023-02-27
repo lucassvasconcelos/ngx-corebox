@@ -9,7 +9,8 @@ const routes: Routes = [
 	{ path: 'example', component: ExampleComponent },
 	{ path: 'example2', component: Example2Component },
 	{ path: 'example2/:id', component: Example2Component },
-	{ path: 'example3', component: Example3Component }
+	{ path: 'example3', component: Example3Component },
+	{ path: '**', component: Example3Component }
 ];
 
 @NgModule({

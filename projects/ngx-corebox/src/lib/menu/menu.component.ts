@@ -51,7 +51,6 @@ export class MenuComponent implements OnInit {
 
 		const baseResources = baseConfigs.map((c) => c.path);
 
-		debugger;
 		if (location.pathname && location.hash) {
 			const path = location.href.replace(`${location.origin}/#/`, '');
 			const resourceMatches = baseResources.filter((r) => path.startsWith(r));

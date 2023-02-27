@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,11 +7,12 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./error-page.component.scss']
 })
 export class ErrorPageComponent implements DoCheck {
-	description: string = '';
+	@Input() description: string = '';
+	@Input() statusCode: string = '';
+	@Input() title: string = '';
+
 	errorMessage: string = '';
 	queryParams: any;
-	statusCode: string = '';
-	title: string = '';
 
 	constructor(private route: ActivatedRoute) {}
 
@@ -21,9 +22,9 @@ export class ErrorPageComponent implements DoCheck {
 
 	private getQueryParams(): void {
 		this.route.queryParams.subscribe((params) => (this.queryParams = params));
-		this.description = this.queryParams.description;
+		this.description = this.queryParams.description ?? this.description;
 		this.errorMessage = this.queryParams.errorMessage;
-		this.statusCode = this.queryParams.statusCode;
-		this.title = this.queryParams.title;
+		this.statusCode = this.queryParams.statusCode ?? this.statusCode;
+		this.title = this.queryParams.title ?? this.title;
 	}
 }
