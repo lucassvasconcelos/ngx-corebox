@@ -41,10 +41,10 @@ export class HeaderComponent {
 			}
 		}
 
-		document.body.onclick = (): void => {
+		document.body.addEventListener('click', () => {
 			!this.profileMenuButtonPressed ? this.toogleProfileMenu(false) : (this.profileMenuButtonPressed = false);
 			!this.appsMenuButtonPressed ? this.toogleAppsMenu(false) : (this.appsMenuButtonPressed = false);
-		};
+		});
 	}
 
 	toogleProfileMenu = (pressionouBotao: boolean): void => {
