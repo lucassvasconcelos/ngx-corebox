@@ -1,6 +1,6 @@
 <section class="corebox-apps" [ngClass]="{ 'corebox-d-block': showApps, 'corebox-d-none': !showApps }">
 	<div class="corebox-apps-content">
-		<div *ngFor="let app of appItems" class="corebox-app" (click)="navigate(app.url, {})">
+		<div *ngFor="let app of appItems" class="corebox-app" (click)="navigate(app.url, {})" [class.d-none]="!app.show">
 			<fa-icon [icon]="[app.iconGallery, app.icon]" class="fa-xl"></fa-icon>
 			<span>{{ app.title }}</span>
 		</div>
