@@ -15,7 +15,8 @@ import { ModalComponent } from './modal/modal.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { IconPack, fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
 	declarations: [
@@ -48,6 +49,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 })
 export class NgxCoreboxModule {
 	constructor(library: FaIconLibrary) {
-		library.addIconPacks(fas);
+		library.addIconPacks(fas, fab as IconPack);
 	}
 }

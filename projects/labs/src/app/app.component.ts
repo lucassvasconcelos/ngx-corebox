@@ -35,7 +35,7 @@ export class AppComponent {
 		)
 	];
 
-	appItems: AppItem[] = [new AppItem('App 1', '/url1')];
+	appItems: AppItem[] = [new AppItem('App 1', '/url1'), new AppItem('App 2', '/url2', 'whatsapp', 'fab')];
 
 	menuItems: MenuItem[] = [
 		new MenuItem('/url1', 'Menu 1', [
