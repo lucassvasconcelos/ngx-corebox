@@ -1,8 +1,14 @@
 <nav id="menu" [ngClass]="{ 'corebox-closed': useMenuClosedClass(), 'corebox-opened': useMenuOpenedClass() }">
 	<div class="corebox-nav-content" [ngClass]="{ 'corebox-opened': useMenuOpenedClass() }">
-		<div class="corebox-logo" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }" [ngSwitch]="useMenuClosedClass()" *ngIf="menuOptions.logo">
+		<div class="corebox-logo" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }" [ngSwitch]="useMenuClosedClass()" *ngIf="menuOptions.logo && !menuOptions.logoUrl">
 			<img *ngSwitchCase="false" class="corebox-desktop" [src]="menuOptions.logo" alt="Company logo" />
 			<img *ngSwitchCase="true" class="corebox-mobile" [src]="menuOptions.logoMobile" alt="Small Company logo" />
+		</div>
+		<div class="corebox-logo" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }" [ngSwitch]="useMenuClosedClass()" *ngIf="menuOptions.logo && menuOptions.logoUrl">
+			<a href="{{menuOptions.logoUrl}}">
+				<img *ngSwitchCase="false" class="corebox-desktop" [src]="menuOptions.logo" alt="Company logo" />
+				<img *ngSwitchCase="true" class="corebox-mobile" [src]="menuOptions.logoMobile" alt="Small Company logo" />
+			</a>
 		</div>
 		<div class="corebox-menu" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }">
 			<ul>

@@ -64,6 +64,22 @@ nav {
 					height: 50px;
 				}
 			}
+
+			> a {
+				> img {
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+
+					&.corebox-desktop {
+						height: 70px;
+					}
+
+					&.corebox-mobile {
+						height: 50px;
+					}
+				}
+			}
 		}
 
 		> .corebox-menu {
