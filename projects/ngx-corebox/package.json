@@ -21,6 +21,7 @@
 		"angular13",
 		"angular14",
 		"angular15",
+		"angular16",
 		"base template",
 		"admin template",
 		"ngx",
@@ -53,19 +54,19 @@
 		"access": "public"
 	},
 	"peerDependencies": {
-		"@angular/common": "^15.0.4",
-		"@angular/core": "^15.0.4",
-		"@fortawesome/angular-fontawesome": "^0.12.0",
-		"@fortawesome/fontawesome-svg-core": "^6.2.1",
-		"@fortawesome/free-brands-svg-icons": "^6.2.1",
-		"@fortawesome/free-solid-svg-icons": "^6.2.1",
-		"@ng-bootstrap/ng-bootstrap": "^14.0.1",
+		"@angular/common": "^16.2.4",
+		"@angular/core": "^16.2.4",
+		"@fortawesome/angular-fontawesome": "^0.13.0",
+		"@fortawesome/fontawesome-svg-core": "^6.4.2",
+		"@fortawesome/free-brands-svg-icons": "^6.4.2",
+		"@fortawesome/free-solid-svg-icons": "^6.4.2",
+		"@ng-bootstrap/ng-bootstrap": "^15.1.1",
 		"@popperjs/core": "^2.11.6",
 		"bootstrap": "^5.2.3",
-		"keycloak-angular": "^13.0.0",
-		"ngx-mask": "^15.0.2",
-		"ngx-spinner": "^15.0.1",
-		"ngx-toastr": "^16.0.2"
+		"keycloak-angular": "^14.1.0",
+		"ngx-mask": "^16.3.1",
+		"ngx-spinner": "^16.0.2",
+		"ngx-toastr": "^17.0.2"
 	},
 	"dependencies": {
 		"tslib": "^2.4.1"
