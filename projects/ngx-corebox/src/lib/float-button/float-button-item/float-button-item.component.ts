@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ViewChild, HostListener, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FloatButtonService } from '../float-button.service';
 import { FloatButtonState } from '../../types/float-button';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -17,6 +17,8 @@ export class FloatButtonItemComponent {
 	@Input() disabled: boolean = false;
 	@Input() tooltipDisabled: boolean = false;
 
+	@Output() clicked: EventEmitter<void> = new EventEmitter<void>();
+
 	@ViewChild('ngbTooltip') ngbTooltip: NgbTooltip;
 
 	constructor(public stateService: FloatButtonService) {}
@@ -26,6 +28,7 @@ export class FloatButtonItemComponent {
 			const currentState: FloatButtonState = this.stateService.currentState;
 			const newState = { ...currentState, isOpen: !currentState.isOpen };
 			this.stateService.publish(newState);
+			this.clicked.emit();
 		}
 	}
 }

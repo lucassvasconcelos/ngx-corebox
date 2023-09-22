@@ -1,16 +1,16 @@
 import { animate, query, stagger, state, style, transition, trigger } from '@angular/animations';
 import {
-	AfterViewInit,
 	ChangeDetectionStrategy,
 	Component,
 	ContentChildren,
+	EventEmitter,
 	Input,
 	OnChanges,
 	OnDestroy,
 	OnInit,
+	Output,
 	QueryList,
-	SimpleChanges,
-	ViewContainerRef
+	SimpleChanges
 } from '@angular/core';
 import { FloatButtonState } from '../types/float-button';
 import { Subscription } from 'rxjs';
@@ -62,7 +62,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 		])
 	]
 })
-export class FloatButtonComponent implements OnInit, AfterViewInit, OnDestroy, OnChanges {
+export class FloatButtonComponent implements OnInit, OnDestroy, OnChanges {
 	@Input() icon: IconProp = 'flag';
 	@Input() color: string = 'text-primary';
 	@Input() marginBottom: string = '75px';
@@ -70,6 +70,8 @@ export class FloatButtonComponent implements OnInit, AfterViewInit, OnDestroy, O
 	@Input() disabled: boolean = false;
 	@Input() isOpen: boolean = false;
 	@Input() hoverable: boolean = false;
+
+	@Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 
 	private _initState: FloatButtonState = {} as FloatButtonState;
 	private _stateSubscription!: Subscription;
@@ -102,26 +104,13 @@ export class FloatButtonComponent implements OnInit, AfterViewInit, OnDestroy, O
 		const state = this.stateService.currentState;
 		const newState = { ...state, isOpen: !state.isOpen };
 		this.stateService.publish(newState);
+
+		if (!state.isHoverable) {
+			this.clicked.emit();
+		}
 	}
 
 	ngOnDestroy(): void {
 		this._stateSubscription!.unsubscribe();
-	}
-
-	ngAfterViewInit(): void {
-		this._stateSubscription = this.stateService.state$.subscribe((newState: FloatButtonState) => {
-			this._showTooltip(newState);
-		});
-	}
-
-	private _showTooltip(state: FloatButtonState): void {
-		const isOpen = state.isOpen;
-		const buttons = this.buttons.toArray();
-
-		// if (isOpen) {
-		// 	buttons.forEach((b) => !b.tooltipDisabled && b.tooltipRef.show());
-		// } else {
-		// 	buttons.forEach((b) => b.tooltipRef.hide());
-		// }
 	}
 }

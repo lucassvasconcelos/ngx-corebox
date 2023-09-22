@@ -32,4 +32,20 @@ export class ExampleComponent {
 	modalClose() {
 		this.toastr.info('Modal close triggered!');
 	}
+
+	dollarClicked() {
+		alert('dollarClicked');
+	}
+
+	userClicked() {
+		alert('userClicked');
+	}
+
+	serverClicked() {
+		alert('serverClicked');
+	}
+
+	floatButtonClicked() {
+		console.log('clicou');
+	}
 }

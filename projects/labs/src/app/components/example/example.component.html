@@ -24,8 +24,8 @@
 	></corebox-modal>
 </ng-template>
 
-<corebox-float-button [icon]="'home'">
-	<corebox-float-button-item [icon]="'dollar'" [tooltip]="'texto'"></corebox-float-button-item>
-	<corebox-float-button-item [icon]="'user'" [tooltip]="'texto médio'"></corebox-float-button-item>
-	<corebox-float-button-item [icon]="'server'" [tooltip]="'Um texto muito grande'"></corebox-float-button-item>
+<corebox-float-button [icon]="'home'" (clicked)="floatButtonClicked()">
+	<corebox-float-button-item (clicked)="dollarClicked()" [icon]="'dollar'" [tooltip]="'texto'"></corebox-float-button-item>
+	<corebox-float-button-item (clicked)="userClicked()" [icon]="'user'" [tooltip]="'texto médio'"></corebox-float-button-item>
+	<corebox-float-button-item (clicked)="serverClicked()" [icon]="'server'" [tooltip]="'Um texto muito grande'"></corebox-float-button-item>
 </corebox-float-button>
