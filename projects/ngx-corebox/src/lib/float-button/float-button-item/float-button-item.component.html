@@ -1,0 +1,15 @@
+<button
+	#elementRef
+	class="m-0 p-0 btn btn-link"
+	[ngClass]="color"
+	[disabled]="disabled"
+	#ngbTooltip="ngbTooltip"
+	placement="start"
+	container="body"
+	[ngbTooltip]="tooltip"
+>
+	<fa-stack>
+		<fa-icon icon="circle" stackItemSize="2x" [ngClass]="color" />
+		<fa-icon [icon]="icon" [inverse]="true" stackItemSize="1x" />
+	</fa-stack>
+</button>

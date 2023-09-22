@@ -17,6 +17,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { IconPack, fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FloatButtonComponent } from './float-button/float-button.component';
+import { FloatButtonItemComponent } from './float-button/float-button-item/float-button-item.component';
+import { FloatButtonService } from './float-button/float-button.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
 	declarations: [
@@ -31,9 +35,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 		ProfileComponent,
 		BreadcrumbComponent,
 		ModalComponent,
-		ErrorPageComponent
+		ErrorPageComponent,
+		FloatButtonComponent,
+		FloatButtonItemComponent
 	],
-	imports: [CommonModule, FontAwesomeModule, RouterModule],
 	exports: [
 		FooterComponent,
 		HeaderComponent,
@@ -44,8 +49,12 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 		TemplateComponent,
 		BreadcrumbComponent,
 		ModalComponent,
-		ErrorPageComponent
-	]
+		ErrorPageComponent,
+		FloatButtonComponent,
+		FloatButtonItemComponent
+	],
+	imports: [CommonModule, FontAwesomeModule, NgbModule, RouterModule],
+	providers: [FloatButtonService]
 })
 export class NgxCoreboxModule {
 	constructor(library: FaIconLibrary) {

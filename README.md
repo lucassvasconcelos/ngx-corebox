@@ -14,7 +14,8 @@
     -   Apps menu;
     -   Delimited content;
     -   Breadcrumb;
-    -   Modal.
+    -   Modal;
+    -   Float Button.
 
 ## Roadmap
 

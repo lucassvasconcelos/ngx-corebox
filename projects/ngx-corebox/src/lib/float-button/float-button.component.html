@@ -1,0 +1,27 @@
+<div
+	class="float-button"
+	[style.margin-bottom]="marginBottom"
+	[style.margin-right]="marginRight"
+	(mouseenter)="!disabled && stateService.currentState.isHoverable && toggle()"
+	(mouseleave)="!disabled && stateService.currentState.isOpen && stateService.currentState.isHoverable && toggle()"
+>
+	<button
+		(click)="!stateService.currentState.isHoverable && toggle()"
+		[@openClose]="stateService.currentState.isOpen ? 'open' : 'closed'"
+		class="m-0 p-0 btn btn-link"
+		[disabled]="disabled"
+	>
+		<fa-stack>
+			<fa-icon icon="circle" stackItemSize="2x" [ngClass]="color" />
+			<fa-icon [icon]="icon" [inverse]="true" stackItemSize="1x" />
+		</fa-stack>
+	</button>
+
+	<div
+		class="float-button-items"
+		[style]="{ height: stateService.currentState.isOpen ? '100%' : '0px' }"
+		[@accordion]="(stateService.state$ | async)!.isOpen ? 'open' : 'closed'"
+	>
+		<ng-content></ng-content>
+	</div>
+</div>
