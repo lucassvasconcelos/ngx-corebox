@@ -62,7 +62,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 		])
 	]
 })
-export class FloatButtonComponent implements OnInit, OnDestroy, OnChanges {
+export class FloatButtonComponent implements OnInit, OnChanges {
 	@Input() icon: IconProp = 'flag';
 	@Input() color: string = 'text-primary';
 	@Input() marginBottom: string = '75px';
@@ -74,7 +74,6 @@ export class FloatButtonComponent implements OnInit, OnDestroy, OnChanges {
 	@Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 
 	private _initState: FloatButtonState = {} as FloatButtonState;
-	private _stateSubscription!: Subscription;
 
 	@ContentChildren(FloatButtonItemComponent) buttons!: QueryList<FloatButtonItemComponent>;
 
@@ -108,9 +107,5 @@ export class FloatButtonComponent implements OnInit, OnDestroy, OnChanges {
 		if (!state.isHoverable) {
 			this.clicked.emit();
 		}
-	}
-
-	ngOnDestroy(): void {
-		this._stateSubscription!.unsubscribe();
 	}
 }
