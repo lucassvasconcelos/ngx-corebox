@@ -1,5 +1,6 @@
 import { animate, query, stagger, state, style, transition, trigger } from '@angular/animations';
 import {
+	AfterViewInit,
 	ChangeDetectionStrategy,
 	Component,
 	ContentChildren,
@@ -62,7 +63,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 		])
 	]
 })
-export class FloatButtonComponent implements OnInit, OnChanges {
+export class FloatButtonComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 	@Input() icon: IconProp = 'flag';
 	@Input() color: string = 'text-primary';
 	@Input() marginBottom: string = '75px';
@@ -74,6 +75,7 @@ export class FloatButtonComponent implements OnInit, OnChanges {
 	@Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 
 	private _initState: FloatButtonState = {} as FloatButtonState;
+	private _stateSubscription!: Subscription;
 
 	@ContentChildren(FloatButtonItemComponent) buttons!: QueryList<FloatButtonItemComponent>;
 
@@ -96,6 +98,25 @@ export class FloatButtonComponent implements OnInit, OnChanges {
 		if (changes['hoverable'] && changes['hoverable'].previousValue != changes['hoverable'].currentValue) {
 			const newState = { ...this.stateService.currentState, isHoverable: changes['hoverable'].currentValue };
 			this.stateService.publish(newState);
+		}
+	}
+
+	ngAfterViewInit(): void {
+		this._stateSubscription = this.stateService.state$.subscribe((newState: FloatButtonState) => this.showTooltips(newState));
+	}
+
+	ngOnDestroy(): void {
+		this._stateSubscription!.unsubscribe();
+	}
+
+	private showTooltips(state: FloatButtonState): void {
+		const isOpen = state.isOpen;
+		const buttons = this.buttons.toArray();
+
+		if (isOpen) {
+			buttons.forEach((b) => !b.tooltipDisabled && b.tooltipRef.show());
+		} else {
+			buttons.forEach((b) => b.tooltipRef.hide());
 		}
 	}
 

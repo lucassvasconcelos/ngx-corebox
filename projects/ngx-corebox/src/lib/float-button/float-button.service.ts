@@ -4,22 +4,23 @@ import { FloatButtonState } from '../types/float-button';
 
 @Injectable()
 export class FloatButtonService {
-	private _state: FloatButtonState;
-	private _stateSubject$: BehaviorSubject<FloatButtonState>;
 	public state$: Observable<FloatButtonState>;
 
+	private state: FloatButtonState;
+	private stateSubject$: BehaviorSubject<FloatButtonState>;
+
 	constructor() {
-		this._state = {} as FloatButtonState;
-		this._stateSubject$ = new BehaviorSubject(this._state);
-		this.state$ = this._stateSubject$.asObservable();
+		this.state = {} as FloatButtonState;
+		this.stateSubject$ = new BehaviorSubject(this.state);
+		this.state$ = this.stateSubject$.asObservable();
 	}
 
 	get currentState(): FloatButtonState {
-		return this._state;
+		return this.state;
 	}
 
 	publish(newState: FloatButtonState): void {
-		this._state = newState;
-		this._stateSubject$.next(newState);
+		this.state = newState;
+		this.stateSubject$.next(newState);
 	}
 }

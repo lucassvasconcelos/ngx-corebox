@@ -21,6 +21,8 @@ import { FloatButtonComponent } from './float-button/float-button.component';
 import { FloatButtonItemComponent } from './float-button/float-button-item/float-button-item.component';
 import { FloatButtonService } from './float-button/float-button.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from './float-button/float-button-item/tooltip.directive';
+import { TooltipComponent } from './float-button/float-button-item/tooltip/tooltip.component';
 
 @NgModule({
 	declarations: [
@@ -37,7 +39,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 		ModalComponent,
 		ErrorPageComponent,
 		FloatButtonComponent,
-		FloatButtonItemComponent
+		FloatButtonItemComponent,
+		TooltipDirective,
+		TooltipComponent
 	],
 	exports: [
 		FooterComponent,
@@ -53,7 +57,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 		FloatButtonComponent,
 		FloatButtonItemComponent
 	],
-	imports: [CommonModule, FontAwesomeModule, NgbModule, RouterModule],
+	imports: [CommonModule, FontAwesomeModule, RouterModule],
 	providers: [FloatButtonService]
 })
 export class NgxCoreboxModule {

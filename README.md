@@ -15,7 +15,7 @@
     -   Delimited content;
     -   Breadcrumb;
     -   Modal;
-    -   Float Button.
+    -   Float Button [#Attention](#how-to-use-some-components).
 
 ## Roadmap
 
@@ -79,6 +79,16 @@ Add the code bellow in your `app.component.html` and voilà:
     <img style="width:800px" src="./projects/labs/src/assets/desktop.png">
     <img style="width:200px" src="./projects/labs/src/assets/mobile.png">
 </p>
+
+# How to use (some components)
+
+### Float button
+
+Add the code bellow in yout style.scss
+
+```scss
+@import '@angular/cdk/overlay-prebuilt.css';
+```
 
 ## How to run
 

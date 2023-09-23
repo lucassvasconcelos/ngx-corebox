@@ -1,12 +1,11 @@
 <button
+	#tooltipRef="coreboxTooltip"
 	#elementRef
+	coreboxTooltip
 	class="m-0 p-0 btn btn-link"
 	[ngClass]="color"
 	[disabled]="disabled"
-	#ngbTooltip="ngbTooltip"
-	placement="start"
-	container="body"
-	[ngbTooltip]="tooltip"
+	[coreboxTooltip]="tooltip"
 >
 	<fa-stack>
 		<fa-icon icon="circle" stackItemSize="2x" [ngClass]="color" />
