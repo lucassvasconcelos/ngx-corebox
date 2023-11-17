@@ -2,13 +2,13 @@
 	#tooltipRef="coreboxTooltip"
 	#elementRef
 	coreboxTooltip
-	class="m-0 p-0 btn btn-link"
+	class="m-0 p-0 btn shadow"
 	[ngClass]="color"
 	[disabled]="disabled"
 	[coreboxTooltip]="tooltip"
 >
 	<fa-stack>
-		<fa-icon icon="circle" stackItemSize="2x" [ngClass]="color" />
+		<fa-icon icon="circle" stackItemSize="2x" class="opacity-0" />
 		<fa-icon [icon]="icon" [inverse]="true" stackItemSize="1x" />
 	</fa-stack>
 </button>

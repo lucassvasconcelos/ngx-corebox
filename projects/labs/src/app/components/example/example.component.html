@@ -25,7 +25,12 @@
 </ng-template>
 
 <corebox-float-button [icon]="'home'" (clicked)="floatButtonClicked()">
-	<corebox-float-button-item (clicked)="dollarClicked()" [icon]="'dollar'" [tooltip]="'texto'"></corebox-float-button-item>
-	<corebox-float-button-item (clicked)="userClicked()" [icon]="'user'" [tooltip]="'texto médio'"></corebox-float-button-item>
-	<corebox-float-button-item (clicked)="serverClicked()" [icon]="'server'" [tooltip]="'Um texto muito grande'"></corebox-float-button-item>
+	<corebox-float-button-item (clicked)="dollarClicked()" [icon]="'dollar'" [tooltip]="'Action'" [color]="'btn-success'"></corebox-float-button-item>
+	<corebox-float-button-item (clicked)="userClicked()" [icon]="'user'" [tooltip]="'Other Action'" [color]="'btn-info'"></corebox-float-button-item>
+	<corebox-float-button-item
+		(clicked)="serverClicked()"
+		[icon]="'server'"
+		[tooltip]="'Another action with large text'"
+		[color]="'btn-danger'"
+	></corebox-float-button-item>
 </corebox-float-button>

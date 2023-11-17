@@ -65,7 +65,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 })
 export class FloatButtonComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 	@Input() icon: IconProp = 'flag';
-	@Input() color: string = 'text-primary';
+	@Input() color: string = 'btn-primary';
 	@Input() marginBottom: string = '75px';
 	@Input() marginRight: string = '50px';
 	@Input() disabled: boolean = false;

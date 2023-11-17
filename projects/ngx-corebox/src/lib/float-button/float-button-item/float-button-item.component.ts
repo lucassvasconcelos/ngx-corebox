@@ -13,7 +13,7 @@ import { TooltipDirective } from './tooltip.directive';
 export class FloatButtonItemComponent {
 	@Input() icon: IconProp = 'flag';
 	@Input({ required: true }) tooltip: string = '';
-	@Input() color: string = 'text-secondary';
+	@Input() color: string = 'btn-secondary';
 	@Input() disabled: boolean = false;
 	@Input() tooltipDisabled: boolean = false;
 
