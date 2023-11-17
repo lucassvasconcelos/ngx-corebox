@@ -8,7 +8,7 @@
 	<button
 		(click)="!stateService.currentState.isHoverable && toggle()"
 		[@openClose]="stateService.currentState.isOpen ? 'open' : 'closed'"
-		class="m-0 p-0 btn shadow"
+		class="m-0 p-0 btn"
 		[ngClass]="color"
 		[disabled]="disabled"
 	>
