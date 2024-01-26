@@ -18,7 +18,7 @@ export class AppsComponent {
 		if (typeof url === 'string') {
 			navigate(url, queryParams, this.router);
 		} else {
-			url();
+			if (url !== null && url !== undefined) url();
 		}
 	};
 }

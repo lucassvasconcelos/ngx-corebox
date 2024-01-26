@@ -49,7 +49,7 @@ export class AppComponent {
 			alert('Menu event');
 		}, 'Menu 3'),
 		new MenuItem('', 'Hidden Menu 3', null, false),
-		new MenuItem('', 'Error pages', [
+		new MenuItem(null, 'Error pages', [
 			new MenuItem('/example3', '403', undefined, true, {
 				statusCode: 403,
 				description: 'Forbidden',
