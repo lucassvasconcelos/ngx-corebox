@@ -7,7 +7,7 @@ export class MenuItem {
 		public children: MenuItem[] = null,
 		public show: boolean = true,
 		public queryParams: any = null,
-		public icon: IconName = 'font-awesome',
+		public icon: IconName = null,
 		public opened: boolean = false
 	) {}
 }

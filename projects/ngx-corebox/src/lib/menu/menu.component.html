@@ -4,79 +4,112 @@
 			<img *ngSwitchCase="false" class="corebox-desktop" [src]="menuOptions.logo" alt="Company logo" />
 			<img *ngSwitchCase="true" class="corebox-mobile" [src]="menuOptions.logoMobile" alt="Small Company logo" />
 		</div>
+
 		<div class="corebox-logo" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }" [ngSwitch]="useMenuClosedClass()" *ngIf="menuOptions.logo && menuOptions.logoUrl">
-			<a href="{{menuOptions.logoUrl}}">
+			<a href="{{ menuOptions.logoUrl }}">
 				<img *ngSwitchCase="false" class="corebox-desktop" [src]="menuOptions.logo" alt="Company logo" />
 				<img *ngSwitchCase="true" class="corebox-mobile" [src]="menuOptions.logoMobile" alt="Small Company logo" />
 			</a>
 		</div>
+
 		<div class="corebox-menu" [ngClass]="{ 'corebox-closed': useMenuClosedClass() }">
 			<ul>
 				<li id="menu_{{ i }}" *ngFor="let menuItem of menuItems; let i = index">
-					<a
-						*ngIf="!menuItem.children && menuItem.show"
-						(click)="this.selectMenu(menuItem, i)"
-						routerLinkActive="active"
-						[ngClass]="{ 'corebox-selected': menuItem === selectedMenu, 'corebox-closed': useMenuClosedClass() }"
-					>
+					<a *ngIf="!menuItem.children && menuItem.show" (click)="this.selectMenu(menuItem, i)" routerLinkActive="active" [ngClass]="{ 'corebox-selected': menuItem === selectedMenu, 'corebox-closed': useMenuClosedClass() }">
 						<div>
-							<fa-icon [icon]="menuItem.icon || 'th'" [ngClass]="{ 'fa-lg': useMenuClosedClass() }"></fa-icon>
+							<fa-icon [icon]="menuItem.icon || 'th'" [ngClass]="{ 'fa-lg': useMenuClosedClass() }" />
 							<ng-container *ngIf="!useMenuClosedClass()">
 								<span>{{ menuItem.title }}</span>
 							</ng-container>
 						</div>
 					</a>
 
-					<a
-						*ngIf="menuItem.children && menuItem.show"
-						routerLinkActive="active"
-						(click)="this.selectMenu(menuItem, i)"
-						[ngClass]="{ 'corebox-selected': menuItem === selectedMenu, 'corebox-closed': useMenuClosedClass() }"
-					>
+					<a *ngIf="menuItem.children && menuItem.show" routerLinkActive="active" (click)="this.selectMenu(menuItem, i)" [ngClass]="{ 'corebox-selected': menuItem === selectedMenu, 'corebox-closed': useMenuClosedClass() }">
 						<div>
-							<fa-icon [icon]="menuItem.icon || 'th'" [ngClass]="{ 'fa-lg': useMenuClosedClass() }"></fa-icon>
+							<fa-icon [icon]="menuItem.icon || 'th'" [ngClass]="{ 'fa-lg': useMenuClosedClass() }" />
 							<ng-container *ngIf="!useMenuClosedClass()">
 								<span>{{ menuItem.title }}</span>
 								<span class="corebox-arrow">
-									<fa-icon *ngIf="!menuItem.opened" [icon]="'chevron-left'"></fa-icon>
-									<fa-icon *ngIf="menuItem.opened" [icon]="'chevron-down'"></fa-icon>
+									<fa-icon *ngIf="!menuItem.opened" [icon]="'chevron-left'" />
+									<fa-icon *ngIf="menuItem.opened" [icon]="'chevron-down'" />
 								</span>
 							</ng-container>
 						</div>
 					</a>
 
 					<ul [ngClass]="{ 'corebox-show-submenu': menuItem.opened && showDesktopSubMenuWithOpenedNav() && !useMenuClosedClass() }">
-						<li *ngFor="let subMenuItem of menuItem.children">
-							<a
-								*ngIf="subMenuItem.show"
-								routerLinkActive="active"
-								(click)="selectSubMenu(subMenuItem)"
-								[ngClass]="{
-									'corebox-selected': menuItem === selectedMenu,
-									'corebox-selectedSubMenu': subMenuItem === selectedSubMenu
-								}"
-							>
-								<ng-container *ngIf="!useMenuClosedClass()"></ng-container>
-								<span>{{ subMenuItem.title }}</span>
+						<li *ngFor="let subMenuItem of menuItem.children; let i = index">
+							<a *ngIf="!subMenuItem.children && subMenuItem.show" routerLinkActive="active" (click)="selectSubMenu(subMenuItem, i)" [ngClass]="{'corebox-selected': menuItem === selectedMenu, 'corebox-selectedSubMenu': subMenuItem === selectedSubMenu }">
+								<fa-icon *ngIf="subMenuItem.icon" [icon]="subMenuItem.icon" [ngClass]="{ 'fa-lg': useMenuClosedClass() }" />
+								<span class="ml-6">{{ subMenuItem.title }}</span>
 							</a>
+
+							<a *ngIf="subMenuItem.children && subMenuItem.show" routerLinkActive="active" (click)="this.selectMenu(subMenuItem, i)" [ngClass]="{ 'corebox-selected': subMenuItem === selectedMenu }">
+								<div>
+									<fa-icon *ngIf="subMenuItem.icon" [icon]="subMenuItem.icon" [ngClass]="{ 'fa-lg': useMenuClosedClass() }" />
+									<ng-container *ngIf="!useMenuClosedClass()">
+										<span class="ml-6">{{ subMenuItem.title }}</span>
+										<span class="corebox-arrow">
+											<fa-icon *ngIf="!subMenuItem.opened" [icon]="'chevron-left'" />
+											<fa-icon *ngIf="subMenuItem.opened" [icon]="'chevron-down'" />
+										</span>
+									</ng-container>
+								</div>
+							</a>
+
+							<ul *ngIf="subMenuItem.opened" class="corebox-show-submenu">
+								<li *ngFor="let subSubMenuItem of subMenuItem.children">
+									<a *ngIf="!subSubMenuItem.children && subSubMenuItem.show" routerLinkActive="active" (click)="selectSubMenu(subSubMenuItem, i)" [ngClass]="{'corebox-selected': menuItem === selectedMenu, 'corebox-selectedSubMenu': subSubMenuItem === selectedSubMenu }">
+										<fa-icon *ngIf="subSubMenuItem.icon" [icon]="subSubMenuItem.icon" [ngClass]="{ 'fa-lg': useMenuClosedClass() }" />
+										<span class="ml-6">{{ subSubMenuItem.title }}</span>
+									</a>
+		
+									<a *ngIf="subSubMenuItem.children && subSubMenuItem.show" routerLinkActive="active" (click)="this.selectMenu(subSubMenuItem, i)" [ngClass]="{ 'corebox-selected': subSubMenuItem === selectedMenu }">
+										<div>
+											<fa-icon *ngIf="subSubMenuItem.icon" [icon]="subSubMenuItem.icon" [ngClass]="{ 'fa-lg': useMenuClosedClass() }" />
+											<ng-container *ngIf="!useMenuClosedClass()">
+												<span class="ml-6">{{ subSubMenuItem.title }}</span>
+												<span class="corebox-arrow">
+													<fa-icon *ngIf="!subSubMenuItem.opened" [icon]="'chevron-left'" />
+													<fa-icon *ngIf="subSubMenuItem.opened" [icon]="'chevron-down'" />
+												</span>
+											</ng-container>
+										</div>
+									</a>
+								</li>
+							</ul>
+
 						</li>
 					</ul>
+					
 				</li>
 			</ul>
 		</div>
+
 	</div>
 </nav>
 
 <div id="submenu" class="corebox-subMenuPopup" style="display: none">
 	<ul>
-		<li *ngFor="let subMenuItem of selectedMenu?.children">
-			<a
-				routerLinkActive="active"
-				(click)="selectSubMenu(subMenuItem)"
-				[ngClass]="{ 'corebox-selected': selectedMenu === selectedMenu, 'corebox-selectedSubMenu': subMenuItem === selectedSubMenu }"
-			>
-				<ng-container *ngIf="!useMenuClosedClass()"></ng-container>
+		<li id="submenu_{{ i }}" *ngFor="let subMenuItem of selectedMenu?.children; let i = index">
+			<a *ngIf="subMenuItem.show" routerLinkActive="active" (click)="selectSubMenu(subMenuItem, i)" [ngClass]="{ 'corebox-selected': selectedMenu === selectedMenu, 'corebox-selectedSubMenu': subMenuItem === selectedSubMenu }">
+				<ng-container *ngIf="!useMenuClosedClass()" />
 				<span>{{ subMenuItem.title }}</span>
+				<span class="corebox-arrow" *ngIf="subMenuItem.children">
+					<fa-icon *ngIf="!subMenuItem.opened" [icon]="'chevron-left'" />
+					<fa-icon *ngIf="subMenuItem.opened" [icon]="'chevron-right'" />
+				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<div id="subsubmenu" class="corebox-subSubMenuPopup" style="display: none">
+	<ul>
+		<li id="subsubmenu_{{ i }}" *ngFor="let subSubMenuItem of selectedSubMenu?.children; let i = index">
+			<a *ngIf="subSubMenuItem.show" routerLinkActive="active" (click)="selectSubMenu(subSubMenuItem, i, true)" [ngClass]="{ 'corebox-selected': selectedMenu === selectedMenu, 'corebox-selectedSubMenu': subSubMenuItem === selectedSubMenu }">
+				<ng-container *ngIf="!useMenuClosedClass()" />
+				<span>{{ subSubMenuItem.title }}</span>
 			</a>
 		</li>
 	</ul>

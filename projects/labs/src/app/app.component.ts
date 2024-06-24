@@ -42,7 +42,12 @@ export class AppComponent {
 			new MenuItem('/submenu1', 'SubMenu 1.1'),
 			new MenuItem('/submenu1', 'SubMenu 1.2'),
 			new MenuItem('/submenu1', 'Hidden SubMenu 1.3', null, false),
-			new MenuItem('/submenu1', 'SubMenu 1.4')
+			new MenuItem('/submenu1', 'SubMenu 1.4', [
+				new MenuItem('/submenu1', 'SubMenu 1.4.1'),
+			]),
+			new MenuItem('', 'SubMenu 1.5', [
+				new MenuItem('/submenu1', 'SubMenu 1.5.1'),
+			])
 		]),
 		new MenuItem('/example2', 'Menu 2'),
 		new MenuItem(() => {

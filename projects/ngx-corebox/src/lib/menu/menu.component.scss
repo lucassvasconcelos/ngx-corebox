@@ -151,10 +151,6 @@ nav {
 							> fa-icon {
 								margin: 0 5px 0 0;
 							}
-
-							> .corebox-arrow {
-								float: right;
-							}
 						}
 					}
 
@@ -199,6 +195,51 @@ nav {
 								&:hover {
 									background-color: var(--menu-background-hover-color);
 									color: var(--menu-font-hover-color);
+								}
+							}
+
+							> ul {
+								background-color: var(--menu-submenu-background-color);
+								margin: 0;
+								list-style: none;
+								padding: 0;
+								max-height: 0;
+								overflow: hidden;
+								transition: all 0.4s;
+								-webkit-transition: all 0.4s;
+								-moz-transition: all 0.4s;
+								-o-transition: all 0.4s;
+
+								&.corebox-show-submenu {
+									max-height: 100vh;
+								}
+
+								> li {
+									cursor: pointer;
+									display: block;
+									position: relative;
+									width: 100%;
+
+									> a {
+										color: var(--menu-font-color);
+										display: block;
+										padding: 15px 30px 15px 70px;
+										text-decoration: none;
+										transition: all 0.4s;
+										-webkit-transition: all 0.4s;
+										-moz-transition: all 0.4s;
+										-o-transition: all 0.4s;
+
+										&.corebox-selectedSubMenu {
+											background-color: var(--menu-submenu-selected-background-color);
+											color: var(--menu-font-hover-color);
+										}
+
+										&:hover {
+											background-color: var(--menu-background-hover-color);
+											color: var(--menu-font-hover-color);
+										}
+									}
 								}
 							}
 						}
@@ -258,4 +299,54 @@ nav {
 			}
 		}
 	}
+}
+
+.corebox-subSubMenuPopup {
+	background-color: var(--menu-background-color);
+	left: calc(var(--menu-closed-width) + 220px);
+	max-height: 100vh;
+	position: absolute;
+	width: 220px;
+
+	> ul {
+		border-left: 4px solid var(--menu-border-left-color);
+		margin: 0;
+		list-style: none;
+		padding: 0;
+
+		> li {
+			cursor: pointer;
+			display: block;
+			position: relative;
+
+			> a {
+				color: var(--menu-font-color);
+				display: block;
+				padding: 15px 30px;
+				text-decoration: none;
+				transition: all 0.4s;
+				-webkit-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				-o-transition: all 0.4s;
+
+				&.corebox-selectedSubMenu {
+					background-color: var(--menu-submenu-selected-background-color);
+					color: var(--menu-font-hover-color);
+				}
+
+				&:hover {
+					background-color: var(--menu-background-hover-color);
+					color: var(--menu-font-hover-color);
+				}
+			}
+		}
+	}
+}
+
+.ml-6 {
+	margin-left: 6px;
+}
+
+.corebox-arrow {
+	float: right;
 }

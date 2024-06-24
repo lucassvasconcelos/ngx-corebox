@@ -18,7 +18,7 @@ export class TemplateComponent implements OnInit {
 	@Input() menuOptions: MenuOptions;
 	@Input() profileOptions?: ProfileOptions;
 
-	menuClosed: boolean = true;
+	menuClosed: boolean = false;
 	appsIsOpen: boolean = false;
 
 	ngOnInit(): void {
@@ -65,10 +65,6 @@ export class TemplateComponent implements OnInit {
 		this.appsIsOpen = $event;
 	}
 
-	setMenuState($event: boolean): void {
-		this.menuClosed = $event;
-	}
-
 	useClosedMenuClass(): boolean {
 		return this.menuClosed && window.innerWidth > 800;
 	}
@@ -77,16 +73,17 @@ export class TemplateComponent implements OnInit {
 		return this.menuClosed && window.innerWidth <= 800;
 	}
 
-	changeMenuState(opened: boolean): void {
-		this.menuClosed = opened;
+	toggleMenu(state: boolean): void {
+		this.menuClosed = state;
 	}
 
 	closeSubMenu = (): void => {
 		if (window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
-			if (divSubmenu) {
-				divSubmenu.style.display = 'none';
-			}
+			let divSubSubmenu = document.getElementById('subsubmenu');
+			
+			if (divSubmenu) divSubmenu.style.display = 'none';
+			if (divSubSubmenu) divSubSubmenu.style.display = 'none';
 		}
 	};
 }

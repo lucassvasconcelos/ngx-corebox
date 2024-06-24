@@ -10,11 +10,11 @@ import { navigate } from '../utils/navigate';
 	styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-	@Input() menuClosed: boolean = false;
+	@Input() menuClosed: boolean;
 	@Input() menuItems: MenuItem[] = [];
 	@Input() menuOptions: MenuOptions;
 
-	@Output() alterarMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+	@Output() menuChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	selectedMenu?: MenuItem;
 	selectedSubMenu?: MenuItem;
@@ -107,9 +107,21 @@ export class MenuComponent implements OnInit {
 			if (this.selectedMenu === menu) {
 				this.selectedMenu.opened = !this.selectedMenu.opened;
 			} else {
-				this.selectedMenu.opened = false;
-				this.selectedMenu = menu;
-				this.selectedMenu.opened = true;
+				if (!this.selectedMenu.children || this.selectedMenu.children.indexOf(menu) < 0) {
+					this.selectedMenu.opened = false;
+					this.selectedMenu = menu;
+					this.selectedMenu.opened = true;
+				} else {
+					if (this.selectedSubMenu && this.selectedSubMenu === menu) {
+						this.selectedSubMenu.opened = !menu.opened;
+						return;
+					}
+
+					if (this.selectedSubMenu) this.selectedSubMenu.opened = false;
+
+					this.selectedSubMenu = menu;
+					this.selectedSubMenu.opened = true;
+				}
 			}
 		} else {
 			this.selectedMenu = menu;
@@ -118,7 +130,7 @@ export class MenuComponent implements OnInit {
 
 		if (window.innerWidth <= 800) {
 			if (!this.selectedMenu.children || this.selectedMenu.children.length === 0) {
-				this.alterarMenuEvent.emit(false);
+				this.menuChanged.emit(false);
 			}
 		}
 
@@ -136,37 +148,50 @@ export class MenuComponent implements OnInit {
 		this.navigate(menu.url, menu.queryParams);
 	}
 
-	selectSubMenu(submenu: MenuItem): void {
+	selectSubMenu(submenu: MenuItem, i: number, clickSubSubMenu: boolean = false): void {
 		this.menuClicked = true;
 
 		if (this.selectedSubMenu) {
 			if (this.selectedSubMenu === submenu) {
 				this.selectedSubMenu.opened = !this.selectedSubMenu.opened;
 			} else {
-				this.selectedSubMenu.opened = false;
-				this.selectedSubMenu = submenu;
-				this.selectedSubMenu.opened = true;
+				if (this.selectedSubMenu.children && this.selectedSubMenu.children.indexOf(submenu) < 0) {
+					this.selectedSubMenu.opened = false;
+					this.selectedSubMenu = submenu;
+					this.selectedSubMenu.opened = true;
+				}
 			}
 		} else {
 			this.selectedSubMenu = submenu;
 			this.selectedSubMenu.opened = true;
 		}
+
 		if (this.menuClosed && this.selectedMenu) {
 			this.selectedMenu.opened = false;
 		}
 
-		if (this.selectedMenu?.children && window.innerWidth >= 800) {
-			let divSubmenu = document.getElementById('submenu');
-			if (divSubmenu) {
-				divSubmenu.style.display = 'none';
+		let divSubSubmenu = document.getElementById('subsubmenu');
+
+		if (this.menuClosed && this.selectedMenu?.children && window.innerWidth >= 800) {
+			let divSubmenu = document.getElementById(`submenu_${i}`);
+
+			if (this.selectedMenu.children.indexOf(submenu) > 0) {
+				this.selectedSubMenu = submenu;
+				divSubSubmenu.style.display = 'block';
+
+				const posicoesDoItemDeMenu = divSubmenu.getBoundingClientRect();
+				divSubSubmenu.style.display = 'block';
+				divSubSubmenu.style.top = `${posicoesDoItemDeMenu.top}px`;
 			}
 		}
 
 		if (window.innerWidth <= 800) {
-			this.alterarMenuEvent.emit(false);
+			this.menuChanged.emit(false);
 		}
 
 		this.navigate(submenu.url!, submenu.queryParams);
+
+		if (clickSubSubMenu) this.closeSubMenu();
 	}
 
 	showDesktopSubMenuWithOpenedNav = (): boolean => {
@@ -176,9 +201,10 @@ export class MenuComponent implements OnInit {
 	closeSubMenu = (): void => {
 		if (window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById('submenu');
-			if (divSubmenu) {
-				divSubmenu.style.display = 'none';
-			}
+			let divSubSubmenu = document.getElementById('subsubmenu');
+
+			if (divSubmenu) divSubmenu.style.display = 'none';
+			if (divSubSubmenu) divSubSubmenu.style.display = 'none';
 		}
 	};
 

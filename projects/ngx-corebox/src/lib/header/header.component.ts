@@ -1,18 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppItem } from '../types/app-item';
 import { ProfileOptions } from '../types/profile-options';
-import { navigate } from '../utils/navigate';
 
 @Component({
 	selector: 'corebox-header',
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 	@Input() profileOptions?: ProfileOptions;
 	@Input() appItems: AppItem[] = [];
-	@Input() menuClosed: boolean = false;
+	@Input() menuClosed: boolean;
 	@Input() showMenu: boolean = true;
 
 	appsIsOpen: boolean = false;
@@ -20,7 +19,7 @@ export class HeaderComponent {
 	profileMenuButtonPressed = false;
 	appsMenuButtonPressed = false;
 
-	@Output() menuStateEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+	@Output() menuChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
 	@Output() appsOpenedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	constructor(public router: Router) {}
@@ -29,15 +28,15 @@ export class HeaderComponent {
 		const localStorageItem = localStorage.getItem('menuClosed');
 
 		if (window.innerWidth <= 800) {
-			this.menuStateEvent.emit(false);
+			this.menuChanged.emit(false);
 			localStorage.setItem('menuClosed', String(false));
 		} else {
 			if (localStorageItem === null) {
-				this.menuStateEvent.emit(false);
+				this.menuChanged.emit(false);
 				localStorage.setItem('menuClosed', String(false));
 			} else {
 				const menuClosed = localStorageItem === 'true' ? true : false;
-				this.menuStateEvent.emit(menuClosed);
+				this.menuChanged.emit(menuClosed);
 			}
 		}
 
@@ -53,7 +52,7 @@ export class HeaderComponent {
 		if (pressionouBotao) {
 			this.profileIsOpen = !this.profileIsOpen;
 
-			if (window.innerWidth <= 800) this.menuStateEvent.emit(false);
+			if (window.innerWidth <= 800) this.menuChanged.emit(false);
 		} else {
 			this.profileIsOpen = false;
 		}
@@ -75,7 +74,7 @@ export class HeaderComponent {
 		const localStorageItem = localStorage.getItem('menuClosed');
 		const menuClosed = localStorageItem === 'true' ? true : false;
 		localStorage.setItem('menuClosed', String(!menuClosed));
-		this.menuStateEvent.emit(!menuClosed);
+		this.menuChanged.emit(!menuClosed);
 	}
 
 	isMobile = (): boolean => {
@@ -85,9 +84,10 @@ export class HeaderComponent {
 	closeSubMenu = (): void => {
 		if (!this.isMobile()) {
 			let divSubmenu = document.getElementById('submenu');
-			if (divSubmenu) {
-				divSubmenu.style.display = 'none';
-			}
+			let divSubSubmenu = document.getElementById('subsubmenu');
+
+			if (divSubmenu) divSubmenu.style.display = 'none';
+			if (divSubSubmenu) divSubSubmenu.style.display = 'none';
 		}
 	};
 
