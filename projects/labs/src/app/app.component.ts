@@ -38,40 +38,46 @@ export class AppComponent {
 	appItems: AppItem[] = [new AppItem('App 1', '/url1'), new AppItem('App 2', '/url2', 'whatsapp', 'fab')];
 
 	menuItems: MenuItem[] = [
-		new MenuItem('/example', 'Menu 1', [
-			new MenuItem('/submenu1', 'SubMenu 1.1'),
-			new MenuItem('/submenu1', 'SubMenu 1.2'),
-			new MenuItem('/submenu1', 'Hidden SubMenu 1.3', null, false),
-			new MenuItem('/submenu1', 'SubMenu 1.4', [
-				new MenuItem('/submenu1', 'SubMenu 1.4.1'),
-			]),
-			new MenuItem('', 'SubMenu 1.5', [
-				new MenuItem('/submenu1', 'SubMenu 1.5.1'),
-			])
-		]),
-		new MenuItem('/example2', 'Menu 2'),
-		new MenuItem(() => {
-			alert('Menu event');
-		}, 'Menu 3'),
-		new MenuItem('', 'Hidden Menu 3', null, false),
-		new MenuItem(null, 'Error pages', [
-			new MenuItem('/example3', '403', undefined, true, {
-				statusCode: 403,
-				description: 'Forbidden',
-				errorMessage: 'The client does not have access rights to the content',
-				title: 'Oops... ERROR'
-			}),
-			new MenuItem('/example3', '404', undefined, true, {
-				statusCode: 404,
-				description: 'Page not found!',
-				title: 'ERROR'
-			}),
-			new MenuItem('/example3', '500', undefined, true, {
-				statusCode: 500,
-				description: 'Internal Server Error',
-				errorMessage: 'The server has encountered a situation it does not know how to handle',
-				title: 'Oops... ERROR'
-			})
-		])
+		new MenuItem(null, 'Cadastro', [
+			new MenuItem(null, 'Farmácia', [
+				new MenuItem('/example', 'Categorias', undefined, true, undefined),
+				new MenuItem('/example', 'Grupos Farmacológicos', undefined, undefined, undefined),
+				new MenuItem('/example', 'Medicamentos', undefined, undefined, undefined),
+				new MenuItem('/example', 'Medidas', undefined, undefined, undefined),
+				new MenuItem('/example', 'Níveis de Controle', undefined, undefined, undefined),
+				new MenuItem('/example', 'Princípios Ativos', undefined, undefined, undefined),
+			], true, undefined),
+			new MenuItem(null, 'Globais', [
+				new MenuItem('/example', 'Agendas Médicas', undefined, true, undefined),
+				new MenuItem('/example', 'Convênios', undefined, undefined, undefined),
+				new MenuItem('/example', 'Empresas', undefined, undefined, undefined),
+				new MenuItem('/example', 'Especialidades', undefined, undefined, undefined),
+				new MenuItem('/example', 'Feriados', undefined, undefined, undefined),
+				new MenuItem('/example', 'Fornecedores', undefined, undefined, undefined),
+				new MenuItem('/example', 'Locais', undefined, undefined, undefined),
+				new MenuItem('/example', 'Médicos', undefined, undefined, undefined),
+				new MenuItem('/example', 'Posologias', undefined, undefined, undefined),
+				new MenuItem('/example', 'Procedimentos', undefined, undefined, undefined),
+				new MenuItem('/example', 'Vias de Administração', undefined, undefined, undefined)
+			], true, undefined)
+		], undefined, undefined, 'file-lines'),
+		new MenuItem(null, 'Centro Cirúrgico', [
+			new MenuItem('/example', 'Agenda', undefined, true, undefined),
+		], undefined, undefined, 'syringe'),
+		new MenuItem(null, 'Financeiro', [
+			new MenuItem('/example', 'Contas', undefined, true, undefined),
+			new MenuItem('/example', 'Contas Contábeis', undefined, true, undefined),
+			new MenuItem('/example', 'Lançamentos', undefined, true, undefined)
+		], undefined, undefined, 'piggy-bank'),
+		new MenuItem('/example', 'Prontuário', undefined, true, undefined, 'book-medical'),
+		new MenuItem(null, 'Recepção', [
+			new MenuItem('/example', 'Agenda', undefined, true, undefined),
+			new MenuItem('/example', 'Atendimentos', undefined, true, undefined),
+			new MenuItem('/example', 'Pacientes', undefined, true, undefined),
+		], undefined, undefined, 'bell-concierge'),
+		new MenuItem('/example', 'Sessões Ativas', undefined, true, undefined, 'user-clock'),
+		new MenuItem(null, 'Licença', [
+			new MenuItem('/example', 'Usuários', undefined, true, undefined),
+		], undefined, undefined, 'scroll')
 	];
 }

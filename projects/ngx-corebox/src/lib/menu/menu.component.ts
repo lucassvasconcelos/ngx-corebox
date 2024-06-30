@@ -89,7 +89,7 @@ export class MenuComponent implements OnInit {
 		return `url(${this.menuOptions.backgroundImage})`;
 	}
 
-	selectMenu(menu: MenuItem, i: number): void {
+	selectMenu(menu: MenuItem, i: number, level: number): void {
 		this.menuClicked = true;
 
 		let divSubmenu = document.getElementById('submenu');
@@ -107,6 +107,11 @@ export class MenuComponent implements OnInit {
 			if (this.selectedMenu === menu) {
 				this.selectedMenu.opened = !this.selectedMenu.opened;
 			} else {
+				if (level === 1 && this.selectedSubMenu && this.selectedMenu) {
+					this.selectedSubMenu.opened = false;
+					this.selectedSubMenu = null;
+				}
+
 				if (!this.selectedMenu.children || this.selectedMenu.children.indexOf(menu) < 0) {
 					this.selectedMenu.opened = false;
 					this.selectedMenu = menu;
@@ -148,7 +153,7 @@ export class MenuComponent implements OnInit {
 		this.navigate(menu.url, menu.queryParams);
 	}
 
-	selectSubMenu(submenu: MenuItem, i: number, clickSubSubMenu: boolean = false): void {
+	selectSubMenu(submenu: MenuItem, i: number, level: number, clickSubSubMenu: boolean = false): void {
 		this.menuClicked = true;
 
 		if (this.selectedSubMenu) {
@@ -175,7 +180,12 @@ export class MenuComponent implements OnInit {
 		if (this.menuClosed && this.selectedMenu?.children && window.innerWidth >= 800) {
 			let divSubmenu = document.getElementById(`submenu_${i}`);
 
-			if (this.selectedMenu.children.indexOf(submenu) > 0) {
+			if (this.selectedSubMenu == submenu && !submenu.opened) {
+				divSubSubmenu.style.display = 'none';
+				return;
+			}
+
+			if (this.selectedMenu.children.indexOf(submenu) >= 0) {
 				this.selectedSubMenu = submenu;
 				divSubSubmenu.style.display = 'block';
 
